@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@rebass/grid": "^6.1.0",
+    "lodash": "^4.17.20",
     "next": "^10.0.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
