@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Flex, Box, Text } from '.';
 import {
-  DARK_TITLE_COLOR, easingFunction, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
+  DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../utils/theme';
 
 const FooterContainer = styled.footer`
@@ -70,7 +70,7 @@ const UnderlineText = styled(Text)`
   &:hover {
     cursor: pointer;
     color: ${PRIMARY_COLOR};
-    text-decoration: underline;
+    // text-decoration: underline;
   }
 `;
 
@@ -81,9 +81,9 @@ const UnderlineText = styled(Text)`
 //  |- Computer Graphics
 const Footer = () => (
   <FooterContainer>
-    <Flex width={1} px={4} py={4} justify="space-around">
+    <Flex width={1} pb={4} justify="space-between">
       {/* Navigation */}
-      <Flex pl={4} width={0.5} column>
+      <Flex pl={6} pt={5} width={0.5} column>
         <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
           Navigation
         </Text>
@@ -125,12 +125,15 @@ const Footer = () => (
           </Box>
         </Flex>
       </Flex>
-      {/* Resources */}
+      {/* Connect */}
       <Flex width={0.5} column>
-        <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
-          Connect
-        </Text>
-        <Flex mt={4} width={0.5} justify="center" style={{ flexWrap: 'wrap' }}>
+        <Flex height="200px" background={EXTRA_DARK} mt="-1px" />
+        <Box pt={4}>
+          <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
+            Connect
+          </Text>
+        </Box>
+        <Flex mt={4} width={0.4} justify="center" style={{ flexWrap: 'wrap' }}>
           <ConnectIcon>
             <i className="fa fa-twitter fa-fw" />
           </ConnectIcon>
@@ -145,6 +148,9 @@ const Footer = () => (
           </ConnectIcon>
           <ConnectIcon>
             <i className="fa fa-linkedin fa-fw" />
+          </ConnectIcon>
+          <ConnectIcon>
+            <i className="fa fa-behance fa-fw" />
           </ConnectIcon>
         </Flex>
       </Flex>

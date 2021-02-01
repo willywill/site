@@ -1,9 +1,11 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Flex } from '.';
-import { PRIMARY_COLOR, PRIMARY_HOVER_COLOR, WHITE } from '../../utils/theme';
+import { easingFunction, PRIMARY_COLOR, PRIMARY_HOVER_COLOR, WHITE } from '../../utils/theme';
 import NavbarItem from './NavbarItem';
 import Box from './styled/Box';
+
+const NAVBAR_HEIGHT = '62';
 
 const ContactMeButtonWrapper = styled(Flex)`
   width: 35px;
@@ -12,7 +14,7 @@ const ContactMeButtonWrapper = styled(Flex)`
   border-radius: 50%;
   color: ${WHITE};
   font-size: 1rem;
-  transition: background-color 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: background-color 0.5s ${easingFunction};
   cursor: pointer;
 
   &:hover {
@@ -41,6 +43,7 @@ const FlyDownContainer = styled.div`
 `;
 
 const Nav = styled.nav`
+  height: ${NAVBAR_HEIGHT}px;
   padding-right: 32px;
 `;
 
@@ -56,7 +59,7 @@ const Navbar = () => (
       <FlyDownContainer>
         <Flex width={1} mt={4} justify="flex-end">
           <NavbarItem link="/" label="Home" />
-          <NavbarItem link="/projects" label="My Work" />
+          <NavbarItem link="/my-work" label="My Work" />
           <NavbarItem link="/about" label="About" />
           <NavbarItem link="/contact" label="Contact" />
         </Flex>

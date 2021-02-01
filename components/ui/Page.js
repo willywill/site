@@ -22,7 +22,7 @@ const Page = ({ children, backgroundColor }) => (
     column
     align="center"
     justify="center"
-    style={{ minHeight: '100vh' }}
+    style={{ minHeight: '100vh', position: 'relative' }}
   >
     {children}
     <GlobalStyle />

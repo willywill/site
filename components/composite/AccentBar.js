@@ -29,7 +29,7 @@ const AccentBar = styled.div`
   width: 100px;
   height: 4px;
   opacity: 0.4;
-  background-color: ${PRIMARY_COLOR};
+  background-color: ${(props) => props.color || PRIMARY_COLOR};
   animation: ${(props) => css`${props.reversed ? growRight : growLeft} 1200ms ${easingFunction}`};
 `;
 

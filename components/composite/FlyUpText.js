@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { easingFunction } from '../../utils/theme';
 import { Text } from '../ui';
 
@@ -15,7 +15,7 @@ const flyUp = keyframes`
 `;
 
 const FlyUpText = styled(Text)`
-  animation: ${flyUp} 0.4s 0.5s ${easingFunction};
+  animation: ${(props) => css`${flyUp} 0.4s ${0.5 * (props.delayMultiplier || 1)}s ${easingFunction}`};
   animation-fill-mode: forwards;
   opacity: 0;
   will-change: transform;

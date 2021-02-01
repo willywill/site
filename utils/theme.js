@@ -7,11 +7,13 @@ import replace from 'lodash/fp/replace';
  * Colors - Primary, Secondary, Success, Danger, Warning, Info, Light, Dark
  */
 export const PRIMARY_COLOR = 'hsl(214, 100%, 57%)';
+export const PRIMARY_COLOR_TRANSLUCENT = 'hsla(214, 100%, 57%, 0.4)';
 export const SECONDARY_COLOR = 'hsl(230, 70%, 97%)';
 export const PRIMARY_HOVER_COLOR = '#1b5eb6'; // TODO: Convert to HSL
 export const HIGHLIGHT_COLOR = 'rgba(27, 94, 182, 0.2)'; // TODO: Convert to HSLA
 export const SUBTITLE_COLOR = '#71879a'; // TODO: Convert to HSLA
 export const DARK_TITLE_COLOR = '#425269'; // TODO: Convert to HSL
+export const EXTRA_DARK = '#222b38';
 
 // Extras, not validated
 export const SUCCESS_COLOR = 'hsl(143, 73%, 58%)';

@@ -54,7 +54,12 @@ const getFontFamily = ({ font, secondary }) => {
   return PRIMARY_FONT;
 };
 
-const getFontSize = ({ small, medium, large, extraLarge }) => {
+const getFontSize = ({
+  small, medium, large, extraLarge, fontSize,
+}) => {
+  if (fontSize) {
+    return fontSize;
+  }
   if (small) {
     return SMALL_SIZE;
   }
