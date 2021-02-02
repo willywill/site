@@ -127,31 +127,45 @@ const Footer = () => (
       </Flex>
       {/* Connect */}
       <Flex width={0.5} column>
-        <Flex height="200px" background={EXTRA_DARK} mt="-1px" />
-        <Box pt={4}>
+        <Flex height="200px" background={EXTRA_DARK} mt="-1px" style={{ position: 'relative' }}>
+          <div style={{
+            width: '100px',
+            height: '4px',
+            backgroundColor: PRIMARY_COLOR,
+            position: 'absolute',
+            left: '-50px',
+            top: '100px',
+          }}
+          />
+        </Flex>
+        <Box pt={4} ml={4}>
           <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
             Connect
           </Text>
         </Box>
-        <Flex mt={4} width={0.4} justify="center" style={{ flexWrap: 'wrap' }}>
-          <ConnectIcon>
-            <i className="fa fa-twitter fa-fw" />
-          </ConnectIcon>
-          <ConnectIcon>
-            <i className="fa fa-instagram fa-fw" />
-          </ConnectIcon>
-          <ConnectIcon>
-            <i className="fa fa-github fa-fw" />
-          </ConnectIcon>
-          <ConnectIcon>
-            <i className="fa fa-gitlab fa-fw" />
-          </ConnectIcon>
-          <ConnectIcon>
-            <i className="fa fa-linkedin fa-fw" />
-          </ConnectIcon>
-          <ConnectIcon>
-            <i className="fa fa-behance fa-fw" />
-          </ConnectIcon>
+        <Flex mt={4} ml={4} width={0.5} justify="center" style={{ flexWrap: 'wrap' }}>
+          <Flex>
+            <ConnectIcon>
+              <i className="fa fa-twitter fa-fw" />
+            </ConnectIcon>
+            <ConnectIcon>
+              <i className="fa fa-instagram fa-fw" />
+            </ConnectIcon>
+            <ConnectIcon>
+              <i className="fa fa-github fa-fw" />
+            </ConnectIcon>
+          </Flex>
+          <Flex>
+            <ConnectIcon>
+              <i className="fa fa-gitlab fa-fw" />
+            </ConnectIcon>
+            <ConnectIcon>
+              <i className="fa fa-linkedin fa-fw" />
+            </ConnectIcon>
+            <ConnectIcon>
+              <i className="fa fa-facebook fa-fw" />
+            </ConnectIcon>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>
@@ -159,6 +173,13 @@ const Footer = () => (
       <Divider />
     </Flex>
     <Flex px="10%" py="3%" justify="space-between" align="space-between">
+      <Box>
+        <a href="https://github.com/willywill/site" style={{ textDecoration: 'none' }}>
+          <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
+            Designed & Coded by Will Germany
+          </UnderlineText>
+        </a>
+      </Box>
       <Box>
         <Text color={SUBTITLE_COLOR} letterSpacing={0.3}>
           Last Updated — {`${new Date().toLocaleString('default', { month: 'long' })}, ${(new Date().getFullYear())}`}

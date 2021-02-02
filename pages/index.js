@@ -8,11 +8,11 @@ import Navbar from '../components/ui/Navbar';
 import FlyUpText from '../components/composite/FlyUpText';
 import {
   DARK_TITLE_COLOR, easingFunction, PRIMARY_COLOR,
-  PRIMARY_COLOR_TRANSLUCENT, PRIMARY_FONT, PRIMARY_HOVER_COLOR, SUBTITLE_COLOR,
-  WHITE, SECONDARY_COLOR, EXTRA_DARK, shiftHSL,
+  SUBTITLE_COLOR, WHITE, SECONDARY_COLOR, EXTRA_DARK,
 } from '../utils/theme';
 import Footer from '../components/ui/Footer';
 import AccentBar from '../components/composite/AccentBar';
+import RibbonCanvas from '../components/composite/RibbonCanvas';
 
 const Image = styled.div`
   margin-top: 500px;
@@ -34,13 +34,23 @@ const Image = styled.div`
   }
 `;
 
-const fadeIn = keyframes`
+// const fadeIn = keyframes`
+//   from {
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 0.8;
+//   }
+// `;
+
+const fadeInFull = keyframes`
   from {
     opacity: 0;
   }
 
   to {
-    opacity: 0.8;
+    opacity: 1.0;
   }
 `;
 
@@ -56,27 +66,23 @@ const fadeIn = keyframes`
 //   animation-fill-mode: forwards;
 // `;
 
-const Button = styled.button`
-  /* background-color: ${PRIMARY_COLOR}; */
-  background-color: transparent;
-  border: none;
-  outline: none;
-  color: ${WHITE};
-  font-size: 1.2rem;
-  font-family: ${PRIMARY_FONT};
-  font-weight: 300;
-  border: 1px solid white;
-  padding: 12px 25px;
-  position: relative;
-  cursor: pointer;
-  /* text-transform: uppercase; */
-  transition: background-color 0.4s ${easingFunction};
-  /* box-shadow: 8px 8px ${PRIMARY_COLOR_TRANSLUCENT}; */
-
-  &:hover {
-    background-color: ${PRIMARY_HOVER_COLOR};
-  }
-`;
+// const Button = styled.button`
+//   /* background-color: ${PRIMARY_COLOR}; */
+//   background-color: transparent;
+//   border: none;
+//   outline: none;
+//   color: ${WHITE};
+//   font-size: 1.2rem;
+//   font-family: ${PRIMARY_FONT};
+//   font-weight: 300;
+//   border: 1px solid white;
+//   padding: 12px 25px;
+//   position: relative;
+//   cursor: pointer;
+//   /* text-transform: uppercase; */
+//   transition: background-color 0.4s ${easingFunction};
+//   /* box-shadow: 8px 8px ${PRIMARY_COLOR_TRANSLUCENT}; */
+// `;
 
 const TextWithHover = styled(Text)`
   cursor: pointer;
@@ -121,9 +127,46 @@ const CountUpNumber = ({ end }) => {
 
 const Logo = styled.img`
   margin: 25px;
-  /* transition: opacity 0.5s ${easingFunction}; */
-  animation: ${fadeIn} 1s ${easingFunction};
-  animation-fill-mode: forwards;
+  opacity: 0.6;
+  filter: none;
+  cursor: pointer;
+  /* transition: filter 0.5s ${easingFunction}; Crazy color effect */
+
+  &:hover {
+    opacity: 1.0;
+    filter: invert(35%) sepia(81%) saturate(1846%) hue-rotate(202deg) brightness(105%) contrast(101%);
+  }
+`;
+
+const ExampleBox = styled(Box)`
+  background-image: ${(props) => `url(${props.url})`};
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ${easingFunction};
+  filter: saturate(0.2);
+  cursor: pointer;
+  animation: ${fadeInFull} 1s ${easingFunction};
+  
+  &:hover {
+    filter: saturate(0.85);
+  }
+`;
+
+const ButtonBorder = styled.svg`
+  display: block;
+  position: absolute;
+  top: -30px;
+  left: -47px;
+  cursor: pointer;
+  margin: auto;
+  stroke-dasharray: 150 200 140 140;
+  transition: stroke-dasharray 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &:hover {
+    stroke-dasharray: 1000 600 600 600;
+    transition: stroke-dasharray 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
 `;
 
 const HomePage = () => (
@@ -133,14 +176,6 @@ const HomePage = () => (
     <Flex width={1}>
       <Box width={0.6}>
         <Flex width={1} height="calc(100vh - 62px)" align="center" justify="center" column>
-          {/* <Flex mb={4} mt={-4} align="center" justify="flex-start">
-            <Box mr={2}>
-              <AccentBar />
-            </Box>
-            <Text medium bold letterSpacing={-2.16} color={DARK_TITLE_COLOR}>
-              {'Will Germany'}
-            </Text>
-          </Flex> */}
           <Flex width={1} px="15%" pb={1} style={{ overflow: 'hidden' }}>
             <FlyUpText center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
               {'Building digital products, immersive visuals, and capturing moments.'}
@@ -161,30 +196,51 @@ working on full-stack web development, real-time computer graphics and photograp
         <Text small color={DARK_TITLE_COLOR}>
           1 / 5
         </Text>
-        <FlyUpText center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
-          {'At A Glance.'}
-        </FlyUpText>
+        <Flex column>
+          <Text data-aos="fly-in" data-aos-offset="500" center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
+            {'At A Glance.'}
+          </Text>
+          <div style={{
+            opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', marginLeft: '20px',
+          }}
+          />
+        </Flex>
       </Flex>
       <Flex width={1} mt={4} justify="center">
         <Flex>
-          <Box width="25vw" height={500} p={4} background={shiftHSL({}, PRIMARY_COLOR)}>
+          <ExampleBox width="25vw" height={700} p={4} url="/minecraft.png">
             <Text medium bold color={WHITE} letterSpacing={-1.56}>
-              {'Hello'}
+              {'Computer Graphics'}
             </Text>
-          </Box>
-          <Box width="25vw" height={500} p={4} background={shiftHSL({ lightness: 20 }, PRIMARY_COLOR)}>
+            <Box mt={3}>
+              <Text large bold color={WHITE} letterSpacing={-1.56}>
+                {'Photorealistic Visuals'}
+              </Text>
+            </Box>
+          </ExampleBox>
+          <ExampleBox width="25vw" height={700} p={4} url="/code.png">
             <Text medium bold color={WHITE} letterSpacing={-1.56}>
-              {'Hello'}
+              {'Web Development'}
             </Text>
-          </Box>
-          <Box width="25vw" height={500} p={4} background={shiftHSL({ lightness: 40 }, PRIMARY_COLOR)}>
-            <Text medium bold color={DARK_TITLE_COLOR} letterSpacing={-1.56}>
-              {'Hello'}
+            <Box mt={3}>
+              <Text large bold color={WHITE} letterSpacing={-1.56}>
+                {'Engaging Products'}
+              </Text>
+            </Box>
+          </ExampleBox>
+          <ExampleBox width="25vw" height={700} p={4} url="/photography.png">
+            <Text medium bold color={WHITE} letterSpacing={-1.56}>
+              {'Photography'}
             </Text>
-          </Box>
+            <Box mt={3}>
+              <Text large bold color={WHITE} letterSpacing={-1.56}>
+                {'Surreal Memories'}
+              </Text>
+            </Box>
+          </ExampleBox>
         </Flex>
       </Flex>
-      <Flex mt={5} width={1} justify="center">
+      <Flex data-aos="fly-in" mt={5} width={1} justify="center">
         <Flex mr={5} column>
           <CountUpNumber end="218" />
           <FlyUpText color={SUBTITLE_COLOR}>
@@ -204,20 +260,52 @@ working on full-stack web development, real-time computer graphics and photograp
           </FlyUpText>
         </Flex>
       </Flex>
-      <Flex width={1} my={4} px={7} justify="center" column>
-        <Flex justify="center">
-          <Logo width="150px" src="/c-sharp.png" alt="C# logo" />
-          <Logo width="150px" src="/unity.png" alt="Unity logo" />
-          <Logo width="150px" src="/js.png" alt="Javascript logo" />
-          <Logo width="150px" src="/graphql.png" alt="GraphQL logo" />
-          <Logo width="150px" src="/react.png" alt="ReactJS logo" />
+      <Flex width={0.5} mt={6} background={SECONDARY_COLOR} style={{ position: 'relative' }}>
+        <Flex height="200px" mt="-1px">
+          <div style={{
+            width: '100px',
+            height: '4px',
+            backgroundColor: PRIMARY_COLOR,
+            position: 'absolute',
+            right: '-50px',
+            top: '100px',
+          }}
+          />
         </Flex>
-        <Flex justify="center">
-          <Logo width="150px" src="/opengl.png" alt="OpenGL logo" />
-          <Logo width="150px" src="/directx.png" alt="DirectX logo" />
-          <Logo width="150px" src="/shopify.png" alt="Shopify logo" />
-          <Logo width="150px" src="/vue.png" alt="VueJS logo" />
-          <Logo width="150px" src="/node.png" alt="NodeJS logo" />
+      </Flex>
+      <Flex column py={6} background={SECONDARY_COLOR} style={{ overflow: 'hidden', position: 'relative' }}>
+        <RibbonCanvas />
+        <Flex pr={7} width={1} justify="flex-end">
+          <Text small color={DARK_TITLE_COLOR}>
+            1.5 / 5
+          </Text>
+          <Flex column>
+            <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
+              Skills
+            </Text>
+            <div
+              data-aos="slide-left"
+              style={{
+                opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(-20px)',
+              }}
+            />
+          </Flex>
+        </Flex>
+        <Flex width={1} my={4} px={7} justify="center" column>
+          <Flex justify="center" style={{ overflow: 'hidden' }}>
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/c-sharp.png" alt="C# logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/unity.png" alt="Unity logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/js.png" alt="Javascript logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/graphql.png" alt="GraphQL logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/react.png" alt="ReactJS logo" />
+          </Flex>
+          <Flex justify="center" style={{ overflow: 'hidden' }}>
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/opengl.png" alt="OpenGL logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/directx.png" alt="DirectX logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/shopify.png" alt="Shopify logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/vue.png" alt="VueJS logo" />
+            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/node.png" alt="NodeJS logo" />
+          </Flex>
         </Flex>
       </Flex>
       <Box mb={7} ml={7}>
@@ -233,14 +321,14 @@ working on full-stack web development, real-time computer graphics and photograp
       </Box>
       <Flex width={0.5} column>
         <Box width={1} mb={5} background={SECONDARY_COLOR} height="25%" />
-        <Flex width={1} pl={5} mt={5} column>
-          <FlyUpText extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
+        <Flex width={1} pl={5} mt={6} column>
+          <Text data-aos="fly-in" extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
             {'Hello'}
-          </FlyUpText>
+          </Text>
           <Box style={{ overflow: 'hidden' }} mt={4}>
-            <FlyUpText delayMultiplier={2} large color={DARK_TITLE_COLOR} weight={700} letterSpacing={-2.56}>
+            <Text data-aos="fly-in" data-aos-delay="800" large color={DARK_TITLE_COLOR} weight={700} letterSpacing={-2.56}>
               {'Let\'s touch base.'}
-            </FlyUpText>
+            </Text>
           </Box>
           <Flex mt={48} column>
             <Box>
@@ -263,6 +351,14 @@ working on full-stack web development, real-time computer graphics and photograp
                 <TextWithHoverArrow text="https://linkedin.com/in/williamgermany" />
               </a>
             </Box>
+            <Flex mt={4}>
+              <Text color={SUBTITLE_COLOR} thin>
+                See more details below
+              </Text>
+              <Box ml={2} style={{ color: DARK_TITLE_COLOR }}>
+                <i className="fa fa-angle-down" />
+              </Box>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
@@ -272,28 +368,33 @@ working on full-stack web development, real-time computer graphics and photograp
         <AccentBar color={WHITE} />
       </Box>
       <Box mt={6}>
-        <FlyUpText center fontSize="5rem" color={DARK_TITLE_COLOR} weight={700} letterSpacing={-2.56}>
+        <Text data-aos="fly-in" center fontSize="5rem" color={DARK_TITLE_COLOR} weight={700} letterSpacing={-2.56}>
           {'Openings'}
-        </FlyUpText>
+        </Text>
       </Box>
       <Box style={{ overflow: 'hidden' }} mt={4}>
-        <FlyUpText delayMultiplier={2} fontSize="3rem" color={WHITE} weight={700} letterSpacing={-2.56}>
+        <Text data-aos="fly-in" data-aos-delay="800" fontSize="3rem" color={WHITE} weight={700} letterSpacing={-2.56}>
           {'I\'m available for work.'}
-        </FlyUpText>
+        </Text>
       </Box>
       <Box width={1} maxWidth="1280px" mt={4} px={7}>
-        <FlyUpText delayMultiplier={3} center fontSize="1.1rem" color={WHITE} letterSpacing={-0.3} thin>
+        <Text data-aos="fly-in" data-aos-delay="1200" center fontSize="1.1rem" color={WHITE} letterSpacing={-0.3} thin>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt adipisci cupiditate corrupti impedit quos nemo asperiores magnam <strong style={{ fontWeight: 'bolder' }}>tempora ab consequatur</strong> ipsam saepe repellat nisi, reiciendis quidem quia molestias doloremque dolorum soluta eos molestiae corporis! Laboriosam totam consectetur quos modi eius?
-        </FlyUpText>
+        </Text>
         <br />
-        <FlyUpText delayMultiplier={4} center fontSize="1.1rem" color={WHITE} letterSpacing={-0.3} thin>
+        <Text data-aos="fly-in" data-aos-delay="1600" center fontSize="1.1rem" color={WHITE} letterSpacing={-0.3} thin>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong style={{ fontWeight: 'bolder' }}>Necessitatibus</strong> ex sint quia quasi, vitae consequatur dicta. Adipisci omnis molestias vero, praesentium natus autem ex voluptatibus accusamus animi itaque beatae pariatur distinctio mollitia qui vitae ut.
-        </FlyUpText>
+        </Text>
       </Box>
       <Box mt={5} mb={6}>
-        <Button>
-          Get in touch
-        </Button>
+        <Flex style={{ position: 'relative' }}>
+          <ButtonBorder width="200" height="70">
+            <rect width="200" height="70" style={{ fill: 'rgba(0, 0, 0, 0)', strokeWidth: 2, stroke: 'rgb(255, 255, 255)' }} />
+          </ButtonBorder>
+          <Text color={WHITE} thin uppercase>
+            Get in touch
+          </Text>
+        </Flex>
       </Box>
       <Box pl="25%">
         <AccentBar reversed color={WHITE} />

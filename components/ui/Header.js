@@ -72,17 +72,23 @@ const BackgroundImage = styled.div`
 
 const BallBackground = () => {
   const parallax = (e) => {
-    const elem = document.querySelector('#parallax');
+    const elem1 = document.querySelector('#parallax1');
+    // const elem2 = document.querySelector('#parallax2');
+    // const elem3 = document.querySelector('#parallax3');
     const w = window.innerWidth / 2;
     const h = window.innerHeight / 2;
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    // const depth1 = `${50 - (mouseX - w) * 0.01}% ${50 - (mouseY - h) * 0.01}%`;
-    // const depth2 = `${50 - (mouseX - w) * 0.2}% ${50 - (mouseY - h) * 0.2}%`;
+    // const depth1 = `${50 - (mouseX - w) * 0.01}px ${50 - (mouseY - h) * 0.01}px`;
+    // const depth2 = `${50 - (mouseX - w) * 0.2}px ${50 - (mouseY - h) * 0.2}px`;
     const depth3 = `${325 - (mouseX - w) * 0.05}px ${50 - (mouseY - h) * 0.08}px`;
     const x = `${depth3}`;
-    if (elem && elem.style) {
-      elem.style.backgroundPosition = x;
+    // const y = `${depth2}`;
+    // const z = `${depth1}`;
+    if (elem1 && elem1.style) {
+      elem1.style.backgroundPosition = x;
+      // elem2.style.backgroundPosition = y;
+      // elem3.style.backgroundPosition = z;
     }
   };
 
@@ -92,7 +98,13 @@ const BallBackground = () => {
     return () => document.removeEventListener('mousemove', parallax);
   }, []);
 
-  return <BackgroundImage id="parallax" />;
+  return (
+    <>
+      <BackgroundImage id="parallax1" />
+      {/* <BackgroundImage id="parallax2" /> */}
+      {/* <BackgroundImage id="parallax3" /> */}
+    </>
+  );
 };
 
 const Header = () => (
