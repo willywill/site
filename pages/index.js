@@ -13,6 +13,37 @@ import {
 import Footer from '../components/ui/Footer';
 import AccentBar from '../components/composite/AccentBar';
 import RibbonCanvas from '../components/composite/RibbonCanvas';
+import MovingCubesComponent from '../components/composite/MovingCubes';
+
+const fadeInFull = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1.0;
+  }
+`;
+
+const fadeInHalf = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+`;
+
+const fadeInQuarter = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.25;
+  }
+`;
 
 const Image = styled.div`
   margin-top: 500px;
@@ -34,6 +65,39 @@ const Image = styled.div`
   }
 `;
 
+const FlexShadow = styled(Flex)`
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 30px;
+    left: 30px;
+    background-color: ${PRIMARY_COLOR};
+    opacity: 0.5;
+    animation: ${fadeInHalf} 2s ${easingFunction}; 
+    animation-fill-mode: forwards;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 55px;
+    left: 55px;
+    background-color: ${PRIMARY_COLOR};
+    opacity: 0.25;
+    animation: ${fadeInQuarter} 2s ${easingFunction}; 
+    animation-fill-mode: forwards;
+    z-index: -1;
+  }
+`;
+
 // const fadeIn = keyframes`
 //   from {
 //     opacity: 0;
@@ -43,16 +107,6 @@ const Image = styled.div`
 //     opacity: 0.8;
 //   }
 // `;
-
-const fadeInFull = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1.0;
-  }
-`;
 
 // const RoundedImage = styled.div`
 //   width: 240px;
@@ -206,8 +260,8 @@ working on full-stack web development, real-time computer graphics and photograp
           />
         </Flex>
       </Flex>
-      <Flex width={1} mt={4} justify="center">
-        <Flex>
+      <Flex width={1} mt={4} mb={4} justify="center">
+        <FlexShadow>
           <ExampleBox width="25vw" height={700} p={4} url="/minecraft.png">
             <Text medium bold color={WHITE} letterSpacing={-1.56}>
               {'Computer Graphics'}
@@ -238,7 +292,7 @@ working on full-stack web development, real-time computer graphics and photograp
               </Text>
             </Box>
           </ExampleBox>
-        </Flex>
+        </FlexShadow>
       </Flex>
       <Flex data-aos="fly-in" mt={5} width={1} justify="center">
         <Flex mr={5} column>
@@ -281,7 +335,7 @@ working on full-stack web development, real-time computer graphics and photograp
           </Text>
           <Flex column>
             <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
-              Skills
+              Skills.
             </Text>
             <div
               data-aos="slide-left"
@@ -293,20 +347,88 @@ working on full-stack web development, real-time computer graphics and photograp
         </Flex>
         <Flex width={1} my={4} px={7} justify="center" column>
           <Flex justify="center" style={{ overflow: 'hidden' }}>
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/c-sharp.png" alt="C# logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/unity.png" alt="Unity logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/js.png" alt="Javascript logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/graphql.png" alt="GraphQL logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/react.png" alt="ReactJS logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/c-sharp.png" alt="C# logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/unity.png" alt="Unity logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/js.png" alt="Javascript logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/graphql.png" alt="GraphQL logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/react.png" alt="ReactJS logo" />
           </Flex>
           <Flex justify="center" style={{ overflow: 'hidden' }}>
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/opengl.png" alt="OpenGL logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/directx.png" alt="DirectX logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/shopify.png" alt="Shopify logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/vue.png" alt="VueJS logo" />
-            <Logo data-aos="fly-in" data-aos-delay="800" width="150px" src="/node.png" alt="NodeJS logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/opengl.png" alt="OpenGL logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/directx.png" alt="DirectX logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/shopify.png" alt="Shopify logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/vue.png" alt="VueJS logo" />
+            <Logo data-aos="fly-in-far" data-aos-delay="800" width="150px" src="/logos/node.png" alt="NodeJS logo" />
           </Flex>
         </Flex>
+      </Flex>
+      <Flex>
+        <Flex width={0.5} background={WHITE} />
+        <Flex width={0.5} background={SECONDARY_COLOR} style={{ position: 'relative' }}>
+          <Flex height="200px" mt="-1px">
+            <div style={{
+              width: '100px',
+              height: '4px',
+              backgroundColor: PRIMARY_COLOR,
+              position: 'absolute',
+              left: '-50px',
+              top: '100px',
+            }}
+            />
+          </Flex>
+        </Flex>
+      </Flex>
+      <Flex column>
+        <Flex pl={7} width={1} mt={6} justify="flex-start">
+          <Text small color={DARK_TITLE_COLOR}>
+            2 / 5
+          </Text>
+          <Flex column>
+            <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
+              Computer Graphics.
+            </Text>
+            <div
+              data-aos="slide-left"
+              style={{
+                opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(20px)',
+              }}
+            />
+          </Flex>
+        </Flex>
+        <Box my={1}>
+          <MovingCubesComponent />
+        </Box>
+      </Flex>
+      <Flex>
+        <Box width={0.5}>
+          <Text data-aos="fly-in" large bold color={DARK_TITLE_COLOR} letterSpacing={-2.56}>
+            Ocean Rendering
+            <img width="100%" height="600px" src="/ocean.png" alt="Ocean Rendering" />
+          </Text>
+        </Box>
+        <Box width={0.5}>
+          <Text data-aos="fly-in" large bold color={DARK_TITLE_COLOR} letterSpacing={-2.56}>
+            Camera Simulation
+            <img width="100%" height="600px" src="/camera.png" alt="Ocean Rendering" />
+          </Text>
+        </Box>
+      </Flex>
+      <Flex width={1} justify="center" style={{ position: 'relative' }}>
+        <video width="1920px" loop autoPlay muted style={{ outline: 'none', position: 'relative' }}>
+          <source src="/videos/pbr-sky.mp4" type="video/mp4" />
+          <track kind="captions" />
+        </video>
+        <Box mt={5} ml={5} style={{ zIndex: 3, position: 'absolute', left: 0 }}>
+          <Text data-aos="fly-in" extraLarge bold color={WHITE} letterSpacing={-2.56}>
+            Physically-based Sky
+          </Text>
+          <div
+            data-aos="slide-left"
+            style={{
+              opacity: 0.7, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '10px', transform: 'translateX(20px)',
+            }}
+          />
+        </Box>
       </Flex>
       <Box mb={7} ml={7}>
         <Image />

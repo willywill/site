@@ -32,6 +32,17 @@ const GlobalStyle = createGlobalStyle`
       transform: translateY(0);
     }
   }
+
+  [data-aos="fly-in-far"] {
+    opacity: 0;
+    transform: translateY(250px);
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const Page = ({ children, backgroundColor }) => (
