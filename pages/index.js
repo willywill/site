@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useCountUp } from 'react-countup';
+import RellaxWrapper from 'react-rellax-wrapper';
 import { Box, Flex, Text } from '../components/ui';
 import Header from '../components/ui/Header';
 import Navbar from '../components/ui/Navbar';
@@ -108,17 +109,17 @@ const FlexShadow = styled(Flex)`
 //   }
 // `;
 
-// const RoundedImage = styled.div`
-//   width: 240px;
-//   height: 240px;
-//   border-radius: 50%;
-//   background-image: url('/self.jpg');
-//   background-size: cover;
-//   background-position: center;
-//   opacity: 0;
-//   animation: ${fadeIn} 0.4s 0.5s ${easingFunction};
-//   animation-fill-mode: forwards;
-// `;
+const RoundedImage = styled.div`
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-image: url('/self.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: ${fadeInFull} 0.4s 0.5s ${easingFunction};
+  animation-fill-mode: forwards;
+`;
 
 // const Button = styled.button`
 //   /* background-color: ${PRIMARY_COLOR}; */
@@ -248,7 +249,7 @@ working on full-stack web development, real-time computer graphics and photograp
     <Flex mt={5} backgroundColor={WHITE} column>
       <Flex ml={7}>
         <Text small color={DARK_TITLE_COLOR}>
-          1 / 5
+          1 / 6
         </Text>
         <Flex column>
           <Text data-aos="fly-in" data-aos-offset="500" center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
@@ -331,7 +332,7 @@ working on full-stack web development, real-time computer graphics and photograp
         <RibbonCanvas />
         <Flex pr={7} width={1} justify="flex-end">
           <Text small color={DARK_TITLE_COLOR}>
-            1.5 / 5
+            1.5 / 6
           </Text>
           <Flex column>
             <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
@@ -381,7 +382,7 @@ working on full-stack web development, real-time computer graphics and photograp
       <Flex column>
         <Flex pl={7} width={1} mt={6} justify="flex-start">
           <Text small color={DARK_TITLE_COLOR}>
-            2 / 5
+            2 / 6
           </Text>
           <Flex column>
             <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
@@ -430,11 +431,102 @@ working on full-stack web development, real-time computer graphics and photograp
           />
         </Box>
       </Flex>
-      <Box mb={7} ml={7}>
-        <Image />
-      </Box>
+      <Flex mb={7} mx={7} column>
+        <Flex pb={7} width={1} mt={6} justify="flex-start">
+          <Text small color={DARK_TITLE_COLOR}>
+            4 / 6
+          </Text>
+          <Flex column>
+            <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
+              Photography.
+            </Text>
+            <div
+              data-aos="slide-left"
+              style={{
+                opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(20px)',
+              }}
+            />
+          </Flex>
+        </Flex>
+        <Flex width={1} justify="space-between" style={{ flexWrap: 'wrap' }}>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+            <Flex justify="center">
+              <Image />
+            </Flex>
+          </RellaxWrapper>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+            <Flex mt={7} justify="center">
+              <Image />
+            </Flex>
+          </RellaxWrapper>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+            <Flex justify="center">
+              <Image />
+            </Flex>
+          </RellaxWrapper>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+            <Flex mt={7} justify="center">
+              <Image />
+            </Flex>
+          </RellaxWrapper>
+        </Flex>
+      </Flex>
     </Flex>
-    <Flex background={SECONDARY_COLOR} pb="600px" />
+    <Flex width={0.5} background={SECONDARY_COLOR} style={{ position: 'relative' }}>
+      <Flex height="200px" mt="-1px">
+        <div style={{
+          width: '100px',
+          height: '4px',
+          backgroundColor: PRIMARY_COLOR,
+          position: 'absolute',
+          right: '-50px',
+          top: '100px',
+        }}
+        />
+      </Flex>
+    </Flex>
+    <Flex background={SECONDARY_COLOR} pb={7} column>
+      <Flex pr={7} width={1} mt={6} justify="flex-end">
+        <Text small color={DARK_TITLE_COLOR}>
+          5 / 6
+        </Text>
+        <Flex column>
+          <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
+            About Me.
+          </Text>
+          <div
+            data-aos="slide-left"
+            style={{
+              opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(-20px)',
+            }}
+          />
+        </Flex>
+      </Flex>
+      <Flex mt={5} width={1} align="center" column>
+        <Box mb={6} pr="25%">
+          <AccentBar />
+        </Box>
+        <Box mb={5}>
+          <RoundedImage />
+        </Box>
+        <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
+          {'Hi, I\'m William Germany.'}
+        </Text>
+        <Box mt={4} width={0.4}>
+          <Text center data-aos="fly-in" data-aos-delay="800" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3} dange>
+            {'I have a strong passion for technology, programming, mathematics and art. I taught myself different ways to apply these concepts to build '}<strong style={{ fontWeight: 'bolder' }}>creative</strong>{' solutions to real world problems.'}
+          </Text>
+          <Box mt={4}>
+            <Text center data-aos="fly-in" data-aos-delay="1000" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3} dange>
+              {'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit '}<strong style={{ fontWeight: 'bolder' }}>accusantium nulla quae saepe</strong>{' ullam veritatis quos commodi ex dolorum reprehenderit voluptate aliquam itaque, laboriosam unde!'}
+            </Text>
+          </Box>
+        </Box>
+        <Box mt={6} pl="25%">
+          <AccentBar reversed />
+        </Box>
+      </Flex>
+    </Flex>
     <Flex width={1} background={WHITE}>
       <Box width={0.5}>
         <a href="https://www.google.com/maps/place/Cincinnati,+OH/">
