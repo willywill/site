@@ -33,7 +33,7 @@ const fadeInHalf = keyframes`
   }
 
   to {
-    opacity: 0.5;
+    opacity: 0.75;
   }
 `;
 
@@ -76,16 +76,16 @@ const FlexShadow = styled(Flex)`
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 30px;
-    left: 30px;
+    top: 25px;
+    left: 25px;
     background-color: ${PRIMARY_COLOR};
-    opacity: 0.5;
+    opacity: 0.75;
     animation: ${fadeInHalf} 2s ${easingFunction}; 
     animation-fill-mode: forwards;
     z-index: -1;
   }
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -97,7 +97,7 @@ const FlexShadow = styled(Flex)`
     animation: ${fadeInQuarter} 2s ${easingFunction}; 
     animation-fill-mode: forwards;
     z-index: -1;
-  }
+  } */
 `;
 
 // const fadeIn = keyframes`
@@ -173,7 +173,7 @@ const TextWithHoverArrow = ({ text }) => {
 };
 
 const CountUpNumber = ({ end }) => {
-  const { countUp, reset, start } = useCountUp({ end, useEasing: true, duration: 5 });
+  const { countUp, reset, start } = useCountUp({ end, useEasing: true, duration: 3 });
 
   const handleAnimateInEvent = ({ detail }) => {
     if (detail?.id === 'count-up') {
@@ -211,16 +211,17 @@ const Logo = styled.img`
 
 const ExampleBox = styled(Box)`
   background-image: ${(props) => `url(${props.url})`};
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;
-  transition: filter 0.5s ${easingFunction};
+  transition: filter 0.5s ${easingFunction}, background-size 0.5s ${easingFunction};
   filter: saturate(0.2);
   cursor: pointer;
   animation: ${fadeInFull} 1s ${easingFunction};
   
   &:hover {
     filter: saturate(0.85);
+    background-size: auto 105%;
   }
 `;
 
@@ -301,6 +302,12 @@ working on full-stack web development, real-time computer graphics and photograp
               <Text large bold color={WHITE} letterSpacing={-1.56}>
                 {'Photorealistic Visuals'}
               </Text>
+              <div
+                data-aos="slide-left"
+                style={{
+                  opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
+                }}
+              />
             </Box>
           </ExampleBox>
           <ExampleBox width="25vw" height={700} p={4} url="/code.png">
@@ -311,6 +318,12 @@ working on full-stack web development, real-time computer graphics and photograp
               <Text large bold color={WHITE} letterSpacing={-1.56}>
                 {'Engaging Products'}
               </Text>
+              <div
+                data-aos="slide-left"
+                style={{
+                  opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
+                }}
+              />
             </Box>
           </ExampleBox>
           <ExampleBox width="25vw" height={700} p={4} url="/photography.png">
@@ -321,6 +334,12 @@ working on full-stack web development, real-time computer graphics and photograp
               <Text large bold color={WHITE} letterSpacing={-1.56}>
                 {'Surreal Memories'}
               </Text>
+              <div
+                data-aos="slide-left"
+                style={{
+                  opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
+                }}
+              />
             </Box>
           </ExampleBox>
         </FlexShadow>
