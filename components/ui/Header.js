@@ -57,7 +57,7 @@ const fadeIn = keyframes`
 const BackgroundImage = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url('/scene.png');
+  background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
   background-position: 400px 0px;
   transform: scaleX(1);
@@ -73,22 +73,22 @@ const BackgroundImage = styled.div`
 const BallBackground = () => {
   const parallax = (e) => {
     const elem1 = document.querySelector('#parallax1');
-    // const elem2 = document.querySelector('#parallax2');
-    // const elem3 = document.querySelector('#parallax3');
+    const elem2 = document.querySelector('#parallax2');
+    const elem3 = document.querySelector('#parallax3');
     const w = window.innerWidth / 2;
     const h = window.innerHeight / 2;
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    // const depth1 = `${50 - (mouseX - w) * 0.01}px ${50 - (mouseY - h) * 0.01}px`;
-    // const depth2 = `${50 - (mouseX - w) * 0.2}px ${50 - (mouseY - h) * 0.2}px`;
+    const depth1 = `${325 - (mouseX - w) * 0.02}px ${50 - (mouseY - h) * 0.01}px`;
+    const depth2 = `${350 - (mouseX - w) * 0.1}px ${50 - (mouseY - h) * 0.2}px`;
     const depth3 = `${325 - (mouseX - w) * 0.05}px ${50 - (mouseY - h) * 0.08}px`;
     const x = `${depth3}`;
-    // const y = `${depth2}`;
-    // const z = `${depth1}`;
+    const y = `${depth2}`;
+    const z = `${depth1}`;
     if (elem1 && elem1.style) {
       elem1.style.backgroundPosition = x;
-      // elem2.style.backgroundPosition = y;
-      // elem3.style.backgroundPosition = z;
+      elem2.style.backgroundPosition = y;
+      elem3.style.backgroundPosition = z;
     }
   };
 
@@ -100,9 +100,9 @@ const BallBackground = () => {
 
   return (
     <>
-      <BackgroundImage id="parallax1" />
-      {/* <BackgroundImage id="parallax2" /> */}
-      {/* <BackgroundImage id="parallax3" /> */}
+      <BackgroundImage src="/scene1.png" id="parallax1" />
+      <BackgroundImage src="/scene2.png" id="parallax2" />
+      <BackgroundImage src="/scene3.png" id="parallax3" />
     </>
   );
 };

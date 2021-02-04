@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+/* global document */
+import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useCountUp } from 'react-countup';
 import RellaxWrapper from 'react-rellax-wrapper';
@@ -172,11 +173,26 @@ const TextWithHoverArrow = ({ text }) => {
 };
 
 const CountUpNumber = ({ end }) => {
-  const { countUp } = useCountUp({ end, useEasing: true, duration: 5 });
+  const { countUp, reset, start } = useCountUp({ end, useEasing: true, duration: 5 });
+
+  const handleAnimateInEvent = ({ detail }) => {
+    if (detail?.id === 'count-up') {
+      reset();
+      start();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('aos:in', handleAnimateInEvent);
+    return () => {
+      document.removeEventListener('aos:in', handleAnimateInEvent);
+    };
+  }, []);
+
   return (
-    <FlyUpText extraLarge bold color={PRIMARY_COLOR}>
+    <Text extraLarge bold color={PRIMARY_COLOR}>
       {countUp}
-    </FlyUpText>
+    </Text>
   );
 };
 
@@ -208,6 +224,16 @@ const ExampleBox = styled(Box)`
   }
 `;
 
+const borderAnimation = keyframes`
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: 800;
+  }
+`;
+
 const ButtonBorder = styled.svg`
   display: block;
   position: absolute;
@@ -216,11 +242,15 @@ const ButtonBorder = styled.svg`
   cursor: pointer;
   margin: auto;
   stroke-dasharray: 150 200 140 140;
-  transition: stroke-dasharray 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: ${borderAnimation} 10s linear infinite;
+  animation-play-state: running;
+  transition: stroke-dasharray 1.5s ${easingFunction};
 
   &:hover {
-    stroke-dasharray: 1000 600 600 600;
-    transition: stroke-dasharray 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    stroke-dashoffset: 0;
+    stroke-dasharray: 2000 600 600 600;
+    animation-play-state: paused;
+    transition: stroke-dasharray 1.5s ${easingFunction};
   }
 `;
 
@@ -295,24 +325,24 @@ working on full-stack web development, real-time computer graphics and photograp
           </ExampleBox>
         </FlexShadow>
       </Flex>
-      <Flex data-aos="fly-in" mt={5} width={1} justify="center">
+      <Flex data-aos="fly-in" id="count-up" mt={5} width={1} justify="center">
         <Flex mr={5} column>
           <CountUpNumber end="218" />
-          <FlyUpText color={SUBTITLE_COLOR}>
+          <Text color={SUBTITLE_COLOR}>
             Shaders Written
-          </FlyUpText>
+          </Text>
         </Flex>
         <Flex mr={5} column>
           <CountUpNumber end="12853" />
-          <FlyUpText color={SUBTITLE_COLOR}>
+          <Text color={SUBTITLE_COLOR}>
             Code Commits
-          </FlyUpText>
+          </Text>
         </Flex>
         <Flex mr={5} column>
           <CountUpNumber end="5011" />
-          <FlyUpText color={SUBTITLE_COLOR}>
+          <Text color={SUBTITLE_COLOR}>
             Photos Taken
-          </FlyUpText>
+          </Text>
         </Flex>
       </Flex>
       <Flex width={0.5} mt={6} background={SECONDARY_COLOR} style={{ position: 'relative' }}>
@@ -449,22 +479,22 @@ working on full-stack web development, real-time computer graphics and photograp
           </Flex>
         </Flex>
         <Flex width={1} justify="space-between" style={{ flexWrap: 'wrap' }}>
-          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}>
             <Flex justify="center">
               <Image />
             </Flex>
           </RellaxWrapper>
-          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}>
             <Flex mt={7} justify="center">
               <Image />
             </Flex>
           </RellaxWrapper>
-          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}>
             <Flex justify="center">
               <Image />
             </Flex>
           </RellaxWrapper>
-          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 1.5s ${easingFunction}` }}>
+          <RellaxWrapper speed={2} vertical style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}>
             <Flex mt={7} justify="center">
               <Image />
             </Flex>
