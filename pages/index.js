@@ -231,7 +231,7 @@ const borderAnimation = keyframes`
   }
 
   to {
-    stroke-dashoffset: 800;
+    stroke-dashoffset: 1565;
   }
 `;
 
@@ -243,7 +243,7 @@ const ButtonBorder = styled.svg`
   cursor: pointer;
   margin: auto;
   stroke-dasharray: 150 200 140 140;
-  animation: ${borderAnimation} 10s linear infinite;
+  animation: ${borderAnimation} 20s linear infinite;
   animation-play-state: running;
   transition: stroke-dasharray 1.5s ${easingFunction};
 
@@ -479,6 +479,24 @@ working on full-stack web development, real-time computer graphics and photograp
             }}
           />
         </Box>
+      </Flex>
+      <Flex pt={6} background={PRIMARY_COLOR} pb="1000px">
+        <Flex pb={7} mx={7} width={1} mt={6} justify="flex-end">
+          <Text small color={WHITE}>
+            3 / 6
+          </Text>
+          <Flex ml={1} column>
+            <Text data-aos="fly-in" extraLarge bold color={WHITE} letterSpacing={-2.56}>
+              Web Development.
+            </Text>
+            <div
+              data-aos="slide-left"
+              style={{
+                opacity: 0.7, height: '5px', width: '100%', backgroundColor: WHITE, marginTop: '10px', transform: 'translateX(20px)',
+              }}
+            />
+          </Flex>
+        </Flex>
       </Flex>
       <Flex mb={7} mx={7} column>
         <Flex pb={7} width={1} mt={6} justify="flex-start">

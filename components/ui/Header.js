@@ -71,6 +71,7 @@ const BackgroundImage = styled.div`
 `;
 
 const BallBackground = () => {
+  // TODO: Switch from background position to transfrom
   const parallax = (e) => {
     const elem1 = document.querySelector('#parallax1');
     const elem2 = document.querySelector('#parallax2');
