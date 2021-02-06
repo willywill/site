@@ -47,7 +47,7 @@ const SectionHeading = ({
     >
       {position && (
         <Box mr={1}>
-          <Text small color={positionColor}>
+          <Text data-aos="fade-in" data-aos-delay="800" small color={positionColor}>
             {position}
           </Text>
         </Box>
