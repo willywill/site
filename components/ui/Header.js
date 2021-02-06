@@ -4,7 +4,7 @@ import throttle from 'lodash/fp/throttle';
 import styled, { keyframes } from 'styled-components';
 import { Flex } from '.';
 import { DARK_TITLE_COLOR, easingFunction, SECONDARY_COLOR, SUBTITLE_COLOR } from '../../utils/theme';
-import AccentBar from '../composite/AccentBar';
+import AccentBar from './AccentBar';
 // import RibbonCanvas from '../composite/RibbonCanvas';
 import Page from './Page';
 import Box from './styled/Box';

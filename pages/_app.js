@@ -1,11 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import { easingFunction } from '../utils/theme';
+import { node, shape } from 'prop-types';
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     AOS.init({
       easing: 'custom-easing',
@@ -15,7 +13,13 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
 
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Component {...pageProps} />;
-}
+};
+
+MyApp.propTypes = {
+  Component: node.isRequired,
+  pageProps: shape({}).isRequired,
+};
 
 export default MyApp;
