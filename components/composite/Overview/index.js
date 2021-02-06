@@ -2,47 +2,35 @@ import React from 'react';
 import {
   PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../../utils/theme';
-import { Box, Flex, Text } from '../../ui';
+import { Flex, Text } from '../../ui';
 import SectionHeading from '../SectionHeading';
 import CountUpNumber from './CountUpNumber';
 import OverviewContainer from './OverviewContainer';
-import OverviewItemContainer from './OverviewItemContainer';
+import OverviewItem from './OverviewItem';
 
 const OverviewSection = () => (
   <Flex id="/my-work" mt={5} backgroundColor={WHITE} column>
     <SectionHeading text="At A Glance." position="1 / 6" animationProps={{ 'data-aos-offset': 500 }} />
     <Flex width={1} mt={4} mb={4} justify="center">
       <OverviewContainer>
-        <OverviewItemContainer url="/minecraft.png" link="/computer-graphics">
-          <Text medium bold color={WHITE} letterSpacing={-1.56}>
-            {'Computer Graphics'}
-          </Text>
-          <Box mt={3}>
-            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
-              {'Photorealistic Visuals'}
-            </Text>
-          </Box>
-        </OverviewItemContainer>
-        <OverviewItemContainer url="/code.png" link="/web-development">
-          <Text medium bold color={WHITE} letterSpacing={-1.56}>
-            {'Web Development'}
-          </Text>
-          <Box mt={3}>
-            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
-              {'Engaging Products'}
-            </Text>
-          </Box>
-        </OverviewItemContainer>
-        <OverviewItemContainer url="/photography.png" link="/photography">
-          <Text medium bold color={WHITE} letterSpacing={-1.56}>
-            {'Photography'}
-          </Text>
-          <Box mt={3}>
-            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
-              {'Surreal Memories'}
-            </Text>
-          </Box>
-        </OverviewItemContainer>
+        <OverviewItem
+          title="Computer Graphics"
+          description="Photorealistic Visuals"
+          imageUrl="/minecraft.png"
+          link="/computer-graphics"
+        />
+        <OverviewItem
+          title="Web Development"
+          description="Engaging Products"
+          imageUrl="/code.png"
+          link="/web-development"
+        />
+        <OverviewItem
+          title="Photography"
+          description="Surreal Memories"
+          imageUrl="/photography.png"
+          link="/photography"
+        />
       </OverviewContainer>
     </Flex>
     <Flex data-aos="fly-in" id="count-up" mt={5} width={1} justify="center">
