@@ -8,7 +8,7 @@ import SectionHeading from '../SectionHeading';
 import ImageBackground from './ImageBackground';
 
 const PhotographySection = () => (
-  <Flex column>
+  <Flex id="/photography" column>
     <Flex mb={7} mr={7} column>
       <Box pb={7} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />

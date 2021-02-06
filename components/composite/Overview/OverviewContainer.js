@@ -20,20 +20,6 @@ const OverviewContainer = styled(Flex)`
     animation-fill-mode: forwards;
     z-index: -1;
   }
-
-  /* &::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 55px;
-    left: 55px;
-    background-color: ${PRIMARY_COLOR};
-    opacity: 0.25;
-    animation: ${getFadeInAnimation(0.5)} 2s ${easingFunction}; 
-    animation-fill-mode: forwards;
-    z-index: -1;
-  } */
 `;
 
 export default OverviewContainer;

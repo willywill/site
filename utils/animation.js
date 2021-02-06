@@ -1,3 +1,4 @@
+/* global document */
 import { css, keyframes } from 'styled-components';
 import { easingFunction } from './theme';
 
@@ -64,4 +65,9 @@ export const getFadeInAnimation = (fadeTo = 1.0) => keyframes`
   }
 `;
 
-export default {};
+export const scrollIntoView = (elementId, options = { block: 'center' }) => () => {
+  if (typeof document === 'undefined') return;
+
+  const sectionElement = document.getElementById(elementId);
+  sectionElement?.scrollIntoView({ ...options, behavior: 'smooth' });
+};

@@ -1,10 +1,10 @@
-/* global document */
 import React from 'react';
 import { string } from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { easingFunction, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../utils/theme';
 import Box from './styled/Box';
 import Text from './styled/Text';
+import { scrollIntoView } from '../../utils/animation';
 
 const NavbarItemWrapper = styled(Box)`
   overflow-x: hidden;
@@ -41,13 +41,8 @@ const AnimatedUnderline = styled.div`
 const NavbarItem = ({ link, label }) => {
   const isCurrentLink = link === '/';
 
-  const handleClick = () => {
-    const sectionElement = document.getElementById(link);
-    sectionElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  };
-
   return (
-    <NavbarItemWrapper mr={4} isCurrentLink={isCurrentLink} onClick={handleClick}>
+    <NavbarItemWrapper mr={4} isCurrentLink={isCurrentLink} onClick={scrollIntoView(link)}>
       <Text color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1} style={{ fontSize: '1.25em' }}>
         {label}
       </Text>

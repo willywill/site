@@ -13,7 +13,7 @@ const OverviewSection = () => (
     <SectionHeading text="At A Glance." position="1 / 6" animationProps={{ 'data-aos-offset': 500 }} />
     <Flex width={1} mt={4} mb={4} justify="center">
       <OverviewContainer>
-        <OverviewItemContainer width="25vw" height={700} p={4} url="/minecraft.png">
+        <OverviewItemContainer url="/minecraft.png" link="/computer-graphics">
           <Text medium bold color={WHITE} letterSpacing={-1.56}>
             {'Computer Graphics'}
           </Text>
@@ -23,7 +23,7 @@ const OverviewSection = () => (
             </Text>
           </Box>
         </OverviewItemContainer>
-        <OverviewItemContainer width="25vw" height={700} p={4} url="/code.png">
+        <OverviewItemContainer url="/code.png" link="/web-development">
           <Text medium bold color={WHITE} letterSpacing={-1.56}>
             {'Web Development'}
           </Text>
@@ -33,7 +33,7 @@ const OverviewSection = () => (
             </Text>
           </Box>
         </OverviewItemContainer>
-        <OverviewItemContainer width="25vw" height={700} p={4} url="/photography.png">
+        <OverviewItemContainer url="/photography.png" link="/photography">
           <Text medium bold color={WHITE} letterSpacing={-1.56}>
             {'Photography'}
           </Text>

@@ -1,9 +1,14 @@
+import React from 'react';
+import { node, string } from 'prop-types';
 import styled from 'styled-components';
-import { getFadeInAnimation } from '../../../utils/animation';
-import { easingFunction } from '../../../utils/theme';
-import { Box } from '../../ui';
+import { getFadeInAnimation, scrollIntoView } from '../../../utils/animation';
+import { easingFunction, WHITE } from '../../../utils/theme';
+import { Box, Flex, Text } from '../../ui';
 
-const OverviewItemContainer = styled(Box)`
+const OverviewItemComponent = styled(Flex)`
+  width: 25vw;
+  height: 700px;
+  padding: 32px;
   background-image: ${(props) => `url(${props.url})`};
   background-size: auto 100%;
   background-position: center;
@@ -18,5 +23,54 @@ const OverviewItemContainer = styled(Box)`
     background-size: auto 105%;
   }
 `;
+
+const HelpTextBox = styled(Box)`
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ${easingFunction}, opacity 0.5s ${easingFunction};
+
+  ${OverviewItemComponent}:hover & {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
+const HelpText = styled(Text)`
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ${easingFunction}, opacity 0.5s ${easingFunction};
+
+  ${OverviewItemComponent}:hover & {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
+const OverviewItemContainer = ({ url, link, children }) => (
+  <OverviewItemComponent
+    url={url}
+    onClick={scrollIntoView(link, { block: 'start' })}
+    column
+    justify="space-between"
+  >
+    <Box>
+      {children}
+    </Box>
+    <Flex pb={1} align="center">
+      <HelpTextBox width={0.15} height="3px" background={WHITE} mr={2} />
+      <HelpText color={WHITE} letterSpacing={-0.3}>
+        {'Click to scroll to section'}
+      </HelpText>
+    </Flex>
+  </OverviewItemComponent>
+);
+
+OverviewItemContainer.displayName = 'OverviewItemContainer';
+
+OverviewItemContainer.propTypes = {
+  url: string.isRequired,
+  link: string.isRequired,
+  children: node.isRequired,
+};
 
 export default OverviewItemContainer;

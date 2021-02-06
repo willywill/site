@@ -6,7 +6,7 @@ import MovingCubesComponent from '../MovingCubes';
 import SectionHeading from '../SectionHeading';
 
 const ComputerGraphicsSection = () => (
-  <Flex column>
+  <Flex id="/computer-graphics" column>
     <Box mt={6}>
       <SectionHeading text="Computer Graphics." position="2 / 6" />
     </Box>
