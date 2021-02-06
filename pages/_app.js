@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { node, shape } from 'prop-types';
+import { any, shape } from 'prop-types';
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -18,7 +18,8 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 MyApp.propTypes = {
-  Component: node.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  Component: any.isRequired,
   pageProps: shape({}).isRequired,
 };
 
