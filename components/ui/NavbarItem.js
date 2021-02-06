@@ -1,6 +1,5 @@
+/* global document */
 import React from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { string } from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
 import { easingFunction, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../utils/theme';
@@ -40,19 +39,20 @@ const AnimatedUnderline = styled.div`
 `;
 
 const NavbarItem = ({ link, label }) => {
-  const router = useRouter();
-  const isCurrentLink = link === router.pathname;
+  const isCurrentLink = link === '/';
+
+  const handleClick = () => {
+    const sectionElement = document.getElementById(link);
+    sectionElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
 
   return (
-    <Link href={link}>
-      <NavbarItemWrapper mr={4} isCurrentLink={isCurrentLink}>
-        <Text color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1} style={{ fontSize: '1.25em' }}>
-          {label}
-        </Text>
-        <AnimatedUnderline isCurrentLink={isCurrentLink} />
-      </NavbarItemWrapper>
-    </Link>
-
+    <NavbarItemWrapper mr={4} isCurrentLink={isCurrentLink} onClick={handleClick}>
+      <Text color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1} style={{ fontSize: '1.25em' }}>
+        {label}
+      </Text>
+      <AnimatedUnderline isCurrentLink={isCurrentLink} />
+    </NavbarItemWrapper>
   );
 };
 

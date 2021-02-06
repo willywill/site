@@ -7,7 +7,7 @@ import { Flex, Box, Text } from '../../ui';
 import ContactItem from './ContactItem';
 
 const ContactSection = () => (
-  <Flex width={1} background={WHITE}>
+  <Flex id="/contact" width={1} background={WHITE}>
     <Box width={0.5}>
       <a href="https://www.google.com/maps/place/Cincinnati,+OH/">
         <img width="100%" height="100%" src="/cincinnati.png" alt="Map" />

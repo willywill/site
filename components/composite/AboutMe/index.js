@@ -7,7 +7,7 @@ import AccentBar from '../../ui/AccentBar';
 import CirclePortrait from './CirclePortrait';
 
 const AboutMeSection = () => (
-  <Flex background={SECONDARY_COLOR} pb={7} column>
+  <Flex id="/about" background={SECONDARY_COLOR} pb={7} column>
     <Flex pr={7} width={1} mt={6} justify="flex-end">
       <Text small color={DARK_TITLE_COLOR}>
         {'5 / 6'}

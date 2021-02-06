@@ -8,7 +8,7 @@ import OverviewContainer from './OverviewContainer';
 import OverviewItemContainer from './OverviewItemContainer';
 
 const OverviewSection = () => (
-  <Flex mt={5} backgroundColor={WHITE} column>
+  <Flex id="/my-work" mt={5} backgroundColor={WHITE} column>
     <Flex ml={7}>
       <Text small color={DARK_TITLE_COLOR}>
         {'1 / 6'}
