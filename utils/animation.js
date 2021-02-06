@@ -53,6 +53,28 @@ export const animateOnScrollAddOns = css`
       transform: translateX(0px);
     }
   }
+
+  [data-aos="accent-slide-in"] {
+    opacity: 0;
+    transform: translateX(200px);
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+      opacity: 0.4;
+      transform: translateX(0px);
+    }
+  }
+
+  [data-aos="accent-slide-in-reversed"] {
+    opacity: 0;
+    transform: translateX(-200px);
+    transition-property: transform, opacity;
+
+    &.aos-animate {
+      opacity: 0.4;
+      transform: translateX(0px);
+    }
+  }
 `;
 
 export const getFadeInAnimation = (fadeTo = 1.0) => keyframes`
