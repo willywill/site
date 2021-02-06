@@ -2,8 +2,9 @@ import React from 'react';
 import reset from 'styled-reset';
 import { node, string } from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
-import { easingFunction, HIGHLIGHT_COLOR, WHITE } from '../../utils/theme';
+import { HIGHLIGHT_COLOR, WHITE } from '../../utils/theme';
 import { Flex } from '.';
+import { animateOnScrollAddOns } from '../../utils/animation';
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -15,34 +16,7 @@ const GlobalStyle = createGlobalStyle`
   scroll-behavior: smooth;
 
   /* Animate-on-scroll Add-Ons */
-  [data-aos] {
-  body[data-aos-easing="custom-easing"] &,
-    &[data-aos][data-aos-easing="custom-easing"] {
-      transition-timing-function: ${easingFunction};
-    }
-  }
-
-  [data-aos="fly-in"] {
-    opacity: 0;
-    transform: translateY(100px);
-    transition-property: transform, opacity;
-
-    &.aos-animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  [data-aos="fly-in-far"] {
-    opacity: 0;
-    transform: translateY(250px);
-    transition-property: transform, opacity;
-
-    &.aos-animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  ${animateOnScrollAddOns}
 `;
 
 const Page = ({ children, backgroundColor }) => (

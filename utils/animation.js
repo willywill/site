@@ -1,8 +1,7 @@
 import { css, keyframes } from 'styled-components';
 import { easingFunction } from './theme';
 
-export const animateOnFadeAddOns = css`
-  /* Animate-on-scroll Add-Ons */
+export const animateOnScrollAddOns = css`
   [data-aos] {
   body[data-aos-easing="custom-easing"] &,
     &[data-aos][data-aos-easing="custom-easing"] {
