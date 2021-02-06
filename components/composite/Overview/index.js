@@ -1,28 +1,16 @@
 import React from 'react';
 import {
-  DARK_TITLE_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
+  PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
+import SectionHeading from '../SectionHeading';
 import CountUpNumber from './CountUpNumber';
 import OverviewContainer from './OverviewContainer';
 import OverviewItemContainer from './OverviewItemContainer';
 
 const OverviewSection = () => (
   <Flex id="/my-work" mt={5} backgroundColor={WHITE} column>
-    <Flex ml={7}>
-      <Text small color={DARK_TITLE_COLOR}>
-        {'1 / 6'}
-      </Text>
-      <Flex column>
-        <Text data-aos="fly-in" data-aos-offset="500" center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
-          {'At A Glance.'}
-        </Text>
-        <div style={{
-          opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', marginLeft: '20px',
-        }}
-        />
-      </Flex>
-    </Flex>
+    <SectionHeading text="At A Glance." position="1 / 6" animationProps={{ 'data-aos-offset': 500 }} />
     <Flex width={1} mt={4} mb={4} justify="center">
       <OverviewContainer>
         <OverviewItemContainer width="25vw" height={700} p={4} url="/minecraft.png">
@@ -30,15 +18,9 @@ const OverviewSection = () => (
             {'Computer Graphics'}
           </Text>
           <Box mt={3}>
-            <Text large bold color={WHITE} letterSpacing={-1.56}>
+            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
               {'Photorealistic Visuals'}
             </Text>
-            <div
-              data-aos="slide-left"
-              style={{
-                opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
-              }}
-            />
           </Box>
         </OverviewItemContainer>
         <OverviewItemContainer width="25vw" height={700} p={4} url="/code.png">
@@ -46,15 +28,9 @@ const OverviewSection = () => (
             {'Web Development'}
           </Text>
           <Box mt={3}>
-            <Text large bold color={WHITE} letterSpacing={-1.56}>
+            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
               {'Engaging Products'}
             </Text>
-            <div
-              data-aos="slide-left"
-              style={{
-                opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
-              }}
-            />
           </Box>
         </OverviewItemContainer>
         <OverviewItemContainer width="25vw" height={700} p={4} url="/photography.png">
@@ -62,15 +38,9 @@ const OverviewSection = () => (
             {'Photography'}
           </Text>
           <Box mt={3}>
-            <Text large bold color={WHITE} letterSpacing={-1.56}>
+            <Text data-aos="fly-in" large bold color={WHITE} letterSpacing={-1.56}>
               {'Surreal Memories'}
             </Text>
-            <div
-              data-aos="slide-left"
-              style={{
-                opacity: 1.0, height: '5px', width: '100%', backgroundColor: PRIMARY_COLOR, marginTop: '5px', transform: 'translateX(10px)',
-              }}
-            />
           </Box>
         </OverviewItemContainer>
       </OverviewContainer>

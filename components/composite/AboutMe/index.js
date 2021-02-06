@@ -1,29 +1,17 @@
 import React from 'react';
 import {
-  PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR,
+  PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR,
 } from '../../../utils/theme';
 import { Flex, Box, Text } from '../../ui';
 import AccentBar from '../../ui/AccentBar';
+import SectionHeading from '../SectionHeading';
 import CirclePortrait from './CirclePortrait';
 
 const AboutMeSection = () => (
   <Flex id="/about" background={SECONDARY_COLOR} pb={7} column>
-    <Flex pr={7} width={1} mt={6} justify="flex-end">
-      <Text small color={DARK_TITLE_COLOR}>
-        {'5 / 6'}
-      </Text>
-      <Flex column>
-        <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
-          {'About Me.'}
-        </Text>
-        <div
-          data-aos="slide-left"
-          style={{
-            opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(-20px)',
-          }}
-        />
-      </Flex>
-    </Flex>
+    <Box mt={6}>
+      <SectionHeading text="About Me." position="5 / 6" flip />
+    </Box>
     <Flex mt={5} width={1} align="center" column>
       <Box mb={6} pr="25%">
         <AccentBar />

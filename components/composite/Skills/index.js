@@ -1,31 +1,17 @@
 import React from 'react';
 import {
-  DARK_TITLE_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
+  PRIMARY_COLOR, SECONDARY_COLOR, WHITE,
 } from '../../../utils/theme';
-import { Flex, Text } from '../../ui';
+import { Flex } from '../../ui';
 import RibbonCanvas from '../RibbonCanvas';
+import SectionHeading from '../SectionHeading';
 import SkillLogo from './SkillLogo';
 
 const SkillsSection = () => (
   <Flex column>
     <Flex column py={6} background={SECONDARY_COLOR} style={{ overflow: 'hidden', position: 'relative' }}>
       <RibbonCanvas />
-      <Flex pr={7} width={1} justify="flex-end">
-        <Text small color={DARK_TITLE_COLOR}>
-          1.5 / 6
-        </Text>
-        <Flex column>
-          <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
-            Skills.
-          </Text>
-          <div
-            data-aos="slide-left"
-            style={{
-              opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(-20px)',
-            }}
-          />
-        </Flex>
-      </Flex>
+      <SectionHeading text="Skills." position="1.5 / 6" flip />
       <Flex width={1} my={4} px={7} justify="center" column>
         <Flex justify="center" style={{ overflow: 'hidden' }}>
           <SkillLogo delay="800" src="/logos/c-sharp.png" alt="C# logo" />
@@ -63,13 +49,5 @@ const SkillsSection = () => (
 );
 
 SkillsSection.displayName = 'SkillsSection';
-
-SkillsSection.propTypes = {
-
-};
-
-SkillsSection.defaultProps = {
-
-};
 
 export default SkillsSection;

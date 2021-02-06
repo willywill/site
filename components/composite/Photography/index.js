@@ -1,32 +1,19 @@
 import React from 'react';
 import RellaxWrapper from 'react-rellax-wrapper';
 import {
-  PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR,
-  easingFunction,
+  PRIMARY_COLOR, SECONDARY_COLOR, easingFunction,
 } from '../../../utils/theme';
-import { Flex, Text } from '../../ui';
+import { Flex, Box } from '../../ui';
+import SectionHeading from '../SectionHeading';
 import ImageBackground from './ImageBackground';
 
 const PhotographySection = () => (
   <Flex column>
-    <Flex mb={7} mx={7} column>
-      <Flex pb={7} width={1} mt={6} justify="flex-start">
-        <Text small color={DARK_TITLE_COLOR}>
-          {'4 / 6'}
-        </Text>
-        <Flex column>
-          <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
-            {'Photography.'}
-          </Text>
-          <div
-            data-aos="slide-left"
-            style={{
-              opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(20px)',
-            }}
-          />
-        </Flex>
-      </Flex>
-      <Flex width={1} justify="space-between" style={{ flexWrap: 'wrap' }}>
+    <Flex mb={7} mr={7} column>
+      <Box pb={7} width={1} mt={6}>
+        <SectionHeading text="Photography." position="4 / 6" />
+      </Box>
+      <Flex width={1} ml={6} justify="space-between" style={{ flexWrap: 'wrap' }}>
         <RellaxWrapper
           speed={2}
           vertical

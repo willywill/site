@@ -1,27 +1,15 @@
 import { Box } from '@rebass/grid';
 import React from 'react';
-import { DARK_TITLE_COLOR, PRIMARY_COLOR, SUBTITLE_COLOR, WHITE } from '../../../utils/theme';
+import { DARK_TITLE_COLOR, PRIMARY_COLOR, WHITE } from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 import MovingCubesComponent from '../MovingCubes';
+import SectionHeading from '../SectionHeading';
 
 const ComputerGraphicsSection = () => (
   <Flex column>
-    <Flex pl={7} width={1} mt={6} justify="flex-start">
-      <Text small color={DARK_TITLE_COLOR}>
-        {'2 / 6'}
-      </Text>
-      <Flex column>
-        <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
-          {'Computer Graphics.'}
-        </Text>
-        <div
-          data-aos="slide-left"
-          style={{
-            opacity: 0.7, height: '5px', width: '100%', backgroundColor: SUBTITLE_COLOR, marginTop: '10px', transform: 'translateX(20px)',
-          }}
-        />
-      </Flex>
-    </Flex>
+    <Box mt={6}>
+      <SectionHeading text="Computer Graphics." position="2 / 6" />
+    </Box>
     <Box my={1}>
       <MovingCubesComponent />
     </Box>
@@ -60,13 +48,5 @@ const ComputerGraphicsSection = () => (
 );
 
 ComputerGraphicsSection.displayName = 'ComputerGraphicsSection';
-
-ComputerGraphicsSection.propTypes = {
-
-};
-
-ComputerGraphicsSection.defaultProps = {
-
-};
 
 export default ComputerGraphicsSection;
