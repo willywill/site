@@ -12,8 +12,10 @@ const GalleryView = ({ title, description, images, flip }) => {
   return (
     <Flex width={1} flexDirection={flip ? 'row-reverse' : 'row'}>
       <Flex column>
-        <MainView />
-        <Flex width={1} mt={2} justify="space-between">
+        <Box data-aos="fly-in">
+          <MainView />
+        </Box>
+        <Flex data-aos="fly-in" width={1} mt={2} justify="space-between">
           <SubView />
           <SubView />
           <SubView />

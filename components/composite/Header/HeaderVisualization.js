@@ -17,6 +17,8 @@ const ImageLayer = styled.div`
   transition: background-position 1s ${easingFunction};
   animation: ${getFadeInAnimation(1.0)} 0.4s 0.5s ${easingFunction};
   animation-fill-mode: forwards;
+
+  filter: ${(props) => `blur(${2.75 * props.depth}px)`};
 `;
 
 const HeaderVisualization = () => {
@@ -49,9 +51,9 @@ const HeaderVisualization = () => {
 
   return (
     <>
-      <ImageLayer src="/scene1.png" id="parallax1" />
-      <ImageLayer src="/scene2.png" id="parallax2" />
-      <ImageLayer src="/scene3.png" id="parallax3" />
+      <ImageLayer src="/scene1.png" id="parallax1" depth={0.0} />
+      <ImageLayer src="/scene2.png" id="parallax2" depth={0.5} />
+      <ImageLayer src="/scene3.png" id="parallax3" depth={1.0} />
     </>
   );
 };

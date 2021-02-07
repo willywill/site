@@ -89,7 +89,7 @@ const Canvas = styled.canvas.attrs({ id: 'ribbon' })`
   overflow: hidden;
   width: 100%;
   height: 100%;
-  opacity: 0.075;
+  opacity: 0.175;
   top: 0;
   pointer-events: none;
 `;
