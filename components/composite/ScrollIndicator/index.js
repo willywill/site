@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/fp/debounce';
 import styled from 'styled-components';
-import { PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT, SUBTITLE_COLOR } from '../../../utils/theme';
+import {
+  easingFunction, PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT,
+  SUBTITLE_COLOR, WHITE,
+} from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 import { scrollIntoView } from '../../../utils/animation';
 
@@ -17,14 +20,14 @@ const SidewaysText = styled(Text)`
   position: fixed;
   top: 50vh;
   left: 50px;
-  color: ${SUBTITLE_COLOR};
+  color: ${(props) => props.color || SUBTITLE_COLOR};
+  transition: color 0.5s ${easingFunction};
   z-index: 3;
 `;
 
 const ScrollIndicatorProgress = styled.div`
   position: fixed;
   width: 3px;
-  height: ${(props) => `${SCROLL_INDICATOR_HEIGHT}` * (props.progress * 0.01)}px;
   background-color: ${PRIMARY_COLOR};
   top: calc(50vh + 100px);
   left: 55px; 
@@ -41,6 +44,14 @@ const ScrollIndicatorProgress = styled.div`
     background-color: ${PRIMARY_COLOR_TRANSLUCENT};
   }
 `;
+
+const getScrollColor = (scrollPercentage) => {
+  if (scrollPercentage >= 91 && scrollPercentage <= 99) {
+    return WHITE;
+  }
+
+  return SUBTITLE_COLOR;
+};
 
 // NOTE: This works in a production setting only
 // Causing flickering on `background-image: url` components in development environment
@@ -71,10 +82,15 @@ const ScrollIndicator = () => {
       onClick={scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? undefined : scrollIntoView('/home', { block: 'start' })}
       column
     >
-      <SidewaysText>
+      <SidewaysText color={getScrollColor(scrollProgress)}>
         {'Scroll to top'}
       </SidewaysText>
-      <ScrollIndicatorProgress progress={scrollProgress} />
+      <ScrollIndicatorProgress
+        progress={scrollProgress}
+        style={{
+          height: `${SCROLL_INDICATOR_HEIGHT * (scrollProgress * 0.01)}px`,
+        }}
+      />
     </Flex>
   );
 };

@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Flex, Box, Text } from '.';
+import { scrollIntoView } from '../../utils/animation';
 import {
   DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../utils/theme';
@@ -74,53 +74,70 @@ const UnderlineText = styled(Text)`
   }
 `;
 
-// TODO: Rework tree / directory component, see below:
-// My work
-//  |- Photography
-//  |- Web Dev
-//  |- Computer Graphics
+const PrivacyPolicy = () => {
+  const [isToggled, setToggled] = useState(false);
+
+  if (isToggled) {
+    return (
+      <Box onClick={() => setToggled(false)}>
+        <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
+          {'🚫 + 🍪 = No Privacy Policy'}
+        </UnderlineText>
+      </Box>
+    );
+  }
+
+  return (
+    <Box onClick={() => setToggled(true)}>
+      <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
+        {'Privacy Policy'}
+      </UnderlineText>
+    </Box>
+  );
+};
+
 const Footer = () => (
   <FooterContainer>
     <Flex width={1} pb={4} justify="space-between">
       {/* Navigation */}
       <Flex pl={6} pt={5} width={0.5} column>
         <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
-          Navigation
+          {'Navigation'}
         </Text>
         <Flex mt={3} column>
-          <Box mr={4} my={3}>
+          <Box mr={4} my={3} onClick={scrollIntoView('/home')}>
             <NavigationText medium>
-              Home
+              {'Home'}
             </NavigationText>
           </Box>
-          <Box mr={4} my={3}>
+          <Box mr={4} my={3} onClick={scrollIntoView('/my-work', { block: 'start' })}>
             <NavigationText medium>
-              My Work
+              {'My Work'}
             </NavigationText>
           </Box>
-          <LeafNavigationBox mr={4} my={3}>
+          <LeafNavigationBox mr={4} my={3} onClick={scrollIntoView('/computer-graphics', { block: 'start' })}>
             <NavigationText medium>
-              Photography
+              {'Computer Graphics'}
             </NavigationText>
           </LeafNavigationBox>
-          <LeafNavigationBox mr={4} my={3}>
+          <LeafNavigationBox mr={4} my={3} onClick={scrollIntoView('/web-development', { block: 'start' })}>
             <NavigationText medium>
-              Web Development
+              {'Web Development'}
             </NavigationText>
           </LeafNavigationBox>
-          <LeafNavigationBox mr={4} my={3} reducedHeight>
+          <LeafNavigationBox mr={4} my={3} reducedHeight onClick={scrollIntoView('/photography', { block: 'start' })}>
             <NavigationText medium>
-              Computer Graphics
+              {'Photography'}
             </NavigationText>
           </LeafNavigationBox>
-          <Box mr={4} my={3}>
+          <Box mr={4} my={3} onClick={scrollIntoView('/about', { block: 'start' })}>
             <NavigationText medium>
-              About
+              {'About'}
             </NavigationText>
           </Box>
-          <Box mr={4} my={3}>
+          <Box mr={4} my={3} onClick={scrollIntoView('/contact', { block: 'start' })}>
             <NavigationText medium>
-              Contact Me
+              {'Contact Me'}
             </NavigationText>
           </Box>
         </Flex>
@@ -140,7 +157,7 @@ const Footer = () => (
         </Flex>
         <Box pt={4} ml={4}>
           <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
-            Connect
+            {'Connect'}
           </Text>
         </Box>
         <Flex mt={4} ml={4} width={0.5} justify="center" style={{ flexWrap: 'wrap' }}>
@@ -176,21 +193,17 @@ const Footer = () => (
       <Box>
         <a href="https://github.com/willywill/site" style={{ textDecoration: 'none' }}>
           <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
-            Designed & Coded by Will Germany
+            {'Designed & Coded by Will Germany'}
           </UnderlineText>
         </a>
       </Box>
       <Box>
         <Text color={SUBTITLE_COLOR} letterSpacing={0.3}>
-          Last Updated — {`${new Date().toLocaleString('default', { month: 'long' })}, ${(new Date().getFullYear())}`}
+          {'Last Updated — March, 2021'}
         </Text>
       </Box>
       <Box>
-        <Link href="/privacy-policy">
-          <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
-            Privacy Policy
-          </UnderlineText>
-        </Link>
+        <PrivacyPolicy />
       </Box>
     </Flex>
   </FooterContainer>

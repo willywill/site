@@ -5,7 +5,7 @@ import AccentBar from '../../ui/AccentBar';
 import OutlineButton from '../../ui/OutlineButton';
 
 const OpeningsSection = () => (
-  <Flex column background={EXTRA_DARK} py="250px" align="center">
+  <Flex id="/openings" column background={EXTRA_DARK} py="250px" align="center">
     <Box pr="25%">
       <AccentBar color={WHITE} />
     </Box>
