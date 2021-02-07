@@ -1,12 +1,15 @@
-/* eslint-disable no-unreachable */
 /* global document */
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/fp/debounce';
 import styled from 'styled-components';
-import { number } from 'prop-types';
 import { PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT, SUBTITLE_COLOR } from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 import { scrollIntoView } from '../../../utils/animation';
+
+// Height in pixels of the scroll progress bar
+const SCROLL_INDICATOR_HEIGHT = 50;
+// At what percentage of scroll on the Y direction do we begin to show the scroll indicator?
+const SCROLL_INDICATOR_VISIBILITY_THRESHOLD = 7;
 
 const SidewaysText = styled(Text)`
   writing-mode: vertical-rl;
@@ -15,10 +18,8 @@ const SidewaysText = styled(Text)`
   top: 50vh;
   left: 50px;
   color: ${SUBTITLE_COLOR};
-  cursor: pointer;
+  z-index: 3;
 `;
-
-const SCROLL_INDICATOR_HEIGHT = 50;
 
 const ScrollIndicatorProgress = styled.div`
   position: fixed;
@@ -28,6 +29,7 @@ const ScrollIndicatorProgress = styled.div`
   top: calc(50vh + 100px);
   left: 55px; 
   transform: scale(-1);
+  z-index: 3;
 
   &::before {
     content: "";
@@ -40,10 +42,10 @@ const ScrollIndicatorProgress = styled.div`
   }
 `;
 
-const ScrollIndicatorContainer = () => {
-  // TODO: Actually set this up properly and use it later
-  return null;
-
+// NOTE: This works in a production setting only
+// Causing flickering on `background-image: url` components in development environment
+// TODO: File an issue with Next.js?
+const ScrollIndicator = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -54,27 +56,29 @@ const ScrollIndicatorContainer = () => {
       setScrollProgress(scrollPercentage);
     };
 
-    document.addEventListener('scroll', debounce(25, handleScroll), false);
+    document.addEventListener('scroll', debounce(15, handleScroll), false);
 
     return () => document.removeEventListener('scroll', handleScroll, false);
-  });
+  }, []);
 
-  return <ScrollIndicator scrollProgress={scrollProgress} />;
+  return (
+    <Flex
+      data-aos="fade-in"
+      style={{
+        opacity: scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? 0 : 1,
+        cursor: scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? 'none' : 'pointer',
+      }}
+      onClick={scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? undefined : scrollIntoView('/home', { block: 'start' })}
+      column
+    >
+      <SidewaysText>
+        {'Scroll to top'}
+      </SidewaysText>
+      <ScrollIndicatorProgress progress={scrollProgress} />
+    </Flex>
+  );
 };
-
-const ScrollIndicator = ({ scrollProgress }) => (
-  <Flex column style={{ zIndex: 5 }} onClick={scrollIntoView('/home', { block: 'start' })}>
-    <SidewaysText>
-      {'Scroll to top'}
-    </SidewaysText>
-    <ScrollIndicatorProgress progress={scrollProgress} />
-  </Flex>
-);
 
 ScrollIndicator.displayName = 'ScrollIndicator';
 
-ScrollIndicator.propTypes = {
-  scrollProgress: number.isRequired,
-};
-
-export default ScrollIndicatorContainer;
+export default ScrollIndicator;

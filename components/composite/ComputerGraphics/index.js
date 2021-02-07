@@ -1,7 +1,6 @@
-import { Box } from '@rebass/grid';
 import React from 'react';
 import { DARK_TITLE_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
-import { Flex, Text } from '../../ui';
+import { Box, Flex, Text } from '../../ui';
 import MovingCubesComponent from '../MovingCubes';
 import SectionHeading from '../SectionHeading';
 
