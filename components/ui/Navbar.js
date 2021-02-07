@@ -53,6 +53,7 @@ const ContactMeButton = () => (
   </ContactMeButtonWrapper>
 );
 
+// TODO: Move this component out of the UI folder & NavbarItem
 const Navbar = () => (
   <Nav>
     <Flex width={1} justify="flex-end" align="center" style={{ overflowY: 'none' }}>

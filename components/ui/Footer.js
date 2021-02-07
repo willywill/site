@@ -96,6 +96,7 @@ const PrivacyPolicy = () => {
   );
 };
 
+// TODO: Refactor this component and move it out of the UI folder
 const Footer = () => (
   <FooterContainer>
     <Flex width={1} pb={4} justify="space-between">
