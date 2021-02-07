@@ -33,7 +33,7 @@ const OverviewSection = () => (
         />
       </OverviewContainer>
     </Flex>
-    <Flex data-aos="fly-in" id="count-up" mt={5} width={1} justify="center">
+    <Flex data-aos="fly-in" data-aos-offset="-50" id="count-up" mt={5} width={1} justify="center">
       <Flex mr={5} column>
         <CountUpNumber end="218" />
         <Text color={SUBTITLE_COLOR}>

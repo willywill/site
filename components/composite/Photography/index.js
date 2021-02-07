@@ -1,55 +1,55 @@
 import React from 'react';
-import RellaxWrapper from 'react-rellax-wrapper';
-import {
-  PRIMARY_COLOR, SECONDARY_COLOR, easingFunction,
-} from '../../../utils/theme';
+import { PRIMARY_COLOR, SECONDARY_COLOR } from '../../../utils/theme';
 import { Flex, Box } from '../../ui';
 import SectionHeading from '../SectionHeading';
-import ImageBackground from './ImageBackground';
+import ImageItem from './ImageItem';
+import ImageWrapper from './ImageWrapper';
 
 const PhotographySection = () => (
   <Flex id="/photography" column>
-    <Flex mb={7} mr={7} column>
-      <Box pb={7} width={1} mt={6}>
+    <Flex mb={1} mr={7} column>
+      <Box pb={8} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
       <Flex width={1} ml={6} justify="space-between" style={{ flexWrap: 'wrap' }}>
-        <RellaxWrapper
-          speed={2}
-          vertical
-          style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}
-        >
+        <ImageWrapper>
           <Flex justify="center">
-            <ImageBackground />
+            <ImageItem
+              src="/photos/1.jpg"
+              title="Dusty Butterfly"
+              description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+              flip
+            />
           </Flex>
-        </RellaxWrapper>
-        <RellaxWrapper
-          speed={2}
-          vertical
-          style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}
-        >
+        </ImageWrapper>
+        <ImageWrapper>
           <Flex mt={7} justify="center">
-            <ImageBackground />
+            <ImageItem
+              src="/photos/2.jpg"
+              title="Autumn Tree"
+              description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+            />
           </Flex>
-        </RellaxWrapper>
-        <RellaxWrapper
-          speed={2}
-          vertical
-          style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}
-        >
+        </ImageWrapper>
+        <ImageWrapper>
           <Flex justify="center">
-            <ImageBackground />
+            <ImageItem
+              src="/photos/3.jpg"
+              title="Ivy Leaves"
+              description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+              flip
+            />
           </Flex>
-        </RellaxWrapper>
-        <RellaxWrapper
-          speed={2}
-          vertical
-          style={{ width: '50%', height: '1000px', transition: `transform 0.7s ${easingFunction}` }}
-        >
+        </ImageWrapper>
+        <ImageWrapper>
           <Flex mt={7} justify="center">
-            <ImageBackground />
+            <ImageItem
+              src="/photos/4.jpg"
+              title="Summer Weeds"
+              description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+            />
           </Flex>
-        </RellaxWrapper>
+        </ImageWrapper>
       </Flex>
     </Flex>
     <Flex width={0.5} background={SECONDARY_COLOR} style={{ position: 'relative' }}>

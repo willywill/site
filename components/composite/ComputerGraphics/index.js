@@ -1,6 +1,6 @@
 import { Box } from '@rebass/grid';
 import React from 'react';
-import { DARK_TITLE_COLOR, PRIMARY_COLOR, WHITE } from '../../../utils/theme';
+import { DARK_TITLE_COLOR, PRIMARY_COLOR, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 import MovingCubesComponent from '../MovingCubes';
 import SectionHeading from '../SectionHeading';
@@ -43,6 +43,22 @@ const ComputerGraphicsSection = () => (
           }}
         />
       </Box>
+    </Flex>
+    <Flex mt={8}>
+      <Flex width={0.5} background={SECONDARY_COLOR} style={{ position: 'relative' }}>
+        <Flex height="200px" mt="-1px">
+          <div style={{
+            width: '100px',
+            height: '4px',
+            backgroundColor: PRIMARY_COLOR,
+            position: 'absolute',
+            right: '-50px',
+            top: '100px',
+          }}
+          />
+        </Flex>
+      </Flex>
+      <Flex width={0.5} background={WHITE} />
     </Flex>
   </Flex>
 );

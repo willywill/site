@@ -2,7 +2,7 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import styled from 'styled-components';
 import { getFadeInAnimation, scrollIntoView } from '../../../utils/animation';
-import { easingFunction, WHITE } from '../../../utils/theme';
+import { easingFunction, PRIMARY_COLOR, WHITE } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
 
 const OverviewItemComponent = styled(Flex)`
@@ -20,7 +20,7 @@ const OverviewItemComponent = styled(Flex)`
   
   &:hover {
     filter: saturate(0.85);
-    background-size: auto 105%;
+    background-size: auto 102%;
   }
 `;
 
@@ -57,7 +57,7 @@ const OverviewItemContainer = ({ url, link, children }) => (
       {children}
     </Box>
     <Flex pb={1} align="center">
-      <HelpTextBox width={0.15} height="3px" background={WHITE} mr={2} />
+      <HelpTextBox width={0.15} height="3px" background={PRIMARY_COLOR} mr={2} />
       <HelpText color={WHITE} letterSpacing={-0.3}>
         {'Click to scroll to section'}
       </HelpText>

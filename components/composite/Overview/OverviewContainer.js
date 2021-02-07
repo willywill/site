@@ -7,7 +7,7 @@ const OverviewContainer = styled(Flex)`
   position: relative;
   z-index: 1;
 
-  &::before {
+  /* &::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -19,7 +19,7 @@ const OverviewContainer = styled(Flex)`
     animation: ${getFadeInAnimation(0.75)} 2s ${easingFunction}; 
     animation-fill-mode: forwards;
     z-index: -1;
-  }
+  } */
 `;
 
 export default OverviewContainer;
