@@ -3,14 +3,15 @@ import styled, { keyframes } from 'styled-components';
 import { PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, easingFunction } from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 
-const ScrollNoticeContainer = styled(Flex)``;
+const ScrollNoticeContainer = styled(Flex)`
+`;
 
 const SidewaysText = styled(Text)`
   writing-mode: vertical-rl;
   transform: scale(-1, -1);
   position: absolute;
   top: 50vh;
-  left: 20px;
+  left: 50px;
 `;
 
 const getFlashColorAnimation = (property = 'color') => keyframes`
@@ -33,7 +34,7 @@ const ArrowTail = styled.div`
   background-color: ${DARK_TITLE_COLOR};
   position: absolute;
   top: calc(50vh + 140px);
-  left: 26px;
+  left: 56px;
   animation: 3s ${getFlashColorAnimation('background-color')} 0.5s ${easingFunction} infinite;
 `;
 
@@ -41,17 +42,17 @@ const ArrowHead = styled.i.attrs({ className: 'fa fa-chevron-down' })`
   color: ${DARK_TITLE_COLOR};
   position: absolute;
   top: calc(50vh + 190px);
-  left: 19px;
+  left: 49px;
   animation: 3s ${getFlashColorAnimation('color')} 0.5s ${easingFunction} infinite;
 `;
 
 const ScrollNotice = () => (
-  <ScrollNoticeContainer align="center" column>
-    <SidewaysText color={SUBTITLE_COLOR}>
+  <ScrollNoticeContainer suppressHydrationWarning align="center" column>
+    <SidewaysText suppressHydrationWarning color={SUBTITLE_COLOR}>
       {'Scroll to see more'}
     </SidewaysText>
-    <ArrowTail />
-    <ArrowHead />
+    <ArrowTail suppressHydrationWarning />
+    <ArrowHead suppressHydrationWarning />
   </ScrollNoticeContainer>
 );
 

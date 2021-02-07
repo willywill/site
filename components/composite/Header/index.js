@@ -17,7 +17,7 @@ const HeaderComponent = styled.header`
 
 const Header = () => (
   // In the header, it contains a fullpage with all of the necessary background elements
-  <HeaderComponent>
+  <HeaderComponent id="/home">
     <Page backgroundColor={SECONDARY_COLOR}>
       <ScrollNotice />
       <HeaderVisualization />

@@ -11,12 +11,14 @@ import PhotographySection from '../components/composite/Photography';
 import AboutMeSection from '../components/composite/AboutMe';
 import ContactSection from '../components/composite/Contact';
 import OpeningsSection from '../components/composite/Openings';
+import ScrollIndicator from '../components/composite/ScrollIndicator';
 
 const HomePage = () => (
   <>
     <Header />
     <Navbar />
     <HomeSection />
+    <ScrollIndicator />
     <OverviewSection />
     <SkillsSection />
     <ComputerGraphicsSection />
