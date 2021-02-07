@@ -7,7 +7,8 @@ import ImageBackground from './ImageBackground';
 
 const ImageItem = ({ src, title, description, flip }) => (
   <Flex justify="center" column>
-    <ImageBackground src={src} flip={flip} />
+    {/* TODO: Update prop to src to fix */}
+    <ImageBackground srcs={src} flip={flip} />
     <RellaxWrapper
       speed={-0.1}
       style={{

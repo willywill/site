@@ -42,7 +42,11 @@ const NavbarItem = ({ link, label }) => {
   const isCurrentLink = link === '/';
 
   return (
-    <NavbarItemWrapper mr={4} isCurrentLink={isCurrentLink} onClick={scrollIntoView(link)}>
+    <NavbarItemWrapper
+      mr={4}
+      isCurrentLink={isCurrentLink}
+      onClick={scrollIntoView(link, { block: link === '/my-work' ? 'start' : 'center' })}
+    >
       <Text color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1} style={{ fontSize: '1.25em' }}>
         {label}
       </Text>

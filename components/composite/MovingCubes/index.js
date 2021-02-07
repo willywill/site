@@ -9,7 +9,7 @@ const MovingCubesComponent = () => {
   }, []);
 
   return (
-    <Flex width={1} id="cube-container" justify="center" align="center" />
+    <Flex width={1} mr={6} mt={6} height="80px" id="cube-container" justify="flex-end" align="center" />
   );
 };
 

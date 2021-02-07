@@ -2,7 +2,7 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import styled from 'styled-components';
 import { getFadeInAnimation, scrollIntoView } from '../../../utils/animation';
-import { easingFunction, PRIMARY_COLOR, WHITE } from '../../../utils/theme';
+import { easingFunction, PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT, WHITE } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
 
 const OverviewItemComponent = styled(Flex)`
@@ -10,6 +10,7 @@ const OverviewItemComponent = styled(Flex)`
   height: 700px;
   padding: 32px;
   background-image: ${(props) => `url(${props.url})`};
+  background-color: ${PRIMARY_COLOR_TRANSLUCENT};
   background-size: auto 100%;
   background-position: center;
   background-repeat: no-repeat;

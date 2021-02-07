@@ -8,7 +8,7 @@ const WebDevelopmentSection = () => (
   <Flex id="/web-development" column>
     <Flex pt={6} background={SECONDARY_COLOR} column>
       <SectionHeading text="Web Development." position="3 / 6" flip />
-      <Flex mx={7}>
+      <Flex mx={6}>
         <Flex width={0.5} mt={6} mb={7} column>
           <ProductItem
             title="Voton"

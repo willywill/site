@@ -9,7 +9,7 @@ import OverviewContainer from './OverviewContainer';
 import OverviewItem from './OverviewItem';
 
 const OverviewSection = () => (
-  <Flex id="/my-work" mt={5} backgroundColor={WHITE} column>
+  <Flex id="/my-work" mt={5} pt={2} backgroundColor={WHITE} column>
     <SectionHeading text="At A Glance." position="1 / 6" animationProps={{ 'data-aos-offset': 500 }} />
     <Flex width={1} mt={4} mb={4} justify="center">
       <OverviewContainer>
