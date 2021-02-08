@@ -26,9 +26,9 @@ const cg = {
     description: sampleDescription,
     gallery: [
       { src: '/videos/ocean.mp4', isVideo: true, isMain: true, mediaProps: {} },
-      { src: '/videos/ocean2.mp4', isVideo: true, isMain: false, mediaProps: {} },
       { src: '/ocean.png', isVideo: false, isMain: false, mediaProps: {} },
       { src: '/ocean2.png', isVideo: false, isMain: false, mediaProps: {} },
+      { src: '/videos/ocean2.mp4', isVideo: true, isMain: false, mediaProps: {} },
     ],
     flip: true,
   },
