@@ -8,25 +8,29 @@ const WebDevelopmentSection = () => (
   <Flex id="/web-development" column>
     <Flex pt={6} background={SECONDARY_COLOR} column>
       <SectionHeading text="Web Development." position="3 / 6" flip />
-      <Flex mx={6}>
+      <Flex mx={7}>
         <Flex width={0.5} mt={6} mb={7} column>
           <ProductItem
             title="Voton"
             description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
+            imageUrl="/web-dev/1.png"
           />
           <ProductItem
-            title="Wishlist Sync"
-            description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"
+            title="Voton"
+            description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
+            imageUrl="/web-dev/2.png"
           />
         </Flex>
         <Flex width={0.5} mt={7} mb={7} column>
           <ProductItem
-            title="Voton"
-            description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
+            title="Wishlist Sync"
+            description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"
+            imageUrl="/web-dev/3.png"
           />
           <ProductItem
             title="Wishlist Sync"
             description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"
+            imageUrl="/web-dev/4.png"
           />
         </Flex>
       </Flex>
