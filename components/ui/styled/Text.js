@@ -31,7 +31,6 @@ Text.propTypes = {
   thin: bool,
   // Letter spacing prop
   letterSpacing: number,
-  // TODO: Text animations as a prop called `animation`
 };
 
 export default Text;

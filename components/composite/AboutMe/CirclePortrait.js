@@ -6,8 +6,7 @@ const CirclePortrait = styled.div`
   height: 240px;
   border-radius: 50%;
   background-color: ${PRIMARY_COLOR_TRANSLUCENT};
-  /* TODO: Add self.jpg to url to fix */
-  background-image: url('/self.png');
+  background-image: url('/self.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0;

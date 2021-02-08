@@ -5,8 +5,7 @@ import { Box, Text } from '../../ui';
 import OverviewItemContainer from './OverviewItemContainer';
 
 const OverviewItem = ({ title, description, imageUrl, link }) => (
-  // TODO: Update prop to url to fix it
-  <OverviewItemContainer imageUrl={imageUrl} link={link}>
+  <OverviewItemContainer url={imageUrl} link={link}>
     <Text medium bold color={WHITE} letterSpacing={-1.56}>
       {title}
     </Text>
