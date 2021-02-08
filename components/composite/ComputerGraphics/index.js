@@ -5,6 +5,46 @@ import GalleryView from '../GalleryView';
 import MovingCubesComponent from '../MovingCubes';
 import SectionHeading from '../SectionHeading';
 
+const sampleDescription = `Urna molestie at elementum eu facilisis sed odio morbi 
+quis commodo odio aenean sed adipiscing diam donec adipiscing 
+tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper`;
+
+const cg = {
+  pbrSky: {
+    title: 'Physically-based Sky',
+    description: sampleDescription,
+    gallery: [
+      { src: '/videos/pbr-sky.mp4', isVideo: true, isMain: true, mediaProps: {} },
+      { src: '/videos/pbr-clouds.mp4', isVideo: true, isMain: false, mediaProps: {} },
+      { src: '/pbr-sky-1.jpg', isVideo: false, isMain: false, mediaProps: {} },
+      { src: '/pbr-sky-2.png', isVideo: false, isMain: false, mediaProps: {} },
+    ],
+    flip: false,
+  },
+  oceanRendering: {
+    title: 'Ocean Rendering',
+    description: sampleDescription,
+    gallery: [
+      { src: '/videos/ocean.mp4', isVideo: true, isMain: true, mediaProps: {} },
+      { src: '/videos/ocean2.mp4', isVideo: true, isMain: false, mediaProps: {} },
+      { src: '/ocean.png', isVideo: false, isMain: false, mediaProps: {} },
+      { src: '/ocean2.png', isVideo: false, isMain: false, mediaProps: {} },
+    ],
+    flip: true,
+  },
+  cameraSimulation: {
+    title: 'Camera Simulation',
+    description: sampleDescription,
+    gallery: [
+      { src: '/videos/camera.mp4', isVideo: true, isMain: true, mediaProps: {} },
+      { src: '/camera.png', isVideo: false, isMain: false, mediaProps: {} },
+      { src: '/camera1.jpg', isVideo: false, isMain: false, mediaProps: {} },
+      { src: '/camera2.png', isVideo: false, isMain: false, mediaProps: {} },
+    ],
+    flip: false,
+  },
+};
+
 const ComputerGraphicsSection = () => (
   <Flex id="/computer-graphics" column>
     <Box mt={6}>
@@ -16,24 +56,26 @@ const ComputerGraphicsSection = () => (
     <Flex mx={6} mt={2} mb={6} column>
       <Box>
         <GalleryView
-          title="Physically-based Sky"
-          description="Urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper"
-          images={[]}
+          title={cg.pbrSky.title}
+          description={cg.pbrSky.description}
+          gallery={cg.pbrSky.gallery}
+          flip={cg.pbrSky.flip}
         />
       </Box>
       <Box mt={5}>
         <GalleryView
-          title="Ocean Rendering"
-          description="Urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper"
-          images={[]}
-          flip
+          title={cg.oceanRendering.title}
+          description={cg.oceanRendering.description}
+          gallery={cg.oceanRendering.gallery}
+          flip={cg.oceanRendering.flip}
         />
       </Box>
       <Box mt={5}>
         <GalleryView
-          title="Camera Simulation"
-          description="Urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper"
-          images={[]}
+          title={cg.cameraSimulation.title}
+          description={cg.cameraSimulation.description}
+          gallery={cg.cameraSimulation.gallery}
+          flip={cg.cameraSimulation.flip}
         />
       </Box>
     </Flex>

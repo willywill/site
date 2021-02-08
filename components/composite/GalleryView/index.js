@@ -1,54 +1,64 @@
-import React from 'react';
-import { arrayOf, bool, string } from 'prop-types';
-import { Box, Flex, Text } from '../../ui';
-import MainView from './MainView';
-import SubView from './SubView';
-import { EXTRA_DARK, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../../utils/theme';
+import React, { useState } from 'react';
+import filter from 'lodash/fp/filter';
+import reject from 'lodash/fp/reject';
+import { arrayOf, bool, shape, string } from 'prop-types';
+import GalleryView from './GalleryView';
 
-const GalleryView = ({ title, description, images, flip }) => {
-  // eslint-disable-next-line no-unused-vars
-  const img = images;
+const GalleryViewContainer = ({ title, description, gallery, flip }) => {
+  const [media, setMedia] = useState(gallery);
+
+  const [mainMedia] = filter('isMain', media);
+  const [media1, media2, media3] = reject('isMain', media);
+
+  const handleClick = (orderId) => {
+    // Overwrite the current media flag, set it to false
+    const prevMainMedia = { ...mainMedia, isMain: false };
+    // Update the order and properties of the media according to the slot it came from
+    if (orderId === 1) {
+      setMedia([{ ...media1, isMain: true }, prevMainMedia, media2, media3]);
+    }
+
+    if (orderId === 2) {
+      setMedia([{ ...media2, isMain: true }, media1, prevMainMedia, media3]);
+    }
+
+    if (orderId === 3) {
+      setMedia([{ ...media3, isMain: true }, media1, media2, prevMainMedia]);
+    }
+  };
 
   return (
-    <Flex width={1} flexDirection={flip ? 'row-reverse' : 'row'}>
-      <Flex column>
-        <Box data-aos="fly-in">
-          <MainView />
-        </Box>
-        <Flex data-aos="fly-in" width={1} mt={2} justify="space-between">
-          <SubView />
-          <SubView />
-          <SubView />
-        </Flex>
-      </Flex>
-      <Flex height="420px" mx={4} justify="flex-end" column>
-        <Flex width={0.9} ml={4} data-aos="fly-in" align="center" justify={flip ? 'flex-end' : 'flex-start'}>
-          <Box width="50px" height="2px" mr={2} background={PRIMARY_COLOR} />
-          <Text large bold color={EXTRA_DARK} letterSpacing={-2.56}>
-            {title}
-          </Text>
-        </Flex>
-        <Box width={0.9} data-aos="fade-in" mt={2} ml={4}>
-          <Text right={flip} fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
-            {description}
-          </Text>
-        </Box>
-      </Flex>
-    </Flex>
+    <GalleryView
+      title={title}
+      description={description}
+      flip={flip}
+      onClick={handleClick}
+      media={[
+        mainMedia,
+        media1,
+        media2,
+        media3,
+      ]}
+    />
   );
 };
 
-GalleryView.displayName = 'GalleryView';
+GalleryViewContainer.displayName = 'GalleryViewContainer';
 
-GalleryView.propTypes = {
+GalleryViewContainer.propTypes = {
   title: string.isRequired,
   description: string.isRequired,
-  images: arrayOf(string).isRequired,
-  flip: bool,
+  gallery: arrayOf(shape({
+    src: string.isRequired,
+    isVideo: bool.isRequired,
+    isMain: bool.isRequired,
+    mediaProps: shape({}),
+  })).isRequired,
+  flip: bool, // Do we render the media on the right side? Default is left
 };
 
-GalleryView.defaultProps = {
+GalleryViewContainer.defaultProps = {
   flip: false,
 };
 
-export default GalleryView;
+export default GalleryViewContainer;
