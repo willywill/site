@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import { bool, number, shape, string } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';

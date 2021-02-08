@@ -17,7 +17,6 @@ const Heading = ({ size, ...textProps }) => {
 
   if (!HeadingComponent) return null;
 
-  // eslint-disable-next-line react/jsx-props-no-spreading
   return <HeadingComponent {...textProps} />;
 };
 

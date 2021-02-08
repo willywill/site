@@ -33,6 +33,7 @@
     "implicit-arrow-linebreak": [0],
     "react/destructuring-assignment": [0],
     "react/no-access-state-in-setstate": [0],
+    "react/jsx-props-no-spreading": [0],
     "operator-linebreak": [0],
     "no-plusplus": [0]
   }
