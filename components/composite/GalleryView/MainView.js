@@ -1,14 +1,14 @@
 import React from 'react';
 import { bool, number, shape, string } from 'prop-types';
 import styled from 'styled-components';
-import { easingFunction, PRIMARY_COLOR } from '../../../utils/theme';
+import { easingFunction, SECONDARY_COLOR } from '../../../utils/theme';
 import { Flex } from '../../ui';
 import { getFadeInAnimation } from '../../../utils/animation';
 
 const MainViewContainer = styled(Flex)`
   width: 800px;
   height: 500px;
-  background-color: ${PRIMARY_COLOR};
+  background-color: ${SECONDARY_COLOR};
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
   background-position: center;

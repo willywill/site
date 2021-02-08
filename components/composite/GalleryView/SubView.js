@@ -1,14 +1,14 @@
 import React from 'react';
 import { bool, func, shape, string } from 'prop-types';
 import styled from 'styled-components';
-import { easingFunction, PRIMARY_COLOR, WHITE } from '../../../utils/theme';
+import { easingFunction, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
 import { getFadeInAnimation } from '../../../utils/animation';
 import { Flex } from '../../ui';
 
 const SubViewContainer = styled(Flex)`
   width: 260px;
   height: 150px;
-  background-color: ${PRIMARY_COLOR};
+  background-color: ${SECONDARY_COLOR};
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
   background-position: center;
