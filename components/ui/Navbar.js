@@ -56,30 +56,29 @@ const ContactMeButton = () => (
 // TODO: Move this component out of the UI folder & NavbarItem
 const Navbar = () => (
   <Nav>
-    <Flex width={1} justify="flex-end" align="center" style={{ overflowY: 'none' }}>
-      <FlyDownContainer>
-        <Flex width={1} mt={4} justify="flex-end">
-          <NavbarItem link="/" label="Home" />
-          <NavbarItem link="/my-work" label="My Work" />
-          <NavbarItem link="/about" label="About" />
-          <NavbarItem link="/contact" label="Contact" />
-        </Flex>
-        <Box mt="24px" mr={4}>
-          <ContactMeButton />
+    <Flex width={1} justify="space-between" align="center" style={{ overflowY: 'none' }}>
+      <Flex justify="flex-start" align="center">
+        <Box mt="24px" ml={5}>
+          <img height="30px" src="/favicon.png" alt="Logo" />
         </Box>
-      </FlyDownContainer>
+      </Flex>
+      <Flex justify="flex-end" align="center">
+        <FlyDownContainer>
+          <Flex width={1} mt={4} justify="flex-end">
+            <NavbarItem link="/" label="Home" />
+            <NavbarItem link="/my-work" label="My Work" />
+            <NavbarItem link="/about" label="About" />
+            <NavbarItem link="/contact" label="Contact" />
+          </Flex>
+          <Box mt="24px" mr={4}>
+            <ContactMeButton />
+          </Box>
+        </FlyDownContainer>
+      </Flex>
     </Flex>
   </Nav>
 );
 
 Navbar.displayName = 'Navbar';
-
-Navbar.propTypes = {
-
-};
-
-Navbar.defaultProps = {
-
-};
 
 export default Navbar;

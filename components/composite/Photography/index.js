@@ -1,13 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
 import { PRIMARY_COLOR, SECONDARY_COLOR } from '../../../utils/theme';
 import { Flex, Box } from '../../ui';
 import SectionHeading from '../SectionHeading';
 import ImageItem from './ImageItem';
 import ImageWrapper from './ImageWrapper';
 
+const CameraVisualization = styled.img`
+  width: 30%;
+  top: 5%;
+  position: absolute;
+  right: -100px;
+  opacity: 0.875;
+  user-select: none;
+  z-index: -1;
+`;
+
+const LensVisualization = styled.img`
+  width: 35%;
+  bottom: 5%;
+  position: absolute;
+  left: 100px;
+  opacity: 0.4;
+  user-select: none;
+  z-index: -1;
+`;
+
 const PhotographySection = () => (
   <Flex id="/photography" column>
-    <Flex mb={1} mr={7} column>
+    <Flex mb={1} mr={7} column style={{ position: 'relative' }}>
+      <CameraVisualization src="/mirrorless.png" />
       <Box pb={8} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
@@ -50,6 +72,7 @@ const PhotographySection = () => (
             />
           </Flex>
         </ImageWrapper>
+        <LensVisualization src="/lens.png" />
       </Flex>
     </Flex>
     <Flex width={0.5} background={SECONDARY_COLOR} style={{ position: 'relative' }}>

@@ -1,13 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
 import { PRIMARY_COLOR, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
 import { Flex } from '../../ui';
 import SectionHeading from '../SectionHeading';
 import ProductItem from './ProductItem';
 
+const GitBranchVisualization = styled.img`
+  height: 80%;
+  top: 20%;
+  position: absolute;
+  left: -150px;
+  opacity: 0.4;
+  user-select: none;
+`;
+
 const WebDevelopmentSection = () => (
   <Flex id="/web-development" column>
-    <Flex pt={6} background={SECONDARY_COLOR} column>
+    <Flex pt={6} background={SECONDARY_COLOR} column style={{ position: 'relative', overflow: 'hidden' }}>
       <SectionHeading text="Web Development." position="3 / 6" flip />
+      <GitBranchVisualization height="100%" src="/git-branch.svg" />
       <Flex mx={7}>
         <Flex width={0.5} mt={6} mb={7} column>
           <ProductItem

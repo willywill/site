@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool, number, shape, string } from 'prop-types';
+import { bool, shape, string } from 'prop-types';
 import styled from 'styled-components';
 import { easingFunction, SECONDARY_COLOR } from '../../../utils/theme';
 import { Flex } from '../../ui';
@@ -48,7 +48,6 @@ MainView.propTypes = {
     src: string.isRequired,
     isVideo: bool.isRequired,
     mediaProps: shape({}),
-    order: number.isRequired,
   }).isRequired,
 };
 

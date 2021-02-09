@@ -1,17 +1,45 @@
 import React from 'react';
+import styled from 'styled-components';
+import RellaxWrapper from 'react-rellax-wrapper';
 import {
-  PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR,
+  PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR, easingFunction,
 } from '../../../utils/theme';
 import { Flex, Box, Text } from '../../ui';
 import AccentBar from '../../ui/AccentBar';
 import SectionHeading from '../SectionHeading';
 import CirclePortrait from './CirclePortrait';
 
+const TriangleBackgroundElement = styled.img`
+  width: 30%;
+  top: 15%;
+  position: absolute;
+  right: 100px;
+  opacity: 0.15;
+  user-select: none;
+`;
+
+const CircleBackgroundElement = styled.img`
+  width: 35%;
+  top: 500px;
+  position: absolute;
+  left: 10px;
+  opacity: 0.15;
+  user-select: none;
+`;
+
 const AboutMeSection = () => (
-  <Flex id="/about" background={SECONDARY_COLOR} pb={7} column>
+  <Flex id="/about" background={SECONDARY_COLOR} pb={7} column style={{ overflow: 'hidden' }}>
     <Box mt={6}>
       <SectionHeading text="About Me." position="5 / 6" flip />
     </Box>
+    <Flex column style={{ position: 'relative' }}>
+      <RellaxWrapper speed={2} percentage={0.9} style={{ transition: `transform 1.2s ${easingFunction}` }}>
+        <TriangleBackgroundElement src="/triangle.svg" />
+      </RellaxWrapper>
+      <RellaxWrapper speed={-2} percentage={0.9} style={{ transition: `transform 1.2s ${easingFunction}` }}>
+        <CircleBackgroundElement src="/circle.svg" />
+      </RellaxWrapper>
+    </Flex>
     <Flex mt={5} width={1} align="center" column>
       <Box mb={6} pr="25%">
         <AccentBar />
