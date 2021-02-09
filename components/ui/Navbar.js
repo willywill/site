@@ -23,20 +23,20 @@ const ContactMeButtonWrapper = styled(Flex)`
 `;
 
 const flyDown = keyframes`
- from {
-   transform: translateY(-100px);
-   opacity: 0;
- }
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
 
- to {
-   transform: translateY(0px);
-   opacity: 1;
- }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 `;
 
 const FlyDownContainer = styled.div`
   display: inherit;
-  animation: ${flyDown} 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: ${flyDown} 0.5s ${easingFunction};
   animation-fill-mode: forwards;
   opacity: 0;
   will-change: transform;

@@ -1,3 +1,4 @@
+import { number } from 'prop-types';
 /* eslint-disable max-len */
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-shadow */
@@ -89,19 +90,27 @@ const Canvas = styled.canvas.attrs({ id: 'ribbon' })`
   overflow: hidden;
   width: 100%;
   height: 100%;
-  opacity: 0.175;
+  opacity: ${[(props) => props.opacity || 0.175]};
   top: 0;
   pointer-events: none;
 `;
 
-const RibbonCanvas = () => {
+const RibbonCanvas = ({ opacity }) => {
   useEffect(() => {
     initializeCanvas();
   }, []);
 
-  return <Canvas />;
+  return <Canvas opacity={opacity} />;
 };
 
 RibbonCanvas.displayName = 'RibbonCanvas';
+
+RibbonCanvas.propTypes = {
+  opacity: number,
+};
+
+RibbonCanvas.defaultProps = {
+  opacity: undefined,
+};
 
 export default RibbonCanvas;
