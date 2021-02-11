@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { getFadeInAnimation } from '../../../utils/animation';
-import { easingFunction, PRIMARY_COLOR } from '../../../utils/theme';
+import { breakpoints, easingFunction, PRIMARY_COLOR } from '../../../utils/theme';
 import { Flex } from '../../ui';
 
 const OverviewContainer = styled(Flex)`
   position: relative;
+  max-width: 2400px;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.desktopMedium}) {
+    flex-direction: column;
+  }
 
   /* &::before {
     content: "";

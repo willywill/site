@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
         <body style={{ overflowX: 'none' }}>
           <Main />
           <NextScript />
+          <script async defer data-domain="williamgermany.com" src="https://plausible.io/js/plausible.js" />
         </body>
       </Html>
     );

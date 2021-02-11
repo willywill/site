@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, func, shape, string } from 'prop-types';
 import styled from 'styled-components';
-import { easingFunction, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
+import { breakpoints, easingFunction, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
 import { getFadeInAnimation } from '../../../utils/animation';
 import { Flex } from '../../ui';
 
@@ -18,6 +18,11 @@ const SubViewContainer = styled(Flex)`
   overflow: hidden;
   position: relative;
   cursor: pointer;
+
+  @media screen and (max-width: ${breakpoints.desktopMedium}) {
+    width: 195px;
+    height: 125px;
+  }
 `;
 
 const Video = styled.video`

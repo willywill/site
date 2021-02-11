@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Flex, Box, Text } from '.';
 import { scrollIntoView } from '../../utils/animation';
 import {
-  DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
+  DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../utils/theme';
 
 const FooterContainer = styled.footer`
@@ -101,7 +101,7 @@ const Footer = () => (
   <FooterContainer>
     <Flex width={1} pb={4} justify="space-between">
       {/* Navigation */}
-      <Flex pl={6} pt={5} width={0.5} column>
+      <Flex pl={mediaQuery(6, { tablet: '95px' })} pt={5} width={0.5} column>
         <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
           {'Navigation'}
         </Text>

@@ -54,6 +54,39 @@ export const shiftHSL = ({ hue = 0, saturation = 0, lightness = 0 }, hsl) => {
   return `hsl(${h + hue}, ${s + saturation}%, ${l + lightness}%)`;
 };
 
+export const breakpoints = {
+  mobileSmall: '375px',
+  mobileLarge: '425px',
+  tablet: '768px',
+  desktopSmall: '1024px', // SD
+  desktopMedium: '1650px', // HD+
+  desktopLarge: '1920px', // FHD
+  desktopExtraLarge: '2560px', // QHD
+  desktop4K: '3300px',
+};
+
+// Allows tapping into the specific breakpoints and modifying the values
+export const mediaQuery = (defaultValue, {
+  mobileSmall,
+  mobileLarge,
+  tablet,
+  desktopSmall,
+  desktopMedium,
+  desktopLarge,
+  desktopExtraLarge,
+  desktop4K,
+}) => ([
+  defaultValue, // Offset?
+  mobileSmall || defaultValue,
+  mobileLarge || defaultValue,
+  tablet || defaultValue,
+  desktopSmall || defaultValue,
+  desktopMedium || defaultValue,
+  desktopLarge || defaultValue,
+  desktopExtraLarge || defaultValue,
+  desktop4K || defaultValue,
+]);
+
 const standardColors = {
   primary: PRIMARY_COLOR,
   secondary: SECONDARY_COLOR,

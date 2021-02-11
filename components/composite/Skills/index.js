@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  mediaQuery,
   PRIMARY_COLOR, SECONDARY_COLOR, WHITE,
 } from '../../../utils/theme';
 import { Flex } from '../../ui';
@@ -12,15 +13,15 @@ const SkillsSection = () => (
     <Flex column py={6} background={SECONDARY_COLOR} style={{ overflow: 'hidden', position: 'relative' }}>
       <RibbonCanvas />
       <SectionHeading text="Skills." position="1.5 / 6" flip />
-      <Flex width={1} my={4} px={7} justify="center" column>
-        <Flex justify="center" style={{ overflow: 'hidden' }}>
+      <Flex width={1} my={4} px={2} justify="center" flexDirection={mediaQuery('column', { tablet: 'row' })}>
+        <Flex justify="center" style={{ overflow: 'hidden' }} flexDirection={mediaQuery('row', { tablet: 'column' })}>
           <SkillLogo delay="800" src="/logos/c-sharp.png" alt="C# logo" />
           <SkillLogo delay="800" src="/logos/unity.png" alt="Unity logo" />
           <SkillLogo delay="800" src="/logos/js.png" alt="Javascript logo" />
           <SkillLogo delay="800" src="/logos/graphql.png" alt="GraphQL logo" />
           <SkillLogo delay="800" src="/logos/react.png" alt="ReactJS logo" />
         </Flex>
-        <Flex justify="center" style={{ overflow: 'hidden' }}>
+        <Flex justify="center" style={{ overflow: 'hidden' }} flexDirection={mediaQuery('row', { tablet: 'column' })}>
           <SkillLogo delay="800" src="/logos/opengl.png" alt="OpenGL logo" />
           <SkillLogo delay="800" src="/logos/directx.png" alt="DirectX logo" />
           <SkillLogo delay="800" src="/logos/shopify.png" alt="Shopify logo" />

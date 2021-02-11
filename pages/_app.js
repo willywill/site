@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
+import values from 'lodash/fp/values';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { any, shape } from 'prop-types';
+import { breakpoints } from '../utils/theme';
+
+const theme = {
+  breakpoints: values(breakpoints),
+};
 
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
@@ -13,7 +20,11 @@ const MyApp = ({ Component, pageProps }) => {
     });
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 };
 
 MyApp.propTypes = {

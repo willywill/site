@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PRIMARY_COLOR, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
+import {
+  breakpoints, mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR, WHITE,
+} from '../../../utils/theme';
 import { Flex } from '../../ui';
 import SectionHeading from '../SectionHeading';
 import ProductItem from './ProductItem';
@@ -10,17 +12,30 @@ const GitBranchVisualization = styled.img`
   top: 20%;
   position: absolute;
   left: -150px;
-  opacity: 0.4;
+  opacity: 0.05;
   user-select: none;
+  z-index: -1;
+
+  @media (max-width: ${breakpoints.desktopSmall}) {
+    left: -350px;
+  }
 `;
 
 const WebDevelopmentSection = () => (
   <Flex id="/web-development" column>
-    <Flex pt={6} background={SECONDARY_COLOR} column style={{ position: 'relative', overflow: 'hidden' }}>
+    <Flex pt={6} background={SECONDARY_COLOR} column style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }}>
       <SectionHeading text="Web Development." position="3 / 6" flip />
       <GitBranchVisualization height="100%" src="/git-branch.svg" />
-      <Flex mx={7}>
-        <Flex width={0.5} mt={6} mb={7} column>
+      <Flex
+        mx={mediaQuery('15%', { desktopSmall: '7%', desktopExtraLarge: '25%', desktop4K: '29%' })}
+        flexDirection={mediaQuery('row', { tablet: 'column' })}
+      >
+        <Flex
+          width={mediaQuery(0.5, { tablet: 1 })}
+          mt={6}
+          mb={mediaQuery(6, { tablet: '0px' })}
+          column
+        >
           <ProductItem
             title="Voton"
             description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
@@ -32,7 +47,7 @@ const WebDevelopmentSection = () => (
             imageUrl="/web-dev/2.png"
           />
         </Flex>
-        <Flex width={0.5} mt={7} mb={7} column>
+        <Flex width={mediaQuery(0.5, { tablet: 1 })} mt={mediaQuery(7, { tablet: '0px' })} mb={7} column>
           <ProductItem
             title="Wishlist Sync"
             description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"

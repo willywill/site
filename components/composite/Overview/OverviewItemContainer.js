@@ -2,12 +2,14 @@ import React from 'react';
 import { node, string } from 'prop-types';
 import styled from 'styled-components';
 import { getFadeInAnimation, scrollIntoView } from '../../../utils/animation';
-import { easingFunction, PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT, WHITE } from '../../../utils/theme';
+import {
+  breakpoints, easingFunction, PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT, WHITE,
+} from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
 
 const OverviewItemComponent = styled(Flex)`
   width: 25vw;
-  height: 700px;
+  height: 65vh;
   padding: 32px;
   background-image: ${(props) => `url(${props.url})`};
   background-color: ${PRIMARY_COLOR_TRANSLUCENT};
@@ -22,6 +24,16 @@ const OverviewItemComponent = styled(Flex)`
   &:hover {
     filter: saturate(0.85);
     background-size: auto 102%;
+  }
+
+  @media (max-width: ${breakpoints.desktopMedium}) {
+    width: 75vw;
+    height: 25vh;
+    background-size: cover;
+
+    &:hover {
+      background-size: cover;
+    }
   }
 `;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, shape, string } from 'prop-types';
 import styled from 'styled-components';
-import { easingFunction, SECONDARY_COLOR } from '../../../utils/theme';
+import { breakpoints, easingFunction, SECONDARY_COLOR } from '../../../utils/theme';
 import { Flex } from '../../ui';
 import { getFadeInAnimation } from '../../../utils/animation';
 
@@ -16,6 +16,21 @@ const MainViewContainer = styled(Flex)`
   animation: ${getFadeInAnimation(1.0)} 0.4s ${easingFunction};
   animation-fill-mode: forwards;
   overflow: hidden;
+
+  @media screen and (max-width: ${breakpoints.desktopMedium}) {
+    width: 600px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: ${breakpoints.desktopSmall}) {
+    width: 600px;
+    height: 300px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: 350px;
+  }
 `;
 
 const Video = styled.video`

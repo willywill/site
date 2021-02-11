@@ -1,7 +1,7 @@
 import { string } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { EXTRA_DARK, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../../utils/theme';
+import { breakpoints, EXTRA_DARK, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
 
 const ProductImage = styled.div`
@@ -11,6 +11,16 @@ const ProductImage = styled.div`
   background-image: ${(props) => `url(${props.imageUrl})`};
   background-size: cover;
   background-position: center;
+
+  @media screen and (max-width: ${breakpoints.desktopMedium}) {
+    width: 400px;
+    height: 525px;
+  }
+
+  @media (max-width: ${breakpoints.desktopSmall}) {
+    width: 400px;
+    height: 525px;
+  }
 `;
 
 const ProductItem = ({ title, description, imageUrl }) => (

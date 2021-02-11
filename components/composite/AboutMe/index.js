@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import RellaxWrapper from 'react-rellax-wrapper';
 import {
-  PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR, easingFunction,
+  PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR, easingFunction, mediaQuery,
 } from '../../../utils/theme';
 import { Flex, Box, Text } from '../../ui';
 import AccentBar from '../../ui/AccentBar';
@@ -50,7 +50,7 @@ const AboutMeSection = () => (
       <Text data-aos="fly-in" extraLarge bold color={PRIMARY_COLOR} letterSpacing={-2.56}>
         {'Hi, I\'m William Germany.'}
       </Text>
-      <Box mt={4} width={0.4}>
+      <Box mt={4} width={mediaQuery(0.4, { tablet: 0.75 })}>
         <Text center data-aos="fly-in" data-aos-delay="800" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
           {'I have a strong passion for technology, programming, mathematics and art. I taught myself different ways to apply these concepts to build '}<strong style={{ fontWeight: 'bolder' }}>creative</strong>{' solutions to real world problems.'}
         </Text>

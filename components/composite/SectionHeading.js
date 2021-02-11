@@ -1,7 +1,9 @@
 import { bool, number, shape, string } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { DARK_TITLE_COLOR, PRIMARY_COLOR, SUBTITLE_COLOR, WHITE } from '../../utils/theme';
+import {
+  DARK_TITLE_COLOR, mediaQuery, PRIMARY_COLOR, SUBTITLE_COLOR, WHITE,
+} from '../../utils/theme';
 import { Box, Flex, Heading, Text } from '../ui';
 
 const headingThemes = {
@@ -40,8 +42,8 @@ const SectionHeading = ({
   return (
     <Flex
       width={1}
-      pl={flip ? undefined : 7}
-      pr={flip ? 7 : undefined}
+      pl={flip ? undefined : mediaQuery(7, { tablet: 6 })}
+      pr={flip ? mediaQuery(7, { tablet: 6 }) : undefined}
       justify={flip ? 'flex-end' : undefined}
     >
       {position && (
