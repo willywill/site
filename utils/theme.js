@@ -87,6 +87,44 @@ export const mediaQuery = (defaultValue, {
   desktop4K || defaultValue,
 ]);
 
+const indexByBreakpoint = {
+  mobileSmall: 1,
+  mobileLarge: 2,
+  tablet: 3,
+  desktopSmall: 4, // SD
+  desktopMedium: 5, // HD+
+  desktopLarge: 6, // FHD
+  desktopExtraLarge: 7, // QHD
+  desktop4K: 8,
+};
+
+// Same as standard method, but takes a single value and makes everything less than
+// that breakpoint the same value passed
+export const mediaQueryLessThan = (defaultValue, breakpointKey, lessThanValue) => {
+  const lessThanIndex = indexByBreakpoint[breakpointKey];
+
+  const allDefaults = [
+    defaultValue, // Offset?
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+    defaultValue,
+  ];
+
+  if (!lessThanIndex || !lessThanValue) {
+    return allDefaults;
+  }
+
+  return allDefaults.map((def, index) => {
+    if (index <= lessThanIndex) return lessThanValue;
+    return def;
+  });
+};
+
 const standardColors = {
   primary: PRIMARY_COLOR,
   secondary: SECONDARY_COLOR,
