@@ -26,9 +26,10 @@ const OverviewItemComponent = styled(Flex)`
     background-size: auto 102%;
   }
 
-  @media (max-width: ${breakpoints.desktopMedium}) {
+  @media (max-width: ${breakpoints.desktopSmall}) {
     width: 75vw;
     height: 25vh;
+    filter: saturate(0.85);
     background-size: cover;
 
     &:hover {

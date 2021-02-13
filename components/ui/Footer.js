@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { Flex, Box, Text } from '.';
 import { scrollIntoView } from '../../utils/animation';
 import {
-  DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
+  breakpoints,
+  DARK_TITLE_COLOR, easingFunction, EXTRA_DARK, mediaQuery,
+  mediaQueryLessThan,
+  PRIMARY_COLOR, SECONDARY_COLOR, SUBTITLE_COLOR, WHITE,
 } from '../../utils/theme';
 
 const FooterContainer = styled.footer`
@@ -32,6 +35,16 @@ const LeafNavigationBox = styled(Box)`
     width: 2px;
     height: ${(props) => (props.reducedHeight ? '42px' : '60px')};
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding-left: 12px;
+
+    &::after {
+      top: -12px;
+      left: 0;
+      height: ${(props) => (props.reducedHeight ? '42px' : '48px')};
+    }
+  }
 `;
 
 const NavigationText = styled(Text)`
@@ -40,6 +53,11 @@ const NavigationText = styled(Text)`
   letter-spacing: -1.5px;
   font-weight: 700;
   transition: color 0.5s ${easingFunction};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 1em;
+    letter-spacing: -1px;
+  }
 
   &:hover {
     color: ${PRIMARY_COLOR};
@@ -61,6 +79,12 @@ const ConnectIcon = styled(Box)`
     color: ${PRIMARY_COLOR};
     cursor: pointer;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 1.15rem;
+    padding: 10px 8px;
+    margin: 8px;
+  }
 `;
 
 const UnderlineText = styled(Text)`
@@ -70,7 +94,10 @@ const UnderlineText = styled(Text)`
   &:hover {
     cursor: pointer;
     color: ${PRIMARY_COLOR};
-    // text-decoration: underline;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 0.875em;
   }
 `;
 
@@ -101,7 +128,7 @@ const Footer = () => (
   <FooterContainer>
     <Flex width={1} pb={4} justify="space-between">
       {/* Navigation */}
-      <Flex pl={mediaQuery(6, { tablet: '95px' })} pt={5} width={0.5} column>
+      <Flex pl={mediaQuery(6, { mobileSmall: '20px', tablet: '95px' })} pt={5} width={0.5} column>
         <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
           {'Navigation'}
         </Text>
@@ -190,20 +217,26 @@ const Footer = () => (
     <Flex width={1} justify="center">
       <Divider />
     </Flex>
-    <Flex px="10%" py="3%" justify="space-between" align="space-between">
-      <Box>
+    <Flex
+      px="10%"
+      py="3%"
+      justify="space-between"
+      align="space-between"
+      flexDirection={mediaQueryLessThan('row', 'mobileLarge', 'column')}
+    >
+      <Box my={mediaQueryLessThan('0px', 'mobileLarge', '8px')}>
         <a href="https://github.com/willywill/site" style={{ textDecoration: 'none' }}>
           <UnderlineText color={SUBTITLE_COLOR} letterSpacing={0.3}>
             {'Designed & Coded by Will Germany'}
           </UnderlineText>
         </a>
       </Box>
-      <Box>
+      <Box my={mediaQueryLessThan('0px', 'mobileLarge', '8px')}>
         <Text color={SUBTITLE_COLOR} letterSpacing={0.3}>
           {'Last Updated — March, 2021'}
         </Text>
       </Box>
-      <Box>
+      <Box my={mediaQueryLessThan('0px', 'mobileLarge', '8px')}>
         <PrivacyPolicy />
       </Box>
     </Flex>

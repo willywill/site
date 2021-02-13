@@ -42,8 +42,8 @@ const SectionHeading = ({
   return (
     <Flex
       width={1}
-      pl={flip ? undefined : mediaQuery(7, { tablet: 6 })}
-      pr={flip ? mediaQuery(7, { tablet: 6 }) : undefined}
+      pl={flip ? undefined : mediaQuery(7, { mobileSmall: '16px', mobileLarge: '0px', tablet: 6 })}
+      pr={flip ? mediaQuery(7, { mobileSmall: '16px', mobileLarge: '0px', tablet: 6 }) : undefined}
       justify={flip ? 'flex-end' : undefined}
     >
       {position && (

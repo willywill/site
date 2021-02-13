@@ -1,11 +1,21 @@
 import React from 'react';
 import RellaxWrapper from 'react-rellax-wrapper';
 import { bool, string } from 'prop-types';
+import styled from 'styled-components';
 import {
-  easingFunction, EXTRA_DARK, mediaQuery, PRIMARY_COLOR, SUBTITLE_COLOR,
+  easingFunction, EXTRA_DARK, mediaQuery, MEDIUM_SIZE,
+  mediaQueryLessThan, PRIMARY_COLOR, SUBTITLE_COLOR, breakpoints,
 } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
 import ImageBackground from './ImageBackground';
+
+const ImageTitle = styled(Text)`
+  font-size: ${MEDIUM_SIZE};
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    font-size: 1.2em;
+  }
+`;
 
 const ImageItem = ({ src, title, description, flip }) => (
   <Flex justify="center" column>
@@ -16,11 +26,11 @@ const ImageItem = ({ src, title, description, flip }) => (
         transition: `transform 2s ${easingFunction}`,
       }}
     >
-      <Flex ml={mediaQuery(4, { desktopSmall: 1 })} align="center">
-        <Box data-aos="fly-in" data-aos-offset="-600" width="50px" height="2px" mr={2} background={PRIMARY_COLOR} />
-        <Text data-aos="fly-in" data-aos-offset="-600" medium bold color={EXTRA_DARK} letterSpacing={-1}>
+      <Flex data-aos="fly-in" data-aos-offset="-600" ml={mediaQuery(4, { desktopSmall: 1 })} align="center">
+        <Box width={mediaQueryLessThan(50, 'mobileLarge', 25)} height="2px" mr={2} background={PRIMARY_COLOR} />
+        <ImageTitle medium bold color={EXTRA_DARK} letterSpacing={-1}>
           {title}
-        </Text>
+        </ImageTitle>
       </Flex>
       <Box mt={2} ml={mediaQuery(4, { desktopSmall: 1 })}>
         <Text data-aos="fade-in" data-aos-offset="-600" color={SUBTITLE_COLOR} letterSpacing={-0.3}>

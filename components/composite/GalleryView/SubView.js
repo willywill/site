@@ -23,6 +23,11 @@ const SubViewContainer = styled(Flex)`
     width: 195px;
     height: 125px;
   }
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    width: 33.333333vw;
+    height: 125px;
+  }
 `;
 
 const Video = styled.video`

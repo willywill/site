@@ -1,5 +1,8 @@
 import React from 'react';
-import { mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR, WHITE } from '../../../utils/theme';
+import {
+  mediaQuery, mediaQueryLessThan, PRIMARY_COLOR,
+  SECONDARY_COLOR, WHITE,
+} from '../../../utils/theme';
 import { Box, Flex } from '../../ui';
 import GalleryView from '../GalleryView';
 import MovingCubesComponent from '../MovingCubes';
@@ -50,10 +53,10 @@ const ComputerGraphicsSection = () => (
     <Box mt={6}>
       <SectionHeading text="Computer Graphics." position="2 / 6" />
     </Box>
-    <Flex width={1} my={5} justify="flex-end" style={{ position: 'relative' }}>
+    <Flex width={1} mb={5} mt={mediaQueryLessThan(5, 'mobileLarge', '0px')} justify="flex-end" style={{ position: 'relative' }}>
       <MovingCubesComponent />
     </Flex>
-    <Flex mx={mediaQuery(6, { tablet: '90px', desktopExtraLarge: 7, desktop4K: 8 })} mt={mediaQuery(2, { tablet: 5 })} mb={6} column>
+    <Flex mx={mediaQuery(6, { mobileLarge: '90px', tablet: '90px', desktopExtraLarge: 7, desktop4K: 8 })} mt={mediaQuery(2, { tablet: 5 })} mb={6} column>
       <Box>
         <GalleryView
           title={cg.pbrSky.title}

@@ -9,7 +9,7 @@ import OverviewContainer from './OverviewContainer';
 import OverviewItem from './OverviewItem';
 
 const OverviewSection = () => (
-  <Flex id="/my-work" mt={5} pt={2} backgroundColor={WHITE} column>
+  <Flex id="/my-work" mt={5} pt={2} backgroundColor={WHITE} column style={{ overflowX: 'hidden' }}>
     <SectionHeading text="At A Glance." position="1 / 6" animationProps={{ 'data-aos-offset': 500 }} />
     <Flex width={1} mt={4} mb={4} justify="center">
       <OverviewContainer>
@@ -34,21 +34,21 @@ const OverviewSection = () => (
       </OverviewContainer>
     </Flex>
     <Flex data-aos="fly-in" data-aos-offset="-50" id="count-up" mt={5} width={1} justify="center">
-      <Flex mx={5} column>
+      <Flex mx={5} align="center" column>
         <CountUpNumber end="218" />
-        <Text color={SUBTITLE_COLOR}>
+        <Text center color={SUBTITLE_COLOR}>
           {'Shaders Written'}
         </Text>
       </Flex>
-      <Flex mr={5} column>
+      <Flex mr={5} align="center" column>
         <CountUpNumber end="12853" />
-        <Text color={SUBTITLE_COLOR}>
+        <Text center color={SUBTITLE_COLOR}>
           {'Code Commits'}
         </Text>
       </Flex>
-      <Flex mr={5} column>
+      <Flex mr={5} align="center" column>
         <CountUpNumber end="5011" />
-        <Text color={SUBTITLE_COLOR}>
+        <Text center color={SUBTITLE_COLOR}>
           {'Photos Taken'}
         </Text>
       </Flex>

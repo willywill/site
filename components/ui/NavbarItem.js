@@ -1,13 +1,16 @@
 import React from 'react';
 import { string } from 'prop-types';
 import styled, { css, keyframes } from 'styled-components';
-import { easingFunction, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../utils/theme';
+import {
+  breakpoints, easingFunction, mediaQueryLessThan, PRIMARY_COLOR, SUBTITLE_COLOR,
+} from '../../utils/theme';
 import Box from './styled/Box';
 import Text from './styled/Text';
 import { scrollIntoView } from '../../utils/animation';
 
 const NavbarItemWrapper = styled(Box)`
   overflow-x: hidden;
+  padding: 0px 5px;
   cursor: pointer;
 `;
 
@@ -38,18 +41,26 @@ const AnimatedUnderline = styled.div`
   }
 `;
 
+const NavbarText = styled(Text)`
+  font-size: 1.25em;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 0.87em;
+  }
+`;
+
 const NavbarItem = ({ link, label }) => {
   const isCurrentLink = link === '/';
 
   return (
     <NavbarItemWrapper
-      mr={4}
+      mr={mediaQueryLessThan(4, 'mobileLarge', '24px')}
       isCurrentLink={isCurrentLink}
       onClick={scrollIntoView(link, { block: link === '/my-work' ? 'start' : 'center' })}
     >
-      <Text color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1} style={{ fontSize: '1.25em' }}>
+      <NavbarText color={PRIMARY_COLOR} bold weight={700} letterSpacing={-1}>
         {label}
-      </Text>
+      </NavbarText>
       <AnimatedUnderline isCurrentLink={isCurrentLink} />
     </NavbarItemWrapper>
   );

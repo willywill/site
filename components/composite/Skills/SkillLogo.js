@@ -11,8 +11,8 @@ const Logo = styled.img`
   cursor: pointer;
   /* transition: filter 0.5s ${easingFunction}; */
 
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 150px;
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    width: 100px;
   }
 
   &:hover {

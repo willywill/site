@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Flex } from '.';
-import { easingFunction, PRIMARY_COLOR, PRIMARY_HOVER_COLOR, WHITE } from '../../utils/theme';
+import {
+  breakpoints, easingFunction, mediaQueryLessThan, PRIMARY_COLOR, PRIMARY_HOVER_COLOR, WHITE,
+} from '../../utils/theme';
 import NavbarItem from './NavbarItem';
 import Box from './styled/Box';
 
@@ -45,6 +47,16 @@ const FlyDownContainer = styled.div`
 const Nav = styled.nav`
   height: ${NAVBAR_HEIGHT}px;
   padding-right: 32px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding-right: 0px;
+  }
+`;
+
+const LogoWrapper = styled(Flex)`
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
 `;
 
 const ContactMeButton = () => (
@@ -56,21 +68,27 @@ const ContactMeButton = () => (
 // TODO: Move this component out of the UI folder & NavbarItem
 const Navbar = () => (
   <Nav>
-    <Flex width={1} justify="space-between" align="center" style={{ overflowY: 'none' }}>
-      <Flex justify="flex-start" align="center">
-        <Box mt="24px" ml={5}>
+    <Flex
+      width={1}
+      justify="space-between"
+      align="center"
+      style={{ overflow: 'hidden' }}
+      flexDirection={mediaQueryLessThan('row', 'mobileLarge', 'column')}
+    >
+      <LogoWrapper justify="flex-start" align="center">
+        <Box mt="24px" ml={mediaQueryLessThan(5, 'mobileLarge', '0px')}>
           <img height="30px" src="/favicon.png" alt="Logo" />
         </Box>
-      </Flex>
+      </LogoWrapper>
       <Flex justify="flex-end" align="center">
         <FlyDownContainer>
           <Flex width={1} mt={4} justify="flex-end">
             <NavbarItem link="/" label="Home" />
-            <NavbarItem link="/my-work" label="My Work" />
+            <NavbarItem link="/my-work" label="Work" />
             <NavbarItem link="/about" label="About" />
             <NavbarItem link="/contact" label="Contact" />
           </Flex>
-          <Box mt="24px" mr={4}>
+          <Box mt="24px" mr={mediaQueryLessThan(5, 'mobileLarge', '0px')}>
             <ContactMeButton />
           </Box>
         </FlyDownContainer>

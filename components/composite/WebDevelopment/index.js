@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  breakpoints, mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR, WHITE,
+  breakpoints, mediaQuery, mediaQueryLessThan, PRIMARY_COLOR, SECONDARY_COLOR, WHITE,
 } from '../../../utils/theme';
 import { Flex } from '../../ui';
 import SectionHeading from '../SectionHeading';
@@ -19,6 +19,12 @@ const GitBranchVisualization = styled.img`
   @media (max-width: ${breakpoints.desktopSmall}) {
     left: -350px;
   }
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    height: 37%;
+    top: 67%;
+    left: -160px;
+  }
 `;
 
 const WebDevelopmentSection = () => (
@@ -28,12 +34,12 @@ const WebDevelopmentSection = () => (
       <GitBranchVisualization height="100%" src="/git-branch.svg" />
       <Flex
         mx={mediaQuery('15%', { desktopSmall: '7%', desktopExtraLarge: '25%', desktop4K: '29%' })}
-        flexDirection={mediaQuery('row', { tablet: 'column' })}
+        flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}
       >
         <Flex
-          width={mediaQuery(0.5, { tablet: 1 })}
+          width={mediaQueryLessThan(0.5, 'tablet', 1)}
           mt={6}
-          mb={mediaQuery(6, { tablet: '0px' })}
+          mb={mediaQueryLessThan(6, 'tablet', '0px')}
           column
         >
           <ProductItem
@@ -47,7 +53,7 @@ const WebDevelopmentSection = () => (
             imageUrl="/web-dev/2.png"
           />
         </Flex>
-        <Flex width={mediaQuery(0.5, { tablet: 1 })} mt={mediaQuery(7, { tablet: '0px' })} mb={7} column>
+        <Flex width={mediaQueryLessThan(0.5, 'tablet', 1)} mt={mediaQueryLessThan(7, 'tablet', '0px')} mb={7} column>
           <ProductItem
             title="Wishlist Sync"
             description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"

@@ -76,7 +76,7 @@ export const mediaQuery = (defaultValue, {
   desktopExtraLarge,
   desktop4K,
 }) => ([
-  defaultValue, // Offset?
+  mobileSmall, // Offset?
   mobileSmall || defaultValue,
   mobileLarge || defaultValue,
   tablet || defaultValue,

@@ -40,7 +40,7 @@ const ImageBackground = styled.div`
     z-index: -2;
   }
 
-  @media (max-width: ${breakpoints.desktopSmall}) {
+  @media screen and (min-device-width: ${breakpoints.tablet}) and (max-device-width: ${breakpoints.desktopSmall}) {
     width: 45vw;
     height: 55vh;
 
@@ -52,6 +52,21 @@ const ImageBackground = styled.div`
     &::after {
       width: 45vw;
       height: 55vh;
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 70vw;
+    height: 58vh;
+
+    &::before {
+      width: 70vw;
+      height: 58vh;
+    }
+
+    &::after {
+      width: 70vw;
+      height: 58vh;
     }
   }
 `;

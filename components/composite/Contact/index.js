@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR,
-  WHITE, easingFunction, mediaQuery,
+  WHITE, easingFunction, mediaQuery, mediaQueryLessThan,
 } from '../../../utils/theme';
 import { Flex, Box, Text } from '../../ui';
 import { scrollIntoView } from '../../../utils/animation';
@@ -36,15 +36,39 @@ const CincinnatiImage = styled.img`
 `;
 
 const ContactSection = () => (
-  <Flex id="/contact" width={1} background={WHITE} flexDirection={mediaQuery('row', { tablet: 'column' })}>
-    <Box width={mediaQuery(0.5, { tablet: 1, desktopExtraLarge: 0.4, desktop4K: 0.35 })}>
+  <Flex id="/contact" width={1} background={WHITE} flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}>
+    <Box width={mediaQuery(0.5, {
+      mobileSmall: 1,
+      mobileLarge: 1,
+      tablet: 1,
+      desktopExtraLarge: 0.4,
+      desktop4K: 0.35,
+    })}
+    >
       <a href="https://www.google.com/maps/place/Cincinnati,+OH/">
         <CincinnatiImage src="/cincinnati.png" alt="Map" />
       </a>
     </Box>
-    <Flex width={mediaQuery(0.5, { tablet: 1, desktopExtraLarge: 0.6, desktop4K: 0.65 })} column>
+    <Flex
+      width={mediaQuery(0.5, {
+        mobileSmall: 1,
+        mobileLarge: 1,
+        tablet: 1,
+        desktopExtraLarge: 0.6,
+        desktop4K: 0.65,
+      })}
+      column
+    >
       <Box width={1} mb={5} background={SECONDARY_COLOR} height="25%" />
-      <Flex width={1} height="100%" mt={mediaQuery(undefined, { tablet: 4 })} pl={mediaQuery(5, { tablet: 6 })} pb={mediaQuery(7, { desktopSmall: 6 })} justify="flex-end" column>
+      <Flex
+        width={1}
+        height="100%"
+        mt={mediaQueryLessThan(undefined, 'tablet', 4)}
+        pl={mediaQuery(5, { mobileSmall: 4, tablet: 6 })}
+        pb={mediaQueryLessThan(7, 'desktopSmall', 6)}
+        justify="flex-end"
+        column
+      >
         <Text data-aos="fly-in" extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
           {'Hello'}
         </Text>

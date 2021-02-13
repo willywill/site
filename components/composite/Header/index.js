@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mediaQuery, SECONDARY_COLOR } from '../../../utils/theme';
+import { mediaQuery, mediaQueryLessThan, SECONDARY_COLOR } from '../../../utils/theme';
 import { Box, Flex } from '../../ui';
 import AccentBar from '../../ui/AccentBar';
 import Page from '../../ui/Page';
@@ -21,8 +21,8 @@ const Header = () => (
     <Page backgroundColor={SECONDARY_COLOR}>
       <ScrollNotice />
       <HeaderVisualization />
-      <Flex height="100vh" py={mediaQuery('10%', { tablet: '20%', desktopSmall: '20%' })} justify="space-between" column style={{ zIndex: 1 }}>
-        <Box pr="70vw">
+      <Flex height="100vh" py={mediaQuery('10%', { mobileSmall: '35%', mobileLarge: '35%', tablet: '20%', desktopSmall: '20%' })} justify="space-between" column style={{ zIndex: 1 }}>
+        <Box pr={mediaQueryLessThan('70vw', 'mobileLarge', '25vw')}>
           <AccentBar />
         </Box>
         <Box pl={mediaQuery('35vw', { tablet: '70vw', desktopSmall: '70vw' })}>

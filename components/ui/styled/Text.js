@@ -1,9 +1,15 @@
 import { bool, number, string } from 'prop-types';
 import styled from 'styled-components';
-import textMixin from '../../../utils/text';
+import textMixin, { getMobileFontSize } from '../../../utils/text';
+import { breakpoints } from '../../../utils/theme';
 
 const Text = styled.p`
   ${textMixin};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: ${(props) => getMobileFontSize(props)};
+    letter-spacing: ${(props) => `${Math.max(-0.8, props.letterSpacing)}px`};
+  }
 `;
 
 Text.propTypes = {

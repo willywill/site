@@ -8,7 +8,7 @@ const OverviewContainer = styled(Flex)`
   max-width: 2400px;
   z-index: 1;
 
-  @media (max-width: ${breakpoints.desktopMedium}) {
+  @media (max-width: ${breakpoints.desktopSmall}) {
     flex-direction: column;
   }
 

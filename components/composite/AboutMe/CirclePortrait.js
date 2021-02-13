@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PRIMARY_COLOR_TRANSLUCENT } from '../../../utils/theme';
+import { breakpoints, PRIMARY_COLOR_TRANSLUCENT } from '../../../utils/theme';
 
 const CirclePortrait = styled.div`
   width: 240px;
@@ -11,6 +11,11 @@ const CirclePortrait = styled.div`
   background-position: center;
   opacity: 0;
   animation-fill-mode: forwards;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 180px;
+    height: 180px;
+  }
 `;
 
 CirclePortrait.displayName = 'Ci';

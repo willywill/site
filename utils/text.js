@@ -75,6 +75,24 @@ const getFontSize = ({
   return '';
 };
 
+export const getMobileFontSize = ({
+  small, medium, large, extraLarge,
+}) => {
+  if (small) {
+    return '0.6em';
+  }
+  if (medium) {
+    return '0.75em';
+  }
+  if (large) {
+    return '1.5em';
+  }
+  if (extraLarge) {
+    return '1.75em';
+  }
+  return '0.875em';
+};
+
 const getFontWeight = ({ bold, thin, weight }) => {
   if (weight) {
     return weight;

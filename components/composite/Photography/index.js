@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints, mediaQuery, PRIMARY_COLOR, SECONDARY_COLOR } from '../../../utils/theme';
+import {
+  breakpoints, mediaQuery, mediaQueryLessThan, PRIMARY_COLOR, SECONDARY_COLOR,
+} from '../../../utils/theme';
 import { Flex, Box } from '../../ui';
 import SectionHeading from '../SectionHeading';
 import ImageItem from './ImageItem';
@@ -21,6 +23,12 @@ const CameraVisualization = styled.img`
     top: 8%;
     right: -200px;
   }
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    width: 60%;
+    top: 5%;
+    right: 0px;
+  }
 `;
 
 const LensVisualization = styled.img`
@@ -36,22 +44,26 @@ const LensVisualization = styled.img`
   @media (max-width: ${breakpoints.desktopSmall}) {
     width: 60%;
   }
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    width: 200px;
+  }
 `;
 
 const PhotographySection = () => (
   <Flex id="/photography" column>
-    <Flex mb={1} mr={7} column style={{ position: 'relative' }}>
+    <Flex mb={1} mr={mediaQueryLessThan(7, 'mobileLarge', 6)} column style={{ position: 'relative' }}>
       <CameraVisualization src="/mirrorless.png" />
       <Box pb={8} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
-      <Flex width={1} mx={6} justify="center">
+      <Flex width={1} mr={6} ml={mediaQueryLessThan(6, 'mobileLarge', '80px')} justify="center">
         <Flex
           width={mediaQuery(1, { desktopExtraLarge: 0.65, desktop4K: 0.55 })}
-          ml={6}
+          ml={mediaQueryLessThan(6, 'mobileLarge', 5)}
           justify="space-between"
           style={{ flexWrap: 'wrap' }}
-          flexDirection={mediaQuery('row', { tablet: 'column' })}
+          flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}
         >
           <ImageWrapper>
             <Flex justify="center">
@@ -64,7 +76,7 @@ const PhotographySection = () => (
             </Flex>
           </ImageWrapper>
           <ImageWrapper>
-            <Flex mt={mediaQuery(7, { tablet: '0px' })} justify="center">
+            <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justify="center">
               <ImageItem
                 src="/photos/2.jpg"
                 title="Autumn Tree"
@@ -83,7 +95,7 @@ const PhotographySection = () => (
             </Flex>
           </ImageWrapper>
           <ImageWrapper>
-            <Flex mt={mediaQuery(7, { tablet: '0px' })} justify="center">
+            <Flex mt={mediaQuery(7, 'tablet', '0px')} justify="center">
               <ImageItem
                 src="/photos/4.jpg"
                 title="Summer Weeds"

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/fp/debounce';
 import styled from 'styled-components';
 import {
+  breakpoints,
   easingFunction, PRIMARY_COLOR, PRIMARY_COLOR_TRANSLUCENT,
   SUBTITLE_COLOR, WHITE,
 } from '../../../utils/theme';
@@ -45,6 +46,12 @@ const ScrollIndicatorProgress = styled.div`
   }
 `;
 
+const ScrollIndicatorWrapper = styled(Flex)`
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`;
+
 const getScrollColor = (scrollPercentage) => {
   if (scrollPercentage >= 91 && scrollPercentage <= 99) {
     return WHITE;
@@ -73,7 +80,7 @@ const ScrollIndicator = () => {
   }, []);
 
   return (
-    <Flex
+    <ScrollIndicatorWrapper
       data-aos="fade-in"
       style={{
         opacity: scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? 0 : 1,
@@ -91,7 +98,7 @@ const ScrollIndicator = () => {
           height: `${SCROLL_INDICATOR_HEIGHT * (scrollProgress * 0.01)}px`,
         }}
       />
-    </Flex>
+    </ScrollIndicatorWrapper>
   );
 };
 

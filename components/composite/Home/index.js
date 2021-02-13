@@ -11,7 +11,7 @@ const HomeSection = () => (
             {'Building digital products, immersive visuals, and capturing moments.'}
           </Heading>
         </Flex>
-        <Box maxWidth={600} mt={4}>
+        <Box maxWidth={600} mt={4} px={mediaQueryLessThan(undefined, 'mobileLarge', 3)}>
           <Text data-aos="fly-in" data-aos-delay="400" center fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
             {`I'm a self-taught software engineer
 working on full-stack web development, real-time computer graphics and photography.`}

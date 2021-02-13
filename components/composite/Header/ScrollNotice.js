@@ -1,9 +1,14 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, easingFunction } from '../../../utils/theme';
+import {
+  PRIMARY_COLOR, DARK_TITLE_COLOR, SUBTITLE_COLOR, easingFunction, breakpoints,
+} from '../../../utils/theme';
 import { Flex, Text } from '../../ui';
 
 const ScrollNoticeContainer = styled(Flex)`
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
 `;
 
 const SidewaysText = styled(Text)`
