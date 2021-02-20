@@ -9,7 +9,7 @@ const MainViewContainer = styled(Flex)`
   width: 800px;
   height: 500px;
   background-color: ${SECONDARY_COLOR};
-  background-image: ${(props) => `url(${props.src})`};
+  ${(props) => (props.src ? `background-image: url(${props.src})` : '')};
   background-size: cover;
   background-position: center;
   opacity: 0.0;

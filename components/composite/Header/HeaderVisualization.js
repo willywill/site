@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import throttle from 'lodash/fp/throttle';
 import styled from 'styled-components';
-import { easingFunction } from '../../../utils/theme';
+import { breakpoints, easingFunction } from '../../../utils/theme';
 import { getFadeInAnimation } from '../../../utils/animation';
 
 const ImageLayer = styled.div`
@@ -19,10 +19,17 @@ const ImageLayer = styled.div`
   animation-fill-mode: forwards;
 
   filter: ${(props) => `blur(${2.75 * props.depth}px)`};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    background-image: none;
+    display: none;
+  }
 `;
 
 const HeaderVisualization = () => {
   const parallax = (e) => {
+    if (window.innerWidth < 450) return;
+
     const elem1 = document.querySelector('#parallax1');
     const elem2 = document.querySelector('#parallax2');
     const elem3 = document.querySelector('#parallax3');
@@ -44,9 +51,12 @@ const HeaderVisualization = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousemove', throttle(100, parallax));
+    if (window.innerWidth > 450) {
+      document.addEventListener('mousemove', throttle(100, parallax));
 
-    return () => document.removeEventListener('mousemove', parallax);
+      return () => document.removeEventListener('mousemove', parallax);
+    }
+    return undefined;
   }, []);
 
   return (

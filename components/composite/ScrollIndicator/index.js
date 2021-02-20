@@ -1,4 +1,4 @@
-/* global document */
+/* global document, window */
 import React, { useState, useEffect } from 'react';
 import debounce from 'lodash/fp/debounce';
 import styled from 'styled-components';
@@ -67,16 +67,20 @@ const ScrollIndicator = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollAmount = document.body.scrollTop || document.documentElement.scrollTop;
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPercentage = (scrollAmount / totalHeight) * 100;
-      setScrollProgress(scrollPercentage);
-    };
+    if (window.innerWidth < 450) {
+      const handleScroll = () => {
+        const scrollAmount = document.body.scrollTop || document.documentElement.scrollTop;
+        const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollAmount / totalHeight) * 100;
+        setScrollProgress(scrollPercentage);
+      };
 
-    document.addEventListener('scroll', debounce(15, handleScroll), false);
+      document.addEventListener('scroll', debounce(15, handleScroll), false);
 
-    return () => document.removeEventListener('scroll', handleScroll, false);
+      return () => document.removeEventListener('scroll', handleScroll, false);
+    }
+
+    return undefined;
   }, []);
 
   return (
