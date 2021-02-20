@@ -28,7 +28,7 @@ const GitBranchVisualization = styled.img`
 `;
 
 const WebDevelopmentSection = () => (
-  <Flex id="/web-development" column>
+  <Flex as="section" id="/web-development" column>
     <Flex pt={6} background={SECONDARY_COLOR} column style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }}>
       <SectionHeading text="Web Development." position="3 / 6" flip />
       <GitBranchVisualization height="100%" src="/git-branch.svg" />

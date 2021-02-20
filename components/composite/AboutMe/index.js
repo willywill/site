@@ -27,8 +27,9 @@ const CircleBackgroundElement = styled.img`
   user-select: none;
 `;
 
+// TODO: Don't use <strong></strong> to make text bold
 const AboutMeSection = () => (
-  <Flex id="/about" background={SECONDARY_COLOR} pb={7} column style={{ overflow: 'hidden' }}>
+  <Flex as="section" id="/about" background={SECONDARY_COLOR} pb={7} column style={{ overflow: 'hidden' }}>
     <Box mt={6}>
       <SectionHeading text="About Me." position="5 / 6" flip />
     </Box>

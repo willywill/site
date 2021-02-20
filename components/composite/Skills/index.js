@@ -9,7 +9,7 @@ import SectionHeading from '../SectionHeading';
 import SkillLogo from './SkillLogo';
 
 const SkillsSection = () => (
-  <Flex id="/skills" column>
+  <Flex as="section" id="/skills" column>
     <Flex column py={6} background={SECONDARY_COLOR} style={{ overflow: 'hidden', position: 'relative' }}>
       <RibbonCanvas />
       <SectionHeading text="Skills." position="1.5 / 6" flip />

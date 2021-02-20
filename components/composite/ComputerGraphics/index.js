@@ -49,7 +49,7 @@ const cg = {
 };
 
 const ComputerGraphicsSection = () => (
-  <Flex id="/computer-graphics" column style={{ overflowX: 'hidden' }}>
+  <Flex as="section" id="/computer-graphics" column style={{ overflowX: 'hidden' }}>
     <Box mt={6}>
       <SectionHeading text="Computer Graphics." position="2 / 6" />
     </Box>

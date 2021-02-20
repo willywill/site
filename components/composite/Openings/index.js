@@ -7,7 +7,7 @@ import AccentBar from '../../ui/AccentBar';
 import OutlineButton from '../../ui/OutlineButton';
 
 const OpeningsSection = () => (
-  <Flex id="/openings" column background={EXTRA_DARK} py="250px" align="center">
+  <Flex as="section" id="/openings" column background={EXTRA_DARK} py="250px" align="center">
     <Box pr="25%">
       <AccentBar color={WHITE} />
     </Box>
@@ -25,7 +25,7 @@ const OpeningsSection = () => (
       <Text data-aos="fly-in" data-aos-delay="1200" center color={WHITE} letterSpacing={-0.3} thin>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt adipisci cupiditate corrupti impedit quos nemo asperiores magnam <strong style={{ fontWeight: 'bolder' }}>tempora ab consequatur</strong> ipsam saepe repellat nisi, reiciendis quidem quia molestias doloremque dolorum soluta eos molestiae corporis! Laboriosam totam consectetur quos modi eius?
       </Text>
-      <br />
+      <Box my={2} />
       <Text data-aos="fly-in" data-aos-delay="1600" center color={WHITE} letterSpacing={-0.3} thin>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong style={{ fontWeight: 'bolder' }}>Necessitatibus</strong> ex sint quia quasi, vitae consequatur dicta. Adipisci omnis molestias vero, praesentium natus autem ex voluptatibus accusamus animi itaque beatae pariatur distinctio mollitia qui vitae ut.
       </Text>

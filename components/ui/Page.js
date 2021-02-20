@@ -1,5 +1,6 @@
 import React from 'react';
 import reset from 'styled-reset';
+import { NextSeo } from 'next-seo';
 import { node, string } from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import { HIGHLIGHT_COLOR, WHITE } from '../../utils/theme';
@@ -28,6 +29,30 @@ const Page = ({ children, backgroundColor }) => (
     justify="center"
     style={{ minHeight: '100vh', position: 'relative' }}
   >
+    <NextSeo
+      title="Portfolio"
+      description="I'm a self-taught software engineer
+      working on full-stack web development, real-time computer graphics and photography."
+      openGraph={{
+        type: 'website',
+        url: 'https://williamgermany.com',
+        title: "Will Germany's Portfolio",
+        description: "I'm a self-taught software engineer working on full-stack web development, real-time computer graphics and photography.",
+        images: [
+          {
+            url: 'https://williamgermany.com/self.jpg',
+            width: 600,
+            height: 400,
+            alt: 'Self Portrait',
+          },
+        ],
+      }}
+      twitter={{
+        handle: '@WillGermany',
+        site: '@WillGermany',
+        cardType: 'summary_large_image',
+      }}
+    />
     {children}
     <GlobalStyle />
   </Flex>

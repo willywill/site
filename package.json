@@ -17,6 +17,7 @@
     "gsap": "^3.6.0",
     "lodash": "^4.17.20",
     "next": "^10.0.5",
+    "next-seo": "^4.19.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-countup": "^4.3.3",

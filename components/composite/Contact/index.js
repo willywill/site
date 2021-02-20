@@ -36,7 +36,7 @@ const CincinnatiImage = styled.img`
 `;
 
 const ContactSection = () => (
-  <Flex id="/contact" width={1} background={WHITE} flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}>
+  <Flex as="section" id="/contact" width={1} background={WHITE} flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}>
     <Box width={mediaQuery(0.5, {
       mobileSmall: 1,
       mobileLarge: 1,
