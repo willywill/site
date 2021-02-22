@@ -60,9 +60,11 @@ const LogoWrapper = styled(Flex)`
 `;
 
 const ContactMeButton = () => (
-  <ContactMeButtonWrapper justify="center" align="center">
-    <i className="fa fa-envelope" style={{ marginBottom: '1px' }} />
-  </ContactMeButtonWrapper>
+  <a href="mailto:me@williamgermany.com">
+    <ContactMeButtonWrapper justify="center" align="center">
+      <i className="fa fa-envelope" style={{ marginBottom: '1px' }} />
+    </ContactMeButtonWrapper>
+  </a>
 );
 
 // TODO: Move this component out of the UI folder & NavbarItem
