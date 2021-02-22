@@ -27,7 +27,8 @@ const CircleBackgroundElement = styled.img`
   user-select: none;
 `;
 
-// TODO: Don't use <strong></strong> to make text bold
+const getYearsOfExperience = () => (new Date().getFullYear()) - 2012;
+
 const AboutMeSection = () => (
   <Flex as="section" id="/about" background={SECONDARY_COLOR} pb={7} column style={{ overflow: 'hidden' }}>
     <Box mt={6}>
@@ -57,7 +58,7 @@ const AboutMeSection = () => (
         </Text>
         <Box mt={4}>
           <Text center data-aos="fly-in" data-aos-delay="1000" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
-            {'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit '}<strong style={{ fontWeight: 'bolder' }}>accusantium nulla quae saepe</strong>{' ullam veritatis quos commodi ex dolorum reprehenderit voluptate aliquam itaque, laboriosam unde!'}
+            {'Roughly '}<strong style={{ fontWeight: 'bolder' }}>{getYearsOfExperience()}{' years of experience'}</strong>{', from tinkering with files to enhance video games, developing complex 3D games with groups, being the lead programmer on the robotics team, to making full on production applications used by Fortune 500 companies.'}
           </Text>
         </Box>
       </Box>

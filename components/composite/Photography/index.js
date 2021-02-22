@@ -68,9 +68,9 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex justify="center">
               <ImageItem
-                src="/photos/1.jpg"
-                title="Dusty Butterfly"
-                description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+                src="/photos/portrait1.JPG"
+                title="Sunrise Portrait"
+                description="A capture from morning with a very glowy ambient and indirect light"
                 flip
               />
             </Flex>
@@ -78,18 +78,18 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justify="center">
               <ImageItem
-                src="/photos/2.jpg"
-                title="Autumn Tree"
-                description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+                src="/photos/portrait2.JPG"
+                title="Antique Winery"
+                description="An all encompasing glance at one of the oldest wineries in Ohio"
               />
             </Flex>
           </ImageWrapper>
           <ImageWrapper>
             <Flex justify="center">
               <ImageItem
-                src="/photos/3.jpg"
-                title="Ivy Leaves"
-                description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+                src="/photos/portrait5.jpg"
+                title="Snowy Dog"
+                description="Playful dog captured while walking through the snow"
                 flip
               />
             </Flex>
@@ -97,9 +97,9 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex mt={mediaQuery(7, 'tablet', '0px')} justify="center">
               <ImageItem
-                src="/photos/4.jpg"
-                title="Summer Weeds"
-                description="Netus et malesuada fames ac turpis egestas integer eget aliquet"
+                src="/photos/portrait4.JPG"
+                title="Prom Night"
+                description="Golden hour shot of a prom night couple perfectly rim lit"
               />
             </Flex>
           </ImageWrapper>

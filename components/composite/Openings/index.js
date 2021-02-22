@@ -23,11 +23,11 @@ const OpeningsSection = () => (
     </Box>
     <Box width={1} maxWidth="1280px" mt={4} px={mediaQuery(7, { mobileSmall: 3, tablet: 6 })}>
       <Text data-aos="fly-in" data-aos-delay="1200" center color={WHITE} letterSpacing={-0.3} thin>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt adipisci cupiditate corrupti impedit quos nemo asperiores magnam <strong style={{ fontWeight: 'bolder' }}>tempora ab consequatur</strong> ipsam saepe repellat nisi, reiciendis quidem quia molestias doloremque dolorum soluta eos molestiae corporis! Laboriosam totam consectetur quos modi eius?
+        {'I\'m currently working a full-time position, but I am actively seeking a part-time role for a more continued effort or gig work related to the things I know best. '}
       </Text>
       <Box my={2} />
       <Text data-aos="fly-in" data-aos-delay="1600" center color={WHITE} letterSpacing={-0.3} thin>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong style={{ fontWeight: 'bolder' }}>Necessitatibus</strong> ex sint quia quasi, vitae consequatur dicta. Adipisci omnis molestias vero, praesentium natus autem ex voluptatibus accusamus animi itaque beatae pariatur distinctio mollitia qui vitae ut.
+        {'Feel free to reach out to me about what it is we can work on together. I look forward to applying my creativity and skills towards any projects neccessary.'}
       </Text>
     </Box>
     <Box mt={5} mb={6}>

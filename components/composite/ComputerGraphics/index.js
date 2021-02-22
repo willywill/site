@@ -8,14 +8,10 @@ import GalleryView from '../GalleryView';
 import MovingCubesComponent from '../MovingCubes';
 import SectionHeading from '../SectionHeading';
 
-const sampleDescription = `Urna molestie at elementum eu facilisis sed odio morbi 
-quis commodo odio aenean sed adipiscing diam donec adipiscing 
-tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper`;
-
 const cg = {
   pbrSky: {
     title: 'Physically-based Sky',
-    description: sampleDescription,
+    description: 'A real-time sky simulation that samples the atmosphere based on real properties of light entering and scattering throughout the atmosphere. This solution accounts for volumetric fog and includes a simple volumetric cloud solution.',
     gallery: [
       { src: '/videos/pbr-sky.mp4', isVideo: true, isMain: true, mediaProps: {} },
       { src: '/videos/pbr-clouds.mp4', isVideo: true, isMain: false, mediaProps: {} },
@@ -26,7 +22,7 @@ const cg = {
   },
   oceanRendering: {
     title: 'Ocean Rendering',
-    description: sampleDescription,
+    description: 'A real-time ocean simulation that respects wind speeds that shape the waves, and responds to the Sun\'s angle to create reflections and scatter light appropriately throughout the surface of the water.',
     gallery: [
       { src: '/ocean.png', isVideo: false, isMain: true, mediaProps: {} },
       { src: '/videos/ocean.mp4', isVideo: true, isMain: false, mediaProps: {} },
@@ -37,12 +33,12 @@ const cg = {
   },
   cameraSimulation: {
     title: 'Camera Simulation',
-    description: sampleDescription,
+    description: 'A-real time camera simulation that acts as a modern digital camera with ISO control, aperture control, and shutter speed control. Also features multiple metering modes for auto exposure and cinematic lens properties for creating anamorphic bokeh. Additionally, there is some custom-made lens flare effects, creating a realistic starburst effect on bright surfaces.',
     gallery: [
-      { src: '/camera.png', isVideo: false, isMain: true, mediaProps: {} },
+      { src: '/camera2.png', isVideo: false, isMain: true, mediaProps: {} },
+      { src: '/camera.png', isVideo: false, isMain: false, mediaProps: {} },
       { src: '/videos/camera.mp4', isVideo: true, isMain: false, mediaProps: {} },
       { src: '/camera1.jpg', isVideo: false, isMain: false, mediaProps: {} },
-      { src: '/camera2.png', isVideo: false, isMain: false, mediaProps: {} },
     ],
     flip: false,
   },

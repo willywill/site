@@ -16,7 +16,7 @@ const OverviewSection = () => (
         <OverviewItem
           title="Computer Graphics"
           description="Photorealistic Visuals"
-          imageUrl="/minecraft.png"
+          imageUrl="/minecraft.jpg"
           link="/computer-graphics"
         />
         <OverviewItem
@@ -28,7 +28,7 @@ const OverviewSection = () => (
         <OverviewItem
           title="Photography"
           description="Surreal Memories"
-          imageUrl="/photography.png"
+          imageUrl="/photos/6.JPG"
           link="/photography"
         />
       </OverviewContainer>

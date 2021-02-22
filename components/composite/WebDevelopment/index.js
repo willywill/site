@@ -44,24 +44,24 @@ const WebDevelopmentSection = () => (
         >
           <ProductItem
             title="Voton"
-            description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
-            imageUrl="/web-dev/1.png"
+            description="A simple real-time voting app that gives users the ability to create polls, share and vote on them. Built on NodeJS, PostgreSQL, GraphQL subscriptions, React"
+            imageUrl="web-dev1.png"
           />
           <ProductItem
-            title="Voton"
-            description="Elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget"
-            imageUrl="/web-dev/2.png"
+            title="Wishlist Sync"
+            description="An app that allows you to build and manage your wishlist, and share it with others, all without having to create an account. Built on NodeJS, GraphQL, MongoDB, React"
+            imageUrl="web-dev2.png"
           />
         </Flex>
         <Flex width={mediaQueryLessThan(0.5, 'tablet', 1)} mt={mediaQueryLessThan(7, 'tablet', '0px')} mb={7} column>
           <ProductItem
-            title="Wishlist Sync"
-            description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"
-            imageUrl="/web-dev/3.png"
+            title="This Website"
+            description="This site was coded from scratch by me! Used to show off my skills and the things I've worked on, built on NextJS"
+            imageUrl="web-dev3.png"
           />
           <ProductItem
-            title="Wishlist Sync"
-            description="Neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus"
+            title="Coming Soon"
+            description="A website built for a local small business, using VueJS, Shopify, NodeJS & MySQL"
             imageUrl="/web-dev/4.png"
           />
         </Flex>
