@@ -53,7 +53,7 @@ const LensVisualization = styled.img`
 const PhotographySection = () => (
   <Flex as="section" id="/photography" column>
     <Flex mb={1} mr={mediaQueryLessThan(7, 'mobileLarge', 6)} column style={{ position: 'relative' }}>
-      <CameraVisualization src="/mirrorless.png" />
+      <CameraVisualization src="/mirrorless.png" alt="Mirrorless Outline Drawing" />
       <Box pb={8} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
@@ -103,7 +103,7 @@ const PhotographySection = () => (
               />
             </Flex>
           </ImageWrapper>
-          <LensVisualization src="/lens.png" />
+          <LensVisualization src="/lens.png" alt="Camera Lens Exploded View" />
         </Flex>
       </Flex>
     </Flex>

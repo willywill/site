@@ -36,10 +36,10 @@ const AboutMeSection = () => (
     </Box>
     <Flex column style={{ position: 'relative' }}>
       <RellaxWrapper speed={2} percentage={0.9} style={{ transition: `transform 1.2s ${easingFunction}` }}>
-        <TriangleBackgroundElement src="/triangle.svg" />
+        <TriangleBackgroundElement src="/triangle.svg" alt="Triangle Background Element" />
       </RellaxWrapper>
       <RellaxWrapper speed={-2} percentage={0.9} style={{ transition: `transform 1.2s ${easingFunction}` }}>
-        <CircleBackgroundElement src="/circle.svg" />
+        <CircleBackgroundElement src="/circle.svg" alt="Circle Background Element" />
       </RellaxWrapper>
     </Flex>
     <Flex mt={5} width={1} align="center" column>

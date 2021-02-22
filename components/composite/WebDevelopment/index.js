@@ -31,7 +31,7 @@ const WebDevelopmentSection = () => (
   <Flex as="section" id="/web-development" column>
     <Flex pt={6} background={SECONDARY_COLOR} column style={{ position: 'relative', overflow: 'hidden', zIndex: 1 }}>
       <SectionHeading text="Web Development." position="3 / 6" flip />
-      <GitBranchVisualization height="100%" src="/git-branch.svg" />
+      <GitBranchVisualization height="100%" src="/git-branch.svg" alt="Git Branch Visual" />
       <Flex
         mx={mediaQuery('15%', { desktopSmall: '7%', desktopExtraLarge: '25%', desktop4K: '29%' })}
         flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}
