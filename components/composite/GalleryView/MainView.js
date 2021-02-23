@@ -1,3 +1,4 @@
+/* global window */
 import React from 'react';
 import { bool, shape, string } from 'prop-types';
 import styled from 'styled-components';
@@ -45,7 +46,7 @@ const MainView = ({ media }) => {
   if (media.isVideo) {
     return (
       <MainViewContainer key={media.src} justify="center" align="center" isVideo>
-        <Video key={media.src} width="100%" height="100%" loop autoPlay muted {...media.mediaProps}>
+        <Video key={media.src} width="100%" height="100%" loop autoPlay={typeof window !== 'undefined' && window.innerWidth > 650} muted disableRemotePlayback {...media.mediaProps}>
           <source src={media.src} type="video/mp4" />
           <track kind="captions" />
         </Video>
