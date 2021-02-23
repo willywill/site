@@ -32,7 +32,7 @@ const ImageItem = ({ src, title, description, flip }) => (
           {title}
         </ImageTitle>
       </Flex>
-      <Box mt={2} ml={mediaQuery(4, { desktopSmall: 1 })}>
+      <Box mt={2} mx={4} ml={mediaQuery(4, { desktopSmall: 1 })}>
         <Text data-aos="fade-in" data-aos-offset="-600" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
           {description}
         </Text>

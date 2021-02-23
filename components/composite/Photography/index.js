@@ -52,7 +52,7 @@ const LensVisualization = styled.img`
 
 const PhotographySection = () => (
   <Flex as="section" id="/photography" column>
-    <Flex mb={1} column style={{ position: 'relative' }}>
+    <Flex mb={1} column style={{ position: 'relative', overflow: 'hidden' }}>
       <CameraVisualization src="/visualizations/mirrorless.webp" alt="Mirrorless Outline Drawing" />
       <Box width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
@@ -107,7 +107,7 @@ const PhotographySection = () => (
             </ImageWrapper>
           </Box>
           <Box width={mediaQuery(0.15, { desktopSmall: 0.05 })} />
-          <Box mt={-6} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
+          <Box mt={6} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
             <ImageWrapper>
               <Flex mt={mediaQuery(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
                 <ImageItem

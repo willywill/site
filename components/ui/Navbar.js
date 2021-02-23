@@ -60,7 +60,7 @@ const LogoWrapper = styled(Flex)`
 `;
 
 const ContactMeButton = () => (
-  <a href="mailto:me@williamgermany.com">
+  <a href="mailto:me@williamgermany.com" style={{ textDecoration: 'none' }}>
     <ContactMeButtonWrapper justify="center" align="center">
       <i className="fa fa-envelope" style={{ marginBottom: '1px' }} />
     </ContactMeButtonWrapper>
