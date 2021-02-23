@@ -16,19 +16,19 @@ const OverviewSection = () => (
         <OverviewItem
           title="Computer Graphics"
           description="Photorealistic Visuals"
-          imageUrl="/minecraft.jpg"
+          imageUrl="/overview/minecraft.webp"
           link="/computer-graphics"
         />
         <OverviewItem
           title="Web Development"
           description="Engaging Products"
-          imageUrl="/code.png"
+          imageUrl="overview/code.webp"
           link="/web-development"
         />
         <OverviewItem
           title="Photography"
           description="Surreal Memories"
-          imageUrl="/photos/6.JPG"
+          imageUrl="overview/photography.webp"
           link="/photography"
         />
       </OverviewContainer>

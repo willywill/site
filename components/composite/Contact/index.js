@@ -46,7 +46,7 @@ const ContactSection = () => (
     })}
     >
       <a href="https://www.google.com/maps/place/Cincinnati,+OH/">
-        <CincinnatiImage src="/cincinnati.png" alt="Map" />
+        <CincinnatiImage src="/about-me/cincinnati.webp" alt="Map" />
       </a>
     </Box>
     <Flex

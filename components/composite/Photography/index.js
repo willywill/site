@@ -53,7 +53,7 @@ const LensVisualization = styled.img`
 const PhotographySection = () => (
   <Flex as="section" id="/photography" column>
     <Flex mb={1} mr={mediaQueryLessThan(7, 'mobileLarge', 6)} column style={{ position: 'relative' }}>
-      <CameraVisualization src="/mirrorless.png" alt="Mirrorless Outline Drawing" />
+      <CameraVisualization src="/visualizations/mirrorless.webp" alt="Mirrorless Outline Drawing" />
       <Box pb={8} width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
@@ -68,7 +68,7 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex justify="center">
               <ImageItem
-                src="/photos/portrait1.JPG"
+                src="/photography/photo-1.webp"
                 title="Sunrise Portrait"
                 description="A capture from morning with a very glowy ambient and indirect light"
                 flip
@@ -78,7 +78,7 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justify="center">
               <ImageItem
-                src="/photos/portrait2.JPG"
+                src="/photography/photo-2.webp"
                 title="Antique Winery"
                 description="An all encompasing glance at one of the oldest wineries in Ohio"
               />
@@ -87,7 +87,7 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex justify="center">
               <ImageItem
-                src="/photos/portrait5.jpg"
+                src="/photography/photo-3.webp"
                 title="Snowy Dog"
                 description="Playful dog captured while walking through the snow"
                 flip
@@ -97,13 +97,13 @@ const PhotographySection = () => (
           <ImageWrapper>
             <Flex mt={mediaQuery(7, 'tablet', '0px')} justify="center">
               <ImageItem
-                src="/photos/portrait4.JPG"
+                src="/photography/photo-4.webp"
                 title="Prom Night"
                 description="Golden hour shot of a prom night couple perfectly rim lit"
               />
             </Flex>
           </ImageWrapper>
-          <LensVisualization src="/lens.png" alt="Camera Lens Exploded View" />
+          <LensVisualization src="/visualizations/lens.png" alt="Camera Lens Exploded View" />
         </Flex>
       </Flex>
     </Flex>

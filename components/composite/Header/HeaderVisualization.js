@@ -61,9 +61,9 @@ const HeaderVisualization = () => {
 
   return (
     <>
-      <ImageLayer src="/scene1.png" id="parallax1" depth={0.0} />
-      <ImageLayer src="/scene2.png" id="parallax2" depth={0.5} />
-      <ImageLayer src="/scene3.png" id="parallax3" depth={1.0} />
+      <ImageLayer src="/visualizations/scene-1.webp" id="parallax1" depth={0.0} />
+      <ImageLayer src="/visualizations/scene-2.webp" id="parallax2" depth={0.5} />
+      <ImageLayer src="/visualizations/scene-3.webp" id="parallax3" depth={1.0} />
     </>
   );
 };

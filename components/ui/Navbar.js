@@ -79,7 +79,7 @@ const Navbar = () => (
     >
       <LogoWrapper justify="flex-start" align="center">
         <Box mt="24px" ml={mediaQueryLessThan(5, 'mobileLarge', '0px')}>
-          <img height="30px" src="/favicon.png" alt="Logo" />
+          <img height="30px" src="/favicon.webp" alt="Logo" />
         </Box>
       </LogoWrapper>
       <Flex justify="flex-end" align="center">

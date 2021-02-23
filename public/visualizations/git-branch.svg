@@ -1,0 +1,24 @@
+<svg width="800" height="599.9999999999999" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke="#2684ff" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="183.15176" x2="101.5" y1="63.45313" x1="101.5" stroke-width="1.5" fill="none"/>
+  <ellipse ry="5" rx="5" id="svg_4" cy="190.72656" cx="101.25" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="360.15176" x2="101" y1="198.95313" x1="101" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <ellipse ry="5" rx="5" id="svg_6" cy="368.72656" cx="101.75" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <path id="svg_9" d="m102.75,477.72656" opacity="0.5" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <line stroke="#2684ff" stroke-linecap="null" stroke-linejoin="null" id="svg_14" y2="599.29918" x2="102.25" y1="378.72656" x1="102.25" stroke-width="1.5" fill="none"/>
+  <path stroke="#2684ff" id="svg_15" d="m102.75,384.72656c2.36062,42.84171 27.58997,41.65361 36.30411,44.40686c21.0849,5.70219 17.73036,40.11326 18.44451,52.86651" stroke-width="1.5" fill="none"/>
+  <ellipse ry="5" rx="5" id="svg_17" cy="490.72656" cx="157.25" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_19" y2="601.96885" x2="157.25" y1="500.72656" x1="157.25" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <ellipse ry="5" rx="5" id="svg_20" cy="56.22656" cx="101.25" stroke-width="1.5" stroke="#2684ff" fill="none"/>
+  <line stroke="#2684ff" stroke-linecap="null" stroke-linejoin="null" id="svg_21" y2="-5.20488" x2="101.82143" y1="45.72656" x1="101.82143" stroke-width="1.5" fill="none"/>
+ </g>
+</svg>
