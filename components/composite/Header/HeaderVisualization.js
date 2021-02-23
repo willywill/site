@@ -28,7 +28,7 @@ const ImageLayer = styled.div`
 
 const HeaderVisualization = () => {
   const parallax = (e) => {
-    if (window.innerWidth < 450) return;
+    if (window.innerWidth < 650) return;
 
     const elem1 = document.querySelector('#parallax1');
     const elem2 = document.querySelector('#parallax2');
@@ -51,7 +51,7 @@ const HeaderVisualization = () => {
   };
 
   useEffect(() => {
-    if (window.innerWidth > 450) {
+    if (window.innerWidth > 650) {
       document.addEventListener('mousemove', throttle(100, parallax));
 
       return () => document.removeEventListener('mousemove', parallax);

@@ -60,14 +60,11 @@ const getScrollColor = (scrollPercentage) => {
   return SUBTITLE_COLOR;
 };
 
-// NOTE: This works in a production setting only
-// Causing flickering on `background-image: url` components in development environment
-// TODO: File an issue with Next.js?
 const ScrollIndicator = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    if (window.innerWidth < 450) {
+    if (window.innerWidth > 650) {
       const handleScroll = () => {
         const scrollAmount = document.body.scrollTop || document.documentElement.scrollTop;
         const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
