@@ -13,6 +13,7 @@ const theme = {
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     AOS.init({
+      disable: 'mobile',
       easing: 'custom-easing',
       once: true,
       offset: 200,
