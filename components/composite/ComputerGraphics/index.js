@@ -13,9 +13,9 @@ const cg = {
     title: 'Physically-based Sky',
     description: 'A real-time sky simulation that samples the atmosphere based on real properties of light entering and scattering throughout the atmosphere. This solution accounts for volumetric fog and includes a simple volumetric cloud solution.',
     gallery: [
-      { src: '/videos/pbr-sky.mp4', isVideo: true, isMain: true, mediaProps: {} },
+      { src: '/pbr-sky-1.jpg', isVideo: false, isMain: true, mediaProps: {} },
+      { src: '/videos/pbr-sky.mp4', isVideo: true, isMain: false, mediaProps: {} },
       { src: '/videos/pbr-clouds.mp4', isVideo: true, isMain: false, mediaProps: {} },
-      { src: '/pbr-sky-1.jpg', isVideo: false, isMain: false, mediaProps: {} },
       { src: '/pbr-sky-2.png', isVideo: false, isMain: false, mediaProps: {} },
     ],
     flip: false,
