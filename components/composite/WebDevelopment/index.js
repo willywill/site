@@ -45,19 +45,19 @@ const WebDevelopmentSection = () => (
           <ProductItem
             title="Voton"
             description="A simple real-time voting app that gives users the ability to create polls, share and vote on them. Built on NodeJS, PostgreSQL, GraphQL subscriptions, React"
-            imageUrl="/web-dev/web-dev-1.png"
+            imageUrl="/web-dev/web-dev-1.webp"
           />
           <ProductItem
             title="Wishlist Sync"
             description="An app that allows you to build and manage your wishlist, and share it with others, all without having to create an account. Built on NodeJS, GraphQL, MongoDB, React"
-            imageUrl="/web-dev/web-dev-2.png"
+            imageUrl="/web-dev/web-dev-2.webp"
           />
         </Flex>
         <Flex width={mediaQueryLessThan(0.5, 'tablet', 1)} mt={mediaQueryLessThan(7, 'tablet', '0px')} mb={7} column>
           <ProductItem
             title="This Website"
             description="This site was coded from scratch by me! Used to show off my skills and the things I've worked on, built on NextJS"
-            imageUrl="/web-dev/web-dev-3.png"
+            imageUrl="/web-dev/site.webp"
           />
           <ProductItem
             title="Coming Soon"
