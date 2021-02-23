@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../../utils/theme';
@@ -11,6 +12,8 @@ const MovingCubesWrapper = styled(Flex)`
 `;
 
 const MovingCubesComponent = () => {
+  return null;
+
   useEffect(() => {
     const movingCubesRenderer = new MovingCubes();
     movingCubesRenderer.initialize();
