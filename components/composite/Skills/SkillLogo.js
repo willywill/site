@@ -2,6 +2,7 @@ import React from 'react';
 import { string } from 'prop-types';
 import styled from 'styled-components';
 import { breakpoints, easingFunction } from '../../../utils/theme';
+import { Box } from '../../ui';
 
 const Logo = styled.img`
   width: 150px;
@@ -22,12 +23,14 @@ const Logo = styled.img`
 `;
 
 const SkillLogo = ({ src, alt, delay }) => (
-  <Logo
-    data-aos="fly-in-far"
-    data-aos-delay={delay}
-    src={src}
-    alt={alt}
-  />
+  <Box style={{ overflowY: 'hidden' }}>
+    <Logo
+      data-aos="fly-in-far"
+      data-aos-delay={delay}
+      src={src}
+      alt={alt}
+    />
+  </Box>
 );
 
 SkillLogo.displayName = 'SkillLogo';

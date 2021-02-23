@@ -10,7 +10,7 @@ const ImageLayer = styled.div`
   height: 100vh;
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
-  background-position: 400px 0px;
+  background-position: 520px 0px;
   background-repeat: no-repeat;
   opacity: 0.0;
   position: absolute;
@@ -37,9 +37,9 @@ const HeaderVisualization = () => {
     const h = window.innerHeight / 2;
     const mouseX = e.clientX;
     const mouseY = e.clientY;
-    const depth1 = `${(0.269 * window.innerWidth) - (mouseX - w) * 0.02}px ${50 - (mouseY - h) * 0.01}px`;
-    const depth2 = `${(0.282 * window.innerWidth) - (mouseX - w) * 0.1}px ${50 - (mouseY - h) * 0.2}px`;
-    const depth3 = `${(0.269 * window.innerWidth) - (mouseX - w) * 0.05}px ${50 - (mouseY - h) * 0.08}px`;
+    const depth1 = `${(0.180 * window.innerWidth) - (mouseX - w) * 0.02}px ${50 - (mouseY - h) * 0.01}px`;
+    const depth2 = `${(0.192 * window.innerWidth) - (mouseX - w) * 0.1}px ${50 - (mouseY - h) * 0.2}px`;
+    const depth3 = `${(0.180 * window.innerWidth) - (mouseX - w) * 0.05}px ${50 - (mouseY - h) * 0.08}px`;
     const x = `${depth3}`;
     const y = `${depth2}`;
     const z = `${depth1}`;

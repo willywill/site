@@ -21,7 +21,7 @@ const OpeningsSection = () => (
         {'I\'m available for work.'}
       </Text>
     </Box>
-    <Box width={1} maxWidth="1280px" mt={4} px={mediaQuery(7, { mobileSmall: 3, tablet: 6 })}>
+    <Box width={1} maxWidth="1280px" mt={4} px={mediaQuery('350px', { mobileSmall: 3, mobileLarge: 4, tablet: 6 })}>
       <Text data-aos="fly-in" data-aos-delay="1200" center color={WHITE} letterSpacing={-0.3}>
         {'I\'m currently working a full-time position, but I am actively seeking a part-time role for a more continued effort or gig work related to the things I know best. '}
       </Text>

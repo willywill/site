@@ -14,7 +14,7 @@ const CameraVisualization = styled.img`
   top: 5%;
   position: absolute;
   right: -100px;
-  opacity: 0.875;
+  opacity: 0.4;
   user-select: none;
   z-index: -1;
 
@@ -24,7 +24,7 @@ const CameraVisualization = styled.img`
     right: -200px;
   }
 
-  @media (max-width: ${breakpoints.mobileLarge}) {
+  @media (max-width: ${breakpoints.tablet}) {
     width: 60%;
     top: 5%;
     right: 0px;
@@ -34,10 +34,10 @@ const CameraVisualization = styled.img`
 const LensVisualization = styled.img`
   width: 35%;
   max-width: 700px;
-  bottom: 5%;
+  bottom: 0%;
   position: absolute;
   left: 100px;
-  opacity: 0.4;
+  opacity: 0.2;
   user-select: none;
   z-index: -1;
 
@@ -52,57 +52,72 @@ const LensVisualization = styled.img`
 
 const PhotographySection = () => (
   <Flex as="section" id="/photography" column>
-    <Flex mb={1} mr={mediaQueryLessThan(7, 'mobileLarge', 6)} column style={{ position: 'relative' }}>
+    <Flex mb={1} column style={{ position: 'relative' }}>
       <CameraVisualization src="/visualizations/mirrorless.webp" alt="Mirrorless Outline Drawing" />
-      <Box pb={8} width={1} mt={6}>
+      <Box width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
-      <Flex width={1} mr={6} ml={mediaQueryLessThan(6, 'mobileLarge', '80px')} justify="center">
+      <Flex width={1} mr={6} ml={4} mt={5} mb={7} align="center" column>
         <Flex
-          width={mediaQuery(1, { desktopExtraLarge: 0.65, desktop4K: 0.55 })}
-          ml={mediaQueryLessThan(6, 'mobileLarge', 5)}
-          justify="space-between"
-          style={{ flexWrap: 'wrap' }}
+          width={1}
+          justify="center"
           flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}
         >
-          <ImageWrapper>
-            <Flex justify="center">
-              <ImageItem
-                src="/photography/photo-1.webp"
-                title="Sunrise Portrait"
-                description="A capture from morning with a very glowy ambient and indirect light"
-                flip
-              />
-            </Flex>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justify="center">
-              <ImageItem
-                src="/photography/photo-2.webp"
-                title="Antique Winery"
-                description="An all encompasing glance at one of the oldest wineries in Ohio"
-              />
-            </Flex>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Flex justify="center">
-              <ImageItem
-                src="/photography/photo-3.webp"
-                title="Snowy Dog"
-                description="Playful dog captured while walking through the snow"
-                flip
-              />
-            </Flex>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Flex mt={mediaQuery(7, 'tablet', '0px')} justify="center">
-              <ImageItem
-                src="/photography/photo-4.webp"
-                title="Prom Night"
-                description="Golden hour shot of a prom night couple perfectly rim lit"
-              />
-            </Flex>
-          </ImageWrapper>
+          <Box mb={5} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
+            <ImageWrapper>
+              <Flex justifyContent={mediaQueryLessThan('flex-end', 'tablet', 'center')}>
+                <ImageItem
+                  src="/photography/photo-1.webp"
+                  title="Sunrise Portrait"
+                  description="A capture from morning with a very glowy ambient and indirect light"
+                  flip
+                />
+              </Flex>
+            </ImageWrapper>
+          </Box>
+          <Box width={mediaQuery(0.15, { desktopSmall: 0.05 })} />
+          <Box mb={5} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
+            <ImageWrapper>
+              <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
+                <ImageItem
+                  src="/photography/photo-2.webp"
+                  title="Antique Winery"
+                  description="An all encompasing glance at one of the oldest wineries in Ohio"
+                />
+              </Flex>
+            </ImageWrapper>
+          </Box>
+        </Flex>
+        <Flex
+          mt={4}
+          width={1}
+          justify="center"
+          flexDirection={mediaQueryLessThan('row', 'tablet', 'column')}
+        >
+          <Box width={mediaQueryLessThan(0.35, 'tablet', 1)}>
+            <ImageWrapper>
+              <Flex justifyContent={mediaQueryLessThan('flex-end', 'tablet', 'center')}>
+                <ImageItem
+                  src="/photography/photo-4.webp"
+                  title="Snowy Dog"
+                  description="Playful dog captured while walking through the snow"
+                  flip
+                />
+              </Flex>
+            </ImageWrapper>
+          </Box>
+          <Box width={mediaQuery(0.15, { desktopSmall: 0.05 })} />
+          <Box mt={-6} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
+            <ImageWrapper>
+              <Flex mt={mediaQuery(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
+                <ImageItem
+                  src="/photography/photo-3.webp"
+                  title="Prom Night"
+                  description="Golden hour shot of a prom night couple perfectly rim lit"
+                />
+              </Flex>
+            </ImageWrapper>
+          </Box>
           <LensVisualization src="/visualizations/lens.png" alt="Camera Lens Exploded View" />
         </Flex>
       </Flex>

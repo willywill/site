@@ -21,12 +21,12 @@ const Header = () => (
     <Page backgroundColor={SECONDARY_COLOR}>
       <ScrollNotice />
       <HeaderVisualization />
-      <Flex height="100vh" py={mediaQuery('10%', { mobileSmall: '35%', mobileLarge: '35%', tablet: '20%', desktopSmall: '20%' })} justify="space-between" column style={{ zIndex: 1 }}>
+      <Flex height="100vh" py={mediaQuery('10%', { mobileSmall: '35%', mobileLarge: '35%', tablet: '20%', desktopSmall: '10%' })} justify="space-between" column style={{ zIndex: 1 }}>
         <Box pr={mediaQueryLessThan('70vw', 'mobileLarge', '25vw')}>
-          <AccentBar />
+          <AccentBar animateImmediately />
         </Box>
-        <Box pl={mediaQuery('35vw', { tablet: '70vw', desktopSmall: '70vw' })}>
-          <AccentBar reversed />
+        <Box pl={mediaQuery('35vw', { mobileSmall: '25vw', tablet: '70vw', desktopSmall: '35vw' })}>
+          <AccentBar animateImmediately reversed />
         </Box>
       </Flex>
     </Page>

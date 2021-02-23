@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import RellaxWrapper from 'react-rellax-wrapper';
 import {
   PRIMARY_COLOR, SUBTITLE_COLOR, SECONDARY_COLOR, easingFunction, mediaQueryLessThan,
+  breakpoints,
 } from '../../../utils/theme';
 import { Flex, Box, Text } from '../../ui';
 import AccentBar from '../../ui/AccentBar';
@@ -11,20 +12,34 @@ import CirclePortrait from './CirclePortrait';
 
 const TriangleBackgroundElement = styled.img`
   width: 30%;
-  top: 15%;
+  max-width: 600px;
+  top: 250px;
   position: absolute;
   right: 100px;
   opacity: 0.15;
+  transform: rotateZ(5deg);
   user-select: none;
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    top: 383px;
+    right: -20px;
+    width: 60%;
+  }
 `;
 
 const CircleBackgroundElement = styled.img`
   width: 35%;
-  top: 500px;
+  max-width: 600px;
+  top: 640px;
   position: absolute;
   left: 10px;
   opacity: 0.15;
   user-select: none;
+
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    left: -40px;
+    width: 60%;
+  }
 `;
 
 const getYearsOfExperience = () => (new Date().getFullYear()) - 2012;

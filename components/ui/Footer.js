@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Flex, Box, Text } from '.';
@@ -123,12 +124,25 @@ const PrivacyPolicy = () => {
   );
 };
 
+const ConnectLink = ({ href, icon }) => (
+  <a href={href}>
+    <ConnectIcon>
+      <i className={`fa fa-${icon} fa-fw`} />
+    </ConnectIcon>
+  </a>
+);
+
+ConnectLink.propTypes = {
+  href: string.isRequired,
+  icon: string.isRequired,
+};
+
 // TODO: Refactor this component and move it out of the UI folder
 const Footer = () => (
   <FooterContainer>
     <Flex width={1} pb={4} justify="space-between">
       {/* Navigation */}
-      <Flex pl={mediaQuery(6, { mobileSmall: '20px', tablet: '95px' })} pt={5} width={0.5} column>
+      <Flex pl={mediaQuery(6, { mobileSmall: '20px', mobileLarge: '35px', tablet: '95px' })} pt={5} width={0.5} column>
         <Text uppercase color={PRIMARY_COLOR} letterSpacing={0.3}>
           {'Navigation'}
         </Text>
@@ -190,26 +204,14 @@ const Footer = () => (
         </Box>
         <Flex mt={4} ml={4} width={0.5} justify="center" style={{ flexWrap: 'wrap' }}>
           <Flex>
-            <ConnectIcon>
-              <i className="fa fa-twitter fa-fw" />
-            </ConnectIcon>
-            <ConnectIcon>
-              <i className="fa fa-instagram fa-fw" />
-            </ConnectIcon>
-            <ConnectIcon>
-              <i className="fa fa-github fa-fw" />
-            </ConnectIcon>
+            <ConnectLink href="https://twitter.com/WGermany" icon="twitter" />
+            <ConnectLink href="https://instagram.com/_ice.photography_" icon="instagram" />
+            <ConnectLink href="https://github.com/willywill" icon="github" />
           </Flex>
           <Flex>
-            <ConnectIcon>
-              <i className="fa fa-gitlab fa-fw" />
-            </ConnectIcon>
-            <ConnectIcon>
-              <i className="fa fa-linkedin fa-fw" />
-            </ConnectIcon>
-            <ConnectIcon>
-              <i className="fa fa-facebook fa-fw" />
-            </ConnectIcon>
+            <ConnectLink href="https://gitlab.com/WillGermany" icon="gitlab" />
+            <ConnectLink href="https://linkedin.com/in/williamgermany" icon="linkedin" />
+            <ConnectLink href="https://facebook.com/WGermany" icon="facebook" />
           </Flex>
         </Flex>
       </Flex>

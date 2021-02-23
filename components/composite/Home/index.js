@@ -1,10 +1,10 @@
 import React from 'react';
-import { mediaQueryLessThan, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../../utils/theme';
+import { mediaQueryLessThan, mediaQuery, PRIMARY_COLOR, SUBTITLE_COLOR } from '../../../utils/theme';
 import { Flex, Box, Text, Heading } from '../../ui';
 
 const HomeSection = () => (
   <Flex width={1}>
-    <Box width={mediaQueryLessThan(0.6, 'desktopSmall', 1)}>
+    <Box width={mediaQuery(0.6, { mobileSmall: 1, mobileLarge: 1, tablet: 1, desktopSmall: 0.9 })}>
       <Flex width={1} height="calc(100vh - 62px)" align="center" justify="center" column>
         <Flex width={1} px="15%" pb={1} style={{ overflow: 'hidden' }}>
           <Heading size={1} data-aos="fly-in" center extraLarge color={PRIMARY_COLOR} weight={700} letterSpacing={-2.56}>
@@ -19,7 +19,7 @@ working on full-stack web development, real-time computer graphics and photograp
         </Box>
       </Flex>
     </Box>
-    <Box width={mediaQueryLessThan(0.4, 'desktopSmall', '0px')} />
+    <Box width={mediaQueryLessThan(0.4, 'tablet', '0px')} />
   </Flex>
 );
 

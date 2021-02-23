@@ -6,9 +6,8 @@ import { easingFunction } from '../../../utils/theme';
 const ImageWrapper = ({ slow, children }) => (
   <RellaxWrapper
     speed={2}
+    percentage={0.9}
     style={{
-      width: '50%',
-      height: '1000px',
       transition: `transform ${slow ? 1.7 : 1.2}s ${easingFunction}`,
     }}
   >

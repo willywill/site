@@ -2,11 +2,8 @@ import styled from 'styled-components';
 import { breakpoints, PRIMARY_COLOR } from '../../../utils/theme';
 
 const ImageBackground = styled.div`
-  margin-top: 500px;
-  width: 26vw;
-  max-width: 500px;
-  height: 65vh;
-  max-height: 700px;
+  width: 480px;
+  height: 700px;
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
   background-position: center;
@@ -15,10 +12,8 @@ const ImageBackground = styled.div`
   &::before {
     content: "";
     position: absolute;
-    width: 26vw;
-    max-width: 500px;
-    height: 65vh;
-    max-height: 700px;
+    width: 480px;
+    height: 700px;
     top: 25px;
     left: ${(props) => (props.flip ? '-25px' : '25px')};
     background-color: ${PRIMARY_COLOR};
@@ -29,10 +24,8 @@ const ImageBackground = styled.div`
   &::after {
     content: "";
     position: absolute;
-    width: 26vw;
-    max-width: 500px;
-    height: 65vh;
-    max-height: 700px;
+    width: 480px;
+    height: 700px;
     top: 50px;
     left: ${(props) => (props.flip ? '-50px' : '50px')};
     background-color: ${PRIMARY_COLOR};
@@ -40,33 +33,33 @@ const ImageBackground = styled.div`
     z-index: -2;
   }
 
-  @media screen and (min-device-width: ${breakpoints.tablet}) and (max-device-width: ${breakpoints.desktopSmall}) {
-    width: 45vw;
-    height: 55vh;
+  @media (max-width: 1350px) {
+    width: 380px;
+    height: 600px;
 
     &::before {
-      width: 45vw;
-      height: 55vh;
+      width: 380px;
+      height: 600px;
     }
 
     &::after {
-      width: 45vw;
-      height: 55vh;
+      width: 380px;
+      height: 600px;
     }
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 70vw;
-    height: 58vh;
+  @media (max-width: ${breakpoints.mobileLarge}) {
+    width: 280px;
+    height: 500px;
 
     &::before {
-      width: 70vw;
-      height: 58vh;
+      width: 280px;
+      height: 500px;
     }
 
     &::after {
-      width: 70vw;
-      height: 58vh;
+      width: 280px;
+      height: 500px;
     }
   }
 `;
