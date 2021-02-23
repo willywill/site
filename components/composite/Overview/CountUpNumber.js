@@ -8,19 +8,22 @@ import { Text } from '../../ui';
 const CountUpNumber = ({ end }) => {
   const { countUp, reset, start } = useCountUp({ end, useEasing: true, duration: 3 });
 
-  const handleAnimateInEvent = ({ detail }) => {
-    if (detail?.id === 'count-up') {
-      reset();
-      start();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('aos:in', handleAnimateInEvent);
-    return () => {
-      document.removeEventListener('aos:in', handleAnimateInEvent);
+  // eslint-disable-next-line no-constant-condition
+  if (false) {
+    const handleAnimateInEvent = ({ detail }) => {
+      if (detail?.id === 'count-up') {
+        reset();
+        start();
+      }
     };
-  }, []);
+
+    useEffect(() => {
+      document.addEventListener('aos:in', handleAnimateInEvent);
+      return () => {
+        document.removeEventListener('aos:in', handleAnimateInEvent);
+      };
+    }, []);
+  }
 
   return (
     <Text extraLarge bold color={PRIMARY_COLOR}>
