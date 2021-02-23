@@ -51,7 +51,7 @@ const SubView = ({ media, onClick }) => {
     return (
       <SubViewContainer key={media.src} justify="center" align="center" onClick={onClick} isVideo>
         <PlayButton className="fa fa-play" />
-        <Video key={media.src} width="100%" height="100%" autoPlay={false} muted {...media.mediaProps}>
+        <Video key={media.src} width="100%" height="100%" autoPlay={false} muted disableRemotePlayback {...media.mediaProps}>
           <source src={media.src} type="video/mp4" />
           <track kind="captions" />
         </Video>
