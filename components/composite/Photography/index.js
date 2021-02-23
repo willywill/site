@@ -57,7 +57,7 @@ const PhotographySection = () => (
       <Box width={1} mt={6}>
         <SectionHeading text="Photography." position="4 / 6" />
       </Box>
-      <Flex width={1} mr={6} ml={4} mt={5} mb={7} align="center" column>
+      <Flex width={1} mr={6} ml={4} mt={5} mb={8} align="center" column>
         <Flex
           width={1}
           justify="center"
