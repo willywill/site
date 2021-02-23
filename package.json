@@ -14,7 +14,6 @@
   "dependencies": {
     "@rebass/grid": "^6.1.0",
     "aos": "^3.0.0-beta.6",
-    "gsap": "^3.6.0",
     "lodash": "^4.17.20",
     "next": "^10.0.5",
     "next-seo": "^4.19.0",
@@ -24,8 +23,7 @@
     "react-dom": "^17.0.1",
     "react-rellax-wrapper": "^1.0.6",
     "styled-components": "^5.2.1",
-    "styled-reset": "^4.3.4",
-    "three": "^0.125.2"
+    "styled-reset": "^4.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
