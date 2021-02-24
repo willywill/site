@@ -211,7 +211,7 @@ const Footer = () => (
           <Flex>
             <ConnectLink href="https://gitlab.com/WillGermany" icon="gitlab" />
             <ConnectLink href="https://linkedin.com/in/williamgermany" icon="linkedin" />
-            <ConnectLink href="https://facebook.com/WGermany" icon="facebook" />
+            <ConnectLink href="https://facebook.com/ICE-Photography-116955907101408/" icon="facebook" />
           </Flex>
         </Flex>
       </Flex>
