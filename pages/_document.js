@@ -10,7 +10,6 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="/favicon.webp" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
           <meta name="keywords" content="Portfolio, Engineer, Software, Programming, William, Germany" />
           <meta name="language" content="en" />
@@ -21,6 +20,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <style>@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap);</style>
           <script async defer data-domain="williamgermany.com" src="https://plausible.io/js/plausible.js" />
         </body>
       </Html>

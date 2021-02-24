@@ -41,7 +41,7 @@ const OverviewSection = () => (
         </Text>
       </Flex>
       <Flex mr={5} align="center" column>
-        <CountUpNumber end="8954" />
+        <CountUpNumber end="12954" />
         <Text center color={SUBTITLE_COLOR}>
           {'Code Commits'}
         </Text>

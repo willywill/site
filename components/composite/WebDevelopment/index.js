@@ -45,12 +45,12 @@ const WebDevelopmentSection = () => (
           <ProductItem
             title="Voton"
             description="A simple real-time voting app that gives users the ability to create polls, share and vote on them. Built on NodeJS, PostgreSQL, GraphQL subscriptions, React"
-            imageUrl="/web-dev/web-dev-1.webp"
+            imageUrl="/web-dev/voton.webp"
           />
           <ProductItem
             title="Wishlist Sync"
             description="An app that allows you to build and manage your wishlist, and share it with others, all without having to create an account. Built on NodeJS, GraphQL, MongoDB, React"
-            imageUrl="/web-dev/web-dev-2.webp"
+            imageUrl="/web-dev/wishlist-sync.webp"
           />
         </Flex>
         <Flex width={mediaQueryLessThan(0.5, 'tablet', 1)} mt={mediaQueryLessThan(7, 'tablet', '0px')} mb={7} column>
@@ -62,6 +62,7 @@ const WebDevelopmentSection = () => (
           <ProductItem
             title="Coming Soon"
             description="A website built for a local small business, using VueJS, Shopify, NodeJS & MySQL"
+            imageUrl="/web-dev/coming-soon.webp"
           />
         </Flex>
       </Flex>
