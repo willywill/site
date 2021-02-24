@@ -5,7 +5,7 @@ import { ServerStyleSheet } from 'styled-components';
 export default class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" prefix="og: https://ogp.me/ns#">
         <Head>
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="/favicon.webp" />

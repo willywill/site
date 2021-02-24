@@ -40,7 +40,7 @@ const Page = ({ children, backgroundColor }) => (
         description: "I'm a self-taught software engineer working on full-stack web development, real-time computer graphics and photography.",
         images: [
           {
-            url: 'https://laughing-colden-7778c6.netlify.app/self.webp', // 'https://williamgermany.com/self.webp',
+            url: 'https://laughing-colden-7778c6.netlify.app/about-me/self.webp', // 'https://williamgermany.com/self.webp',
             width: 600,
             height: 400,
             alt: 'Self Portrait',
@@ -50,7 +50,7 @@ const Page = ({ children, backgroundColor }) => (
       twitter={{
         handle: '@WillGermany',
         site: '@WillGermany',
-        cardType: 'summary_large_image',
+        cardType: 'summary',
       }}
     />
     {children}
