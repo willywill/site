@@ -14,7 +14,7 @@ const HomeSection = () => (
         <Box maxWidth={600} mt={4} px={mediaQueryLessThan(undefined, 'mobileLarge', 3)}>
           <Text data-aos="fly-in" data-aos-delay="400" center fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
             {`I'm a self-taught software engineer
-working on full-stack web development, real-time computer graphics and photography.`}
+working on full-stack web development, real-time computer graphics, and photography.`}
           </Text>
         </Box>
       </Flex>

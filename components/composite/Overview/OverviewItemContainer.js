@@ -27,7 +27,7 @@ const OverviewItemComponent = styled(Flex)`
   }
 
   @media (max-width: ${breakpoints.desktopSmall}) {
-    width: 75vw;
+    width: 90vw;
     height: 25vh;
     filter: saturate(0.85);
     background-size: cover;

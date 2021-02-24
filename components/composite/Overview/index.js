@@ -35,19 +35,19 @@ const OverviewSection = () => (
     </Flex>
     <Flex data-aos="fly-in" data-aos-offset="-50" id="count-up" mt={5} width={1} justify="center">
       <Flex mx={5} align="center" column>
-        <CountUpNumber end="218" />
+        <CountUpNumber end="307" />
         <Text center color={SUBTITLE_COLOR}>
           {'Shaders Written'}
         </Text>
       </Flex>
       <Flex mr={5} align="center" column>
-        <CountUpNumber end="12853" />
+        <CountUpNumber end="8954" />
         <Text center color={SUBTITLE_COLOR}>
           {'Code Commits'}
         </Text>
       </Flex>
       <Flex mr={5} align="center" column>
-        <CountUpNumber end="5011" />
+        <CountUpNumber end="6283" />
         <Text center color={SUBTITLE_COLOR}>
           {'Photos Taken'}
         </Text>

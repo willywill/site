@@ -65,7 +65,7 @@ const PhotographySection = () => (
         >
           <Box mb={5} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
             <ImageWrapper>
-              <Flex justifyContent={mediaQueryLessThan('flex-end', 'tablet', 'center')}>
+              <Flex ml={mediaQueryLessThan('0px', 'tablet', '15px')} justifyContent={mediaQueryLessThan('flex-end', 'tablet', 'center')}>
                 <ImageItem
                   src="/photography/photo-1.webp"
                   title="Sunrise Portrait"
@@ -75,10 +75,10 @@ const PhotographySection = () => (
               </Flex>
             </ImageWrapper>
           </Box>
-          <Box width={mediaQuery(0.15, { desktopSmall: 0.05 })} />
+          <Box width={mediaQuery(0.15, { mobileSmall: '0px', desktopSmall: 0.05 })} />
           <Box mb={5} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
             <ImageWrapper>
-              <Flex mt={mediaQueryLessThan(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
+              <Flex mr={mediaQueryLessThan('0px', 'tablet', '35px')} mt={mediaQueryLessThan(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
                 <ImageItem
                   src="/photography/photo-2.webp"
                   title="Antique Winery"
@@ -106,10 +106,10 @@ const PhotographySection = () => (
               </Flex>
             </ImageWrapper>
           </Box>
-          <Box width={mediaQuery(0.15, { desktopSmall: 0.05 })} />
+          <Box width={mediaQuery(0.15, { mobileSmall: '0px', desktopSmall: 0.05 })} />
           <Box mt={6} width={mediaQueryLessThan(0.35, 'tablet', 1)}>
             <ImageWrapper>
-              <Flex mt={mediaQuery(7, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
+              <Flex mr={mediaQueryLessThan('0px', 'tablet', '35px')} mt={mediaQueryLessThan(5, 'tablet', '0px')} justifyContent={mediaQueryLessThan('flex-start', 'tablet', 'center')}>
                 <ImageItem
                   src="/photography/photo-3.webp"
                   title="Prom Night"

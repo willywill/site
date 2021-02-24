@@ -3,7 +3,7 @@ import RellaxWrapper from 'react-rellax-wrapper';
 import { bool, string } from 'prop-types';
 import styled from 'styled-components';
 import {
-  easingFunction, EXTRA_DARK, mediaQuery, MEDIUM_SIZE,
+  easingFunction, EXTRA_DARK, MEDIUM_SIZE,
   mediaQueryLessThan, PRIMARY_COLOR, SUBTITLE_COLOR, breakpoints,
 } from '../../../utils/theme';
 import { Box, Flex, Text } from '../../ui';
@@ -26,13 +26,13 @@ const ImageItem = ({ src, title, description, flip }) => (
         transition: `transform 2s ${easingFunction}`,
       }}
     >
-      <Flex data-aos="fly-in" data-aos-offset="-600" ml={mediaQuery(4, { desktopSmall: 1 })} align="center">
+      <Flex data-aos="fly-in" data-aos-offset="-600" ml={mediaQueryLessThan(4, 'desktopSmall', 1)} align="center">
         <Box width={mediaQueryLessThan(50, 'mobileLarge', 25)} height="2px" mr={2} background={PRIMARY_COLOR} />
         <ImageTitle medium bold color={EXTRA_DARK} letterSpacing={-1}>
           {title}
         </ImageTitle>
       </Flex>
-      <Box mt={2} mx={4} ml={mediaQuery(4, { desktopSmall: 1 })}>
+      <Box maxWidth="320px" mt={2} ml={mediaQueryLessThan(4, 'desktopSmall', 1)} mr={1}>
         <Text data-aos="fade-in" data-aos-offset="-600" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
           {description}
         </Text>

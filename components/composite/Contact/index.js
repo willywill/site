@@ -31,8 +31,8 @@ const HoverBox = styled(Box)`
 `;
 
 const CincinnatiImage = styled.img`
+  transform: translateY(2px);
   width: 100%;
-  height: 100%;
 `;
 
 const ContactSection = () => (

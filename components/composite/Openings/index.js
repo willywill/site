@@ -26,18 +26,20 @@ const OpeningsSection = () => (
         {'I\'m currently working a full-time position, but I am actively seeking a part-time role for a more continued effort or gig work related to the things I know best. '}
       </Text>
       <Box my={2} />
-      <Text data-aos="fly-in" data-aos-delay="1600" center color={WHITE} letterSpacing={-0.3}>
-        {'Feel free to reach out to me about what it is we can work on together. I look forward to applying my creativity and skills towards any projects neccessary.'}
+      <Text data-aos="fly-in" data-aos-delay="1400" center color={WHITE} letterSpacing={-0.3}>
+        {'Feel free to reach out to me about what it is we can work on together. I look forward to applying my creativity and skills towards any projects necessary.'}
       </Text>
     </Box>
     <Box mt={5} mb={6}>
       <Flex style={{ position: 'relative' }}>
-        <OutlineButton width="200" height="70">
-          <rect width="200" height="70" style={{ fill: 'rgba(0, 0, 0, 0)', strokeWidth: 2, stroke: 'rgb(255, 255, 255)' }} />
-        </OutlineButton>
-        <Text color={WHITE} thin uppercase>
-          {'Get in touch'}
-        </Text>
+        <a href="mailto:me@williamgermany.com" style={{ textDecoration: 'none' }}>
+          <OutlineButton width="200" height="70">
+            <rect width="200" height="70" style={{ fill: 'rgba(0, 0, 0, 0)', strokeWidth: 2, stroke: 'rgb(255, 255, 255)' }} />
+          </OutlineButton>
+          <Text color={WHITE} thin uppercase>
+            {'Get in touch'}
+          </Text>
+        </a>
       </Flex>
     </Box>
     <Box pl="25%">

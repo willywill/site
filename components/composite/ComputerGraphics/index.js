@@ -11,7 +11,7 @@ import SectionHeading from '../SectionHeading';
 const cg = {
   pbrSky: {
     title: 'Physically-based Sky',
-    description: 'A real-time sky simulation that samples the atmosphere based on real properties of light entering and scattering throughout the atmosphere. This solution accounts for volumetric fog and includes a simple volumetric cloud solution.',
+    description: 'A real-time sky simulation that provides a full day-night transition. It mimics the sky based on real properties of light entering and scattering throughout the atmosphere. This solution accounts for volumetric fog and includes a simple volumetric cloud solution.',
     gallery: [
       { src: '/computer-graphics/pbr-sky-1.webp', isVideo: false, isMain: true },
       { src: '/videos/pbr-sky.mp4', isVideo: true, isMain: false },
@@ -22,7 +22,7 @@ const cg = {
   },
   oceanRendering: {
     title: 'Ocean Rendering',
-    description: 'A real-time ocean simulation that respects wind speeds that shape the waves, and responds to the Sun\'s angle to create reflections and scatter light appropriately throughout the surface of the water.',
+    description: 'A real-time ocean simulation that respects wind speeds shaping the waves, and responds to the Sun\'s angle to create reflections and scatter light appropriately throughout the surface of the water.',
     gallery: [
       { src: '/computer-graphics/ocean-1.webp', isVideo: false, isMain: true },
       { src: '/videos/ocean.mp4', isVideo: true, isMain: false },
@@ -33,7 +33,7 @@ const cg = {
   },
   cameraSimulation: {
     title: 'Camera Simulation',
-    description: 'A-real time camera simulation that acts as a modern digital camera with ISO control, aperture control, and shutter speed control. Also features multiple metering modes for auto exposure and cinematic lens properties for creating anamorphic bokeh. Additionally, there is some custom-made lens flare effects, creating a realistic starburst effect on bright surfaces.',
+    description: 'A real-time camera simulation that acts as a modern digital camera with ISO, aperture, and shutter speed control. It also features multiple metering modes for auto exposure and cinematic lens properties for creating anamorphic bokeh. Additionally, there is some custom-made lens flare effects, creating a realistic starburst effect on bright surfaces.',
     gallery: [
       { src: '/computer-graphics/camera-3.webp', isVideo: false, isMain: true },
       { src: '/computer-graphics/camera-1.webp', isVideo: false, isMain: false },

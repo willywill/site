@@ -69,11 +69,11 @@ const AboutMeSection = () => (
       </Text>
       <Box mt={4} width={mediaQueryLessThan(0.4, 'tablet', 0.75)}>
         <Text center data-aos="fly-in" data-aos-delay="800" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
-          {'I have a strong passion for technology, programming, mathematics and art. I taught myself different ways to apply these concepts to build '}<strong style={{ fontWeight: 'bolder' }}>creative</strong>{' solutions to real world problems.'}
+          {'I have a strong passion for technology, programming, mathematics and art. I taught myself different ways to apply these concepts to build '}<strong style={{ fontWeight: 'bolder' }}>creative</strong>{' solutions to real-world problems.'}
         </Text>
         <Box mt={4}>
           <Text center data-aos="fly-in" data-aos-delay="1000" fontSize="1.3rem" color={SUBTITLE_COLOR} letterSpacing={-0.3}>
-            {'Roughly '}<strong style={{ fontWeight: 'bolder' }}>{getYearsOfExperience()}{' years of experience'}</strong>{', from tinkering with files to enhance video games, developing complex 3D games with groups, being the lead programmer on the robotics team, to making full on production applications used by Fortune 500 companies.'}
+            {'Roughly '}<strong style={{ fontWeight: 'bolder' }}>{getYearsOfExperience()}{' years of experience'}</strong>{', from tinkering with files to enhance video games, being the lead programmer on the robotics team, developing complex 3D games with others, to making production-ready applications used by top companies today.'}
           </Text>
         </Box>
       </Box>
