@@ -204,7 +204,7 @@ const Footer = () => (
         </Box>
         <Flex mt={4} ml={4} width={0.5} justify="center" style={{ flexWrap: 'wrap' }}>
           <Flex>
-            <ConnectLink href="https://twitter.com/WGermany" icon="twitter" />
+            <ConnectLink href="https://twitter.com/WillGermany" icon="twitter" />
             <ConnectLink href="https://instagram.com/_ice.photography_" icon="instagram" />
             <ConnectLink href="https://github.com/willywill" icon="github" />
           </Flex>

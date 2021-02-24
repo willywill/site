@@ -88,12 +88,4 @@ const WebDevelopmentSection = () => (
 
 WebDevelopmentSection.displayName = 'WebDevelopmentSection';
 
-WebDevelopmentSection.propTypes = {
-
-};
-
-WebDevelopmentSection.defaultProps = {
-
-};
-
 export default WebDevelopmentSection;
