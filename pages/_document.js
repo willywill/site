@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="128x128" href="/favicon.webp" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-          <meta name="twitter:image" content="https://williamgermany.com/about-me/self.webp" />
+          <meta name="twitter:image" content="https://williamgermany.com/about-me/self.jpg" />
           <meta name="twitter:image:alt" content="Self Portrait" />
           <meta name="keywords" content="Portfolio, Engineer, Software, Programming, William, Germany" />
           <meta name="language" content="en" />

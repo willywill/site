@@ -43,7 +43,7 @@ const Page = ({ children, backgroundColor }) => (
         description: "I'm a self-taught software engineer working on full-stack web development, real-time computer graphics and photography.",
         images: [
           {
-            url: 'https://williamgermany.com/about-me/self.webp',
+            url: 'https://williamgermany.com/about-me/self.jpg',
             width: 300,
             height: 200,
             alt: 'Self Portrait',
