@@ -82,7 +82,7 @@ const PhotographySection = () => (
                 <ImageItem
                   src="/photography/photo-2.webp"
                   title="Antique Winery"
-                  description="An all encompasing glance at one of the oldest wineries in Ohio"
+                  description="An all encompassing glance at one of the oldest wineries in Ohio"
                 />
               </Flex>
             </ImageWrapper>
@@ -139,13 +139,5 @@ const PhotographySection = () => (
 );
 
 PhotographySection.displayName = 'PhotographySection';
-
-PhotographySection.propTypes = {
-
-};
-
-PhotographySection.defaultProps = {
-
-};
 
 export default PhotographySection;

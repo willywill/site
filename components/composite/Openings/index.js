@@ -50,12 +50,4 @@ const OpeningsSection = () => (
 
 OpeningsSection.displayName = 'OpeningsSection';
 
-OpeningsSection.propTypes = {
-
-};
-
-OpeningsSection.defaultProps = {
-
-};
-
 export default OpeningsSection;
