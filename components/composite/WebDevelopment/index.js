@@ -60,8 +60,8 @@ const WebDevelopmentSection = () => (
             imageUrl="/web-dev/site.webp"
           />
           <ProductItem
-            title="Coming Soon"
-            description="A website built for a local small business, using VueJS, Shopify, NodeJS & MySQL"
+            title="TBA"
+            description="A Shopify website built for a local small business, a custom-made construction page and dynamic emails"
             imageUrl="/web-dev/coming-soon.webp"
           />
         </Flex>

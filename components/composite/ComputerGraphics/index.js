@@ -27,7 +27,7 @@ const cg = {
       { src: '/computer-graphics/ocean-1.webp', isVideo: false, isMain: true },
       { src: '/videos/ocean.mp4', isVideo: true, isMain: false },
       { src: '/computer-graphics/ocean-2.webp', isVideo: false, isMain: false },
-      { src: '/videos/ocean2.mp4', isVideo: true, isMain: false },
+      { src: '/computer-graphics/ocean-3.webp', isVideo: false, isMain: false },
     ],
     flip: true,
   },
