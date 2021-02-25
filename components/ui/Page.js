@@ -33,6 +33,9 @@ const Page = ({ children, backgroundColor }) => (
       title="Portfolio"
       description="I'm a self-taught software engineer
       working on full-stack web development, real-time computer graphics and photography."
+      robotsProps={{
+        maxImagePreview: 'standard',
+      }}
       openGraph={{
         type: 'website',
         url: 'https://williamgermany.com',
@@ -41,8 +44,8 @@ const Page = ({ children, backgroundColor }) => (
         images: [
           {
             url: 'https://williamgermany.com/about-me/self.webp',
-            width: 600,
-            height: 400,
+            width: 300,
+            height: 200,
             alt: 'Self Portrait',
           },
         ],
