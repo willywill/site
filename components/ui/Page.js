@@ -16,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
   ::-moz-selection { background-color: ${HIGHLIGHT_COLOR}; }
   scroll-behavior: smooth;
 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   /* Animate-on-scroll Add-Ons */
   ${animateOnScrollAddOns}
 `;
@@ -44,8 +49,8 @@ const Page = ({ children, backgroundColor }) => (
         images: [
           {
             url: 'https://williamgermany.com/about-me/self.jpg',
-            width: 300,
-            height: 200,
+            width: 367,
+            height: 245,
             alt: 'Self Portrait',
           },
         ],
