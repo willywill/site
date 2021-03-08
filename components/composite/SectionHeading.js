@@ -1,4 +1,4 @@
-import { bool, number, shape, string } from 'prop-types';
+import { bool, number, string } from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import {
@@ -35,7 +35,6 @@ const SectionHeading = ({
   text,
   theme,
   flip,
-  animationProps,
 }) => {
   const { positionColor, headingColor, underlineColor } = getTheme(theme);
 
@@ -56,7 +55,6 @@ const SectionHeading = ({
       <Flex column>
         <Heading
           data-aos="fly-in"
-          {...animationProps}
           center
           extraLarge
           color={headingColor}
@@ -72,7 +70,6 @@ const SectionHeading = ({
         >
           <HeadingUnderline
             data-aos={flip ? 'slide-right' : 'slide-left'}
-            {...animationProps}
             color={underlineColor}
             flip={flip}
           />
@@ -90,7 +87,6 @@ SectionHeading.propTypes = {
   text: string.isRequired,
   theme: string,
   flip: bool,
-  animationProps: shape({}),
 };
 
 SectionHeading.defaultProps = {
@@ -98,7 +94,6 @@ SectionHeading.defaultProps = {
   position: undefined,
   theme: 'default',
   flip: false,
-  animationProps: {},
 };
 
 export default SectionHeading;
