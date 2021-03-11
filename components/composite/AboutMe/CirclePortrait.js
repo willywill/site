@@ -18,6 +18,6 @@ const CirclePortrait = styled.div`
   }
 `;
 
-CirclePortrait.displayName = 'Ci';
+CirclePortrait.displayName = 'CirclePortrait';
 
 export default CirclePortrait;
