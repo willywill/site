@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
 const Page = ({ children, backgroundColor }) => {
   useEffect(() => {
     if (!window.ANALYTICS_INITIALIZED) {
-      // Load the analytics
       analytics.load();
       window.ANALYTICS_INITIALIZED = true;
     }
