@@ -25,7 +25,6 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
           <style>@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap);</style>
-          <script async defer data-domain="williamgermany.com" src="https://plausible.io/js/plausible.js" />
         </body>
       </Html>
     );
