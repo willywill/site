@@ -108,12 +108,4 @@ const ContactSection = () => (
 
 ContactSection.displayName = 'ContactSection';
 
-ContactSection.propTypes = {
-
-};
-
-ContactSection.defaultProps = {
-
-};
-
 export default ContactSection;
