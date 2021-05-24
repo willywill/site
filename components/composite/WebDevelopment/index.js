@@ -60,9 +60,9 @@ const WebDevelopmentSection = () => (
             imageUrl="/web-dev/site.webp"
           />
           <ProductItem
-            title="TBA"
-            description="A Shopify website built for a local small business, a custom-made construction page and dynamic emails"
-            imageUrl="/web-dev/coming-soon.webp"
+            title="Fyre Recipes"
+            description="A recipe website that lets you build, share and explore recipes from different chefs. Built using TypeScript, GraphQL, PostgreSQL, React"
+            imageUrl="/web-dev/fyre.webp"
           />
         </Flex>
       </Flex>
