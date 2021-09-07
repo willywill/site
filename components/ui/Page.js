@@ -59,8 +59,8 @@ const Page = ({ children, backgroundColor }) => {
           images: [
             {
               url: 'https://williamgermany.com/about-me/self.jpg',
-              width: 367,
-              height: 245,
+              width: 555,
+              height: 555,
               alt: 'Self Portrait',
             },
           ],
