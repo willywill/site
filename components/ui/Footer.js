@@ -209,7 +209,7 @@ const Footer = () => (
             <ConnectLink href="https://github.com/willywill" icon="github" />
           </Flex>
           <Flex>
-            <ConnectLink href="https://gitlab.com/WillGermany" icon="gitlab" />
+            <ConnectLink href="https://gitlab.com/willgermany1" icon="gitlab" />
             <ConnectLink href="https://linkedin.com/in/williamgermany" icon="linkedin" />
             {/* NOTE: Facebook disabled my account... As soon as I created it. Fuck em. */}
             {/* <ConnectLink href="https://facebook.com/.../" icon="facebook" /> */}
@@ -236,7 +236,7 @@ const Footer = () => (
       </Box>
       <Box my={mediaQueryLessThan('0px', 'mobileLarge', '8px')}>
         <Text color={SUBTITLE_COLOR} letterSpacing={0.3}>
-          {'Last Updated — '}<time dateTime="2021-09">{'Sept, 2021'}</time>
+          {'Last Updated — '}<time dateTime="2022-01">{'Jan, 2022'}</time>
         </Text>
       </Box>
       <Box my={mediaQueryLessThan('0px', 'mobileLarge', '8px')}>
