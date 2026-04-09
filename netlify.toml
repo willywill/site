@@ -1,0 +1,9 @@
+# Static export (`output: "export"` → publish `out`). The legacy Next.js plugin
+# v1.x in Netlify UI injects `target` into config and breaks Next 13+.
+# NETLIFY_NEXT_PLUGIN_SKIP skips it if still listed under Site → Plugins.
+[build]
+	command = "bun run build"
+	publish = "out"
+
+[build.environment]
+	NETLIFY_NEXT_PLUGIN_SKIP = "true"
