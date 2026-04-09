@@ -1,0 +1,100 @@
+import type { ReactNode } from "react";
+import styled from "styled-components";
+import { getFadeInAnimation, scrollIntoView } from "../../../utils/animation";
+import {
+	breakpoints,
+	easingFunction,
+	PRIMARY_COLOR,
+	PRIMARY_COLOR_TRANSLUCENT,
+	WHITE,
+} from "../../../utils/theme";
+import { Box, Flex, Text } from "../../ui";
+
+const OverviewItemComponent = styled(Flex)<{ url: string }>`
+  width: 25vw;
+  height: 65vh;
+  padding: 32px;
+  background-image: ${(props) => `url(${props.url})`};
+  background-color: ${PRIMARY_COLOR_TRANSLUCENT};
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: filter 0.5s ${easingFunction}, background-size 0.5s ${easingFunction};
+  filter: saturate(0.2);
+  cursor: pointer;
+  animation: ${getFadeInAnimation(1.0)} 1s ${easingFunction};
+  
+  &:hover {
+    filter: saturate(0.85);
+    background-size: auto 102%;
+  }
+
+  @media (max-width: ${breakpoints.desktopSmall}) {
+    width: 90vw;
+    height: 25vh;
+    filter: saturate(0.85);
+    background-size: cover;
+
+    &:hover {
+      background-size: cover;
+    }
+  }
+`;
+
+const HelpTextBox = styled(Box)`
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ${easingFunction}, opacity 0.5s ${easingFunction};
+
+  ${OverviewItemComponent}:hover & {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
+const HelpText = styled(Text)`
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ${easingFunction}, opacity 0.5s ${easingFunction};
+
+  ${OverviewItemComponent}:hover & {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+`;
+
+type OverviewItemContainerProps = {
+	url: string;
+	link: string;
+	children: ReactNode;
+};
+
+const OverviewItemContainer = ({
+	url,
+	link,
+	children,
+}: OverviewItemContainerProps) => (
+	<OverviewItemComponent
+		url={url}
+		onClick={scrollIntoView(link, { block: "start" })}
+		column
+		justify="space-between"
+	>
+		<Box>{children}</Box>
+		<Flex pb={1} align="center">
+			<HelpTextBox
+				width={0.15}
+				height="3px"
+				background={PRIMARY_COLOR}
+				mr={2}
+			/>
+			<HelpText color={WHITE} letterSpacing={-0.3}>
+				{"Click to scroll to section"}
+			</HelpText>
+		</Flex>
+	</OverviewItemComponent>
+);
+
+OverviewItemContainer.displayName = "OverviewItemContainer";
+
+export default OverviewItemContainer;
