@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.10",
+		"@netlify/plugin-nextjs": "^5.15.9",
 		"@types/aos": "^3.0.7",
 		"@types/lodash": "^4.17.21",
 		"@types/node": "^25.0.0",
