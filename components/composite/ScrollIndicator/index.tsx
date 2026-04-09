@@ -86,7 +86,6 @@ const ScrollIndicator = () => {
 
 	return (
 		<ScrollIndicatorWrapper
-			data-aos="fade-in"
 			style={{
 				opacity:
 					scrollProgress <= SCROLL_INDICATOR_VISIBILITY_THRESHOLD ? 0 : 1,
