@@ -52,19 +52,19 @@ const OverviewSection = () => (
 			justify="center"
 		>
 			<Flex mx={5} align="center" column>
-				<CountUpNumber end="307" />
+				<CountUpNumber end="461" />
 				<Text center color={SUBTITLE_COLOR}>
 					{"Shaders Written"}
 				</Text>
 			</Flex>
 			<Flex mr={5} align="center" column>
-				<CountUpNumber end="12954" />
+				<CountUpNumber end="31349" />
 				<Text center color={SUBTITLE_COLOR}>
 					{"Code Commits"}
 				</Text>
 			</Flex>
 			<Flex mr={5} align="center" column>
-				<CountUpNumber end="6283" />
+				<CountUpNumber end="8168" />
 				<Text center color={SUBTITLE_COLOR}>
 					{"Photos Taken"}
 				</Text>
