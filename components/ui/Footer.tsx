@@ -292,7 +292,7 @@ const Footer = () => (
 			<Box my={mediaQueryLessThan("0px", "mobileLarge", "8px")}>
 				<Text color={SUBTITLE_COLOR} letterSpacing={0.3}>
 					{"Last Updated — "}
-					<time dateTime="2026-04-08">{"April 8th, 2026"}</time>
+					<time dateTime="2026-04-13">{"April 13th, 2026"}</time>
 				</Text>
 			</Box>
 			<Box my={mediaQueryLessThan("0px", "mobileLarge", "8px")}>
